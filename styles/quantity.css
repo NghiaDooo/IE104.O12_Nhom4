@@ -23,7 +23,7 @@
 }
 
 .quantity__minus-button {
-  background-image: url('images/Minus.svg'); 
+  background-image: url('assets/images/quantity/Minus.svg'); 
   background-repeat: no-repeat;
   background-position: center; 
   background-color: #FFF;
@@ -33,7 +33,7 @@
   flex-shrink: 0;
 }
 .quantity__plus-button {
-  background-image: url('images/Plus.svg'); 
+  background-image: url('assets/images/quantity/Plus.svg'); 
   background-repeat: no-repeat;
   background-position: center; 
   background-color: #FFF;
