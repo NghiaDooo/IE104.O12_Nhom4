@@ -1,0 +1,44 @@
+
+.quantity__contain {
+  display: flex;
+  width: 164px;
+  padding: 16px 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  border: 2px solid var(--gray-100, #E4E7E9);
+  background: var(--gray-00, #FFF);
+}
+
+.quantity__count-input {
+  color: #475156;
+  font-size: 16px;
+  font-family: Public Sans;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+  width: 17px;
+  height: 24px;
+  border: none;
+}
+
+.quantity__minus-button {
+  background-image: url('images/Minus.svg'); 
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-color: #FFF;
+  border: none;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.quantity__plus-button {
+  background-image: url('images/Plus.svg'); 
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-color: #FFF;
+  border: none;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
