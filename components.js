@@ -1,12 +1,17 @@
-const componentsFiles = [
+const components = [
     {
       name: 'navbar',
       url: 'components/navbar/index.html',
-      img: 'components/navbar/img/'
+      img: 'components/navbar/img/',
+      linksCSS: [
+        'components/navbar/globals.css',
+        'components/navbar/styleguide.css',
+        'components/navbar/style.css'
+      ]
     }
   ];
 
-componentsFiles.forEach(component => {
+components.forEach(component => {
     fetch(component.url)
     .then(function (response) {
         return response.text();
@@ -22,8 +27,15 @@ componentsFiles.forEach(component => {
         } else {
             console.log(`Element with ID '${component.name}' not found.`);
         }
+        component.linksCSS.forEach(linkCSS =>{
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = linkCSS;
+            document.head.appendChild(link);
+        });
     })
     .catch(function (err) {
         console.error('Failed to fetch page: ', err);
     });
 });
+
