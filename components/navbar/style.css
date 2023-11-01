@@ -1,0 +1,228 @@
+.navigation {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.navigation__top-nav {
+  display: flex;
+  width: 1920px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 15%;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--primary-color);
+  box-shadow: inset 0px -1px 0px #ffffff29;
+}
+
+.top-nav__slogan {
+  position: relative;
+  width: fit-content;
+  font-family: "Public Sans", Helvetica;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 6px;
+  white-space: nowrap;
+}
+
+.top-nav__right-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.right-content__follow-us {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.follow-us__text {
+  position: relative;
+  width: fit-content;
+  font-family: "Public Sans", Helvetica;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 10px;
+  white-space: nowrap;
+}
+
+.follow-us__social-icon {
+  position: relative;
+  height: 16px;
+  width: 16px;
+}
+
+.right-content__line-break {
+  position: relative;
+  width: 1px;
+  height: 16px;
+  object-fit: cover;
+}
+
+.right-content__call-now {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.call-now__call-now-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.call-now__call-now-number {
+  position: relative;
+  width: fit-content;
+  font-family: "Public Sans", Helvetica;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 6px;
+  white-space: nowrap;
+}
+
+.navigation__middle-nav {
+  display: flex;
+  width: 1920px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15%;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--primary-color);
+  border: 1px solid;
+  border-color: var(--primary-border-color);
+}
+
+.middle-nav__logo a, .bottom-nav__item a{
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+  gap: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.logo__logo-icon {
+  position: relative;
+  width: 60px;
+  height: 58.95.8px;
+  object-fit: cover;
+}
+
+.logo__logo-text {
+  position: relative;
+  width: fit-content;
+  font-family: "Public Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.middle-nav__search {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 20px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  box-shadow: 0px 8px 32px #00000014;
+}
+
+.search__search-input{
+  position: relative;
+  border: none;
+  outline: none;
+  width: 400px;
+  height: 24px;
+  justify-content: center;
+  font-family: "Public Sans", Helvetica;
+  font-weight: 400;
+  color: var(--text-search-color);
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+.search__search-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.middle-nav__icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.icons__img{
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.navigation__bottom-nav {
+  display: flex;
+  width: 1920px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 15%;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #00aaf0;
+  box-shadow: inset 0px -1px 0px #e4e7e9;
+}
+
+.item__item-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.item__item-title {
+  position: relative;
+  width: fit-content;
+  font-family: "Public Sans", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+.bottom-nav__item a:hover{
+  border-radius: 10px;
+  background-color: var(--primary-border-color);
+}
+
+.search__search-icon:hover {
+  cursor: pointer;
+}
