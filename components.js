@@ -1,12 +1,12 @@
 const components = [
     {
       name: 'navbar',
-      url: 'components/navbar/index.html',
+      url: 'components/navbar.html',
       img: {
         pattern : 'img/',
-        replacement : 'components/navbar/img/',
+        replacement : 'assets/images/navbar/',
       },
-      linkCSS: 'components/navbar/style.css'
+      linkCSS: 'styles/navbar.css'
     }
   ];
 
