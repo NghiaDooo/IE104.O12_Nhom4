@@ -1,4 +1,4 @@
-.product__contain{
+#product.contain{
     width: 248px; 
     height: 296px; 
     padding: 16px; 
@@ -13,14 +13,14 @@
     display: inline-flex
 }
 
-.product__image{
+#product.image{
     width: 100%; 
     height: 100%; 
     background: linear-gradient(0deg, white 0%, white 100%);
     justify-content:center
 }
 
-.product__content{
+#product.content{
     flex-direction: column; 
     justify-content: flex-start; 
     align-items: flex-start; 
@@ -28,7 +28,7 @@
     display: inline-flex
 }
 
-.product__content__name{
+#product.content__name{
     width: 216px; 
     color: #191C1F; 
     font-size: 14px; 
@@ -38,14 +38,14 @@
     word-wrap: break-word
 }
 
-.product__content__price{
+#product.content__price{
     justify-content: flex-start; 
     align-items: flex-start; 
     gap: 4px; 
     display: inline-flex
 }
 
-.product__content__price__text{
+#product.content__price__text{
     color: #2DA5F3; 
     font-size: 14px; 
     font-family: Public Sans; 
