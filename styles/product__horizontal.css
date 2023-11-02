@@ -1,4 +1,4 @@
-.product__horizontal__contain{
+#product__horizontal.contain{
     width: 312px; 
     height: 104px; 
     padding: 12px; 
@@ -12,26 +12,26 @@
     display: inline-flex
 }
 
-.product__horizontal__image{
+#product__horizontal.image{
     width: 80px; 
     height: 80px; 
     background: linear-gradient(0deg, #F5F5F5 0%, #F5F5F5 100%)
 }
 
-.product__horizontal__content{
+#product__horizontal.content{
     flex-direction: column; 
     justify-content: flex-start; 
     align-items: flex-start; 
     gap: 8px; 
     display: inline-flex
 }
-.product__horizontal__content__price{
+#product__horizontal.content__price{
     width: 196px; color: #191C1F; 
     font-size: 14px; font-family: Public Sans; 
     font-weight: 400; line-height: 20px; 
     word-wrap: break-word
 }
-.product__horizontal__content__price__text{
+#product__horizontal.content__price__text{
     color: #2DA5F3; 
     font-size: 14px; 
     font-family: Public Sans; 
