@@ -16,7 +16,7 @@ a {
 }
 
 .hidden {
-  visibility: hidden
+  display: none !important;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Public+Sans:400,700");

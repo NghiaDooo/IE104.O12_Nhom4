@@ -5,7 +5,8 @@
     height: 100%;
 }
 
-.form-sign-in-and-sign-up {
+.form-sign-in-and-sign-up,
+.form-sign-in-and-sign-in {
     width: 424px;
     /* height: 744px; */
 
@@ -19,6 +20,7 @@
 
 .header-sign-in-and-sign-up {
     display: flex;
+    cursor: pointer;
 }
 
 .header-sign-in,
@@ -38,11 +40,13 @@
     padding: 16px 0px;
 }
 
-.container-sign-up {
+.container-sign-up,
+.container-sign-in {
     padding: 24px 32px;
 }
 
-.content-sign-up {
+.content-sign-up,
+.content-sign-in {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -164,3 +168,5 @@
     position: absolute;
     top: 17px;
 }
+
+/*                        ////////////////////////////////////////////////                         */
