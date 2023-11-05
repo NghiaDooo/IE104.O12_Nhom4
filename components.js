@@ -4,6 +4,34 @@ const components = [
         url: 'components/navbar.html',
         img: 'assets/images/navbar/',
         linkCSS: 'styles/navbar.css'
+    },
+
+    {
+        name: 'breadcrumb',
+        url: 'components/breadcrumb.html',
+        img: 'assets/images/breadcrumb/',
+        linkCSS: 'styles/breadcrumb.css'
+    },
+
+    {
+        name: 'product',
+        url: 'components/product.html',
+        img: 'assets/images/product/',
+        linkCSS: 'styles/product.css'
+    },
+
+    {
+        name: 'sale-off',
+        url: 'components/sale-off.html',
+        img: 'assets/images/product/',
+        linkCSS: 'styles/sale-off.css'
+    },
+
+    {
+        name: 'best-deals',
+        url: 'components/best-deals.html',
+        img: 'assets/images/best-deals/',
+        linkCSS: 'styles/best-deals.css'
     }
 ];
 

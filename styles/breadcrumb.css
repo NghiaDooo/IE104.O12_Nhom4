@@ -1,0 +1,68 @@
+.breadcrumb{
+    display: flex;
+}
+
+.home__icon{
+    padding-right: 8px;
+}
+
+.arrow__icon{
+    padding-top: 2px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.home__text{
+    width: 39px;
+    height: 20px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: var(--gray-600, #5F6C72);
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 3px;
+}
+
+.shop__text{
+    width: 34px;
+    height: 20px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: var(--gray-600, #5F6C72);
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 3px;
+}
+
+.shop-grid__text{
+    width: 65px;
+    height: 20px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: var(--gray-600, #5F6C72);
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 3px;
+}
+
+.elec-device__text{
+    width: 117px;
+    height: 20px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: var(--gray-600, #5F6C72);
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 3px;
+}
+
+.macbook-pro__text{
+    width: 86px;
+    height: 20px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: var(--secondary-500, #2DA5F3);
+    font-style: normal;
+    font-weight: 500;
+    padding-top: 3px;
+}

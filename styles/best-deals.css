@@ -1,0 +1,73 @@
+.best-deals{
+    border-radius: 3px;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background-color: var(--gray-00, #FFF);
+    width: 234px;
+    height: 320px;
+    align-items: center;
+}
+
+.best-deals__text{
+    display: inline-flex;
+    border-radius: 3px;
+    background: var(--secondary-500, #2DA5F3);
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+.bd-image{
+    width: 202px;
+    height: 172px;
+}
+
+.best-deals__img{
+    width: 202px;
+    height: 172px;
+    padding-left: 16px;
+    padding-top: 16px
+}
+
+.best-deals__content{
+    width: 202px;
+    height: 92px;
+    padding-left: 16px;
+    padding-top: 10px;
+}
+
+.best-deals-content__rate{
+    display: flex;
+}
+
+.best-deals-rate__rate-number{
+    font-size: 12px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--gray-500, #77878F);
+    padding-left: 4px;
+    padding-top: 1px;
+}
+
+.best-deals-content__info{
+    font-size: 14px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--gray-900, #191C1F);
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.best-deals-content__price{
+    font-size: 14px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--secondary-500, #2DA5F3);
+}
+
