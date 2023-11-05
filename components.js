@@ -4,6 +4,12 @@ const components = [
         url: 'components/navbar.html',
         img: 'assets/images/navbar/',
         linkCSS: 'styles/navbar.css'
+    },
+    {
+        name: 'footer',
+        url: 'components/footer.html',
+        img: 'assets/images/footer/',
+        linkCSS: 'styles/footer.css'
     }
 ];
 
