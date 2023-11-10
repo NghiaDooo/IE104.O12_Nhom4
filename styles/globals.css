@@ -7,16 +7,15 @@
 
 html,
 body {
-  margin: 0px;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 960px;
+  min-height: 100vh;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
-}
-
-.hidden {
-  display: none !important;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Public+Sans:400,700");
