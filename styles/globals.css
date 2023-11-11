@@ -9,9 +9,11 @@ html,
 body {
   display: flex;
   flex-direction: column;
-  min-width: 960px;
+  min-width: 1462px;
   min-height: 100vh;
   margin: 0;
+  font-family: "Public Sans", Helvetica;
+  padding: 0;
 }
 
 a {
