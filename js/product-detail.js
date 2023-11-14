@@ -21,7 +21,7 @@ let imagesIndex = 0;
 document.addEventListener("DOMContentLoaded", () => {
 
     displayRateStars(3.5);
-    loadProductPrice(19990000, 20);
+    loadProductPrice(19990000, 15);
     loadProductPreviewImages(imagesSrc);
     addEventListenerToImages();
     updateActivateImage(imagesIndex);
