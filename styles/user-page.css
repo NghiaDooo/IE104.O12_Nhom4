@@ -1,0 +1,103 @@
+.user-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.user-container .user-box {
+    flex: 1;
+    display: flex;
+    padding: 10px 10px;
+    margin: 40px 200px;
+}
+
+.user-container .user-box .box-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.user-container .box-left section {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-container .box-left .tab-active {
+    background-color: var(--secondary-200);
+    color: var(--gray-900);
+}
+
+.user-container .box-left div:active {
+    background-color: var(--secondary-200);
+    opacity: 0.4;
+}
+
+.user-container .box-left div {
+    display: flex;
+    padding: 12px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background-color: transparent;
+    box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    color: var(--gray-800);
+}
+
+.user-container .user-box .box-right {
+    flex: 4;
+    display: flex;
+    padding: 12px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background-color: transparent;
+    box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
+}
+
+.user-container article {
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+}
+
+.user-container .article-active {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-container .purchased-order {
+    flex: 1;
+
+}
+
+.user-container .purchased-order h3 {
+    justify-self: center;
+    text-align: center;
+    font-weight: var(--heading-03-font-weight);
+    font-size: var(--heading-03-font-size);
+}
+
+.user-container .search-container {
+    display: inline-block;
+    padding: 10px 5px;
+    margin: 20px auto;
+    width: 80%;
+    border: 1px solid var(--gray-100);
+    border-radius: 5px;
+    position: relative;
+}
+
+.user-container .search-container input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.user-container .search-container img {
+    position: absolute;
+    right: 2%;
+    width: 20px;
+    height: 20px;
+}

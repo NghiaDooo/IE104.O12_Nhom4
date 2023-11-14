@@ -1,6 +1,5 @@
 const InitFooter = () => {
     const footerContainer = document.getElementById('footer');
-    console.log(footerContainer)
     const imageDirectory = '../assets/images/footer/';
     let footerHTML = `
  <footer class="footer">
@@ -56,7 +55,6 @@ const InitFooter = () => {
         </footer>
 `;
     footerHTML = footerHTML.replace(/src="img\//g, `src="${imageDirectory}`);
-    console.log(footerHTML)
     footerContainer.innerHTML = footerHTML;
     // Create a link element for the CSS file
     const cssLink = document.createElement('link');

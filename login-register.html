@@ -1,4 +1,3 @@
-q
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +8,6 @@ q
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/styleguide.css">
     <link rel="stylesheet" href="./styles/login-register.css">
-
-
 
 </head>
 
@@ -26,7 +23,7 @@ q
                     <h2>Đăng ký</h2>
                 </div>
             </div>
-            <form id="login-form" class="form">
+            <form id="login-form" class="form" onsubmit="return login()">
                 <div class="form__group">
                     <label for="email" class="form__label">Email:</label>
                     <input type="email" id="login-email" class="form__input" placeholder="Nhập địa chỉ email"
@@ -49,7 +46,7 @@ q
                 </div>
             </form>
 
-            <form id="register-form" class="form" method="POST" action="your_server_endpoint.php">
+            <form id="register-form" class="form" onsubmit="return register()">
                 <div class="form__group">
                     <label for="username" class="form__label">Tên người dùng:</label>
                     <input type="text" id="register-username" name="username" class="form__input"

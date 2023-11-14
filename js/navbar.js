@@ -1,8 +1,7 @@
 const InitNavbar = () => {
-  const navbarContainer = document.getElementById('navbar');
-  console.log(navbarContainer)
-  const imageDirectory = '../assets/images/navbar/';
-  let navbarHTML = `
+    const navbarContainer = document.getElementById('navbar');
+    const imageDirectory = '../assets/images/navbar/';
+    let navbarHTML = `
   <div class="navigation">
             <div class="navigation__top-nav">
                 <p class="top-nav__slogan">Welcome to AbcXyz online eCommerce store.</p>
@@ -93,23 +92,22 @@ const InitNavbar = () => {
             </div>
         </div>
 `;
-  navbarHTML = navbarHTML.replace(/src="img\//g, `src="${imageDirectory}`);
-  console.log(navbarHTML)
-  navbarContainer.innerHTML = navbarHTML;
-  // Create a link element for the CSS file
-  const cssLink = document.createElement('link');
-  cssLink.rel = 'stylesheet';
-  cssLink.href = '../styles/navbar.css';
+    navbarHTML = navbarHTML.replace(/src="img\//g, `src="${imageDirectory}`);
+    navbarContainer.innerHTML = navbarHTML;
+    // Create a link element for the CSS file
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = '../styles/navbar.css';
 
-  // Append the link element to the head of the document
-  document.head.appendChild(cssLink);
-  const searchInput = document.getElementById('search');
-  const searchIcon = document.getElementById('search-icon');
+    // Append the link element to the head of the document
+    document.head.appendChild(cssLink);
+    const searchInput = document.getElementById('search');
+    const searchIcon = document.getElementById('search-icon');
 
-  searchIcon.addEventListener('click', function () {
-    const searchValue = searchInput.value;
-    alert('You searched for: ' + searchValue);
-  });
+    searchIcon.addEventListener('click', function () {
+        const searchValue = searchInput.value;
+        alert('You searched for: ' + searchValue);
+    });
 
 }
 

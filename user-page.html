@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Thêm CSS để tạo tab */
+
+        article {
+            display: none;
+        }
+
+        article.active {
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="./styles/user-page.css">
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/styleguide.css">
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="user-container">
+        <div class="user-box">
+            <div class="box-left">
+                <section>
+                    <div onclick="showTab(Pages.USER_INFO, this)" class="tab-active">Hồ sơ</div>
+                    <div onclick="showTab(Pages.PURCHASED_ORDER, this)">Lịch sử mua hàng</div>
+                    <div onclick="">Log out</div>
+                </section>
+            </div>
+            <div class="box-right">
+                <article id="user-info" class="user-info article-active ">
+                    1
+                </article>
+                <article id="purchased-order" class="purchased-order">
+                    <h3>Lịch sử mua hàng</h3>
+                    <div class="search-container">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm bạn đã mua theo tên hoặc ID">
+                        <img src="./assets/images/user-page/search.svg" alt="">
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./js/common.js"></script>
+    <script>
+
+        const Pages = {
+            USER_INFO: 'user-info',
+            PURCHASED_ORDER: 'purchased-order'
+        };
+        function showTab(tabId, div) {
+            document.querySelectorAll('.tab-active').forEach(function (div) {
+                div.classList.remove('tab-active');
+            });
+            div.classList.add("tab-active");
+            // Ẩn tất cả các tab
+            document.querySelectorAll('article').forEach(function (article) {
+                article.classList.remove('article-active');
+            });
+
+            // Hiển thị tab được chọn
+            document.getElementById(tabId).classList.add('article-active');
+        }
+
+    </script>
+</body>
+
+</html>
