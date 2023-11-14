@@ -118,8 +118,8 @@
 
 .box-right .product-content h3 {
     margin: 20px 0;
-    font-weight: bold;
-    font-size: 22px;
+    font-weight: var(--heading-03-font-weight);
+    font-size: var(--heading-03-font-size);
     line-height: 1.2;
 }
 
@@ -188,7 +188,7 @@
     display: block;
 }
 
-.box-right .product-info-container h2 {
+.box-right .product-info-container h4 {
 
     padding: 15px 5px;
     text-align: center;
