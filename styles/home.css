@@ -1,0 +1,219 @@
+.home-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-container .ads-container {
+    width: 75%;
+    margin: 10px 0 50px 0;
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+}
+
+.home-container .slider-container {
+    flex: 7;
+    position: relative;
+    overflow: hidden;
+    padding: none;
+    border: none;
+    border-radius: 10px 50px 10px 50px;
+    margin: 10px 30px;
+    box-shadow: 0 0 5px var(--secondary-500);
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container .slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.home-container .slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.home-container .control-btn {
+    position: absolute;
+    z-index: 1;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    margin: 30px;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    opacity: 0.3;
+    box-shadow: 0 0 3px #000;
+    cursor: pointer;
+}
+
+.home-container .control-btn:hover {
+    box-shadow: 0 0 6px #000;
+}
+
+.home-container .control-btn--left {
+    top: 30%;
+    left: 5%;
+}
+
+.home-container .control-btn--right {
+    top: 30%;
+    right: 5%;
+}
+
+.home-container .small-widget {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 30px;
+    width: 100%;
+    height: 97%;
+}
+
+.home-container .small-widget a {
+    flex: 1;
+    width: 100%;
+    height: 40%;
+    box-shadow: 0 0 5px var(--secondary-500);
+    margin: 10px;
+}
+
+.home-container .small-widget img {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+}
+
+.today-best-deals {
+    display: inline-flex;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 70px;
+    position: relative;
+    border: none;
+    border-radius: 12px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px var(--primary-500);
+}
+
+.today-best-deals .heading {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.today-best-deals .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+
+.today-best-deals .deals-ends-in {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+    padding: 10px;
+    margin: 0 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px var(--primary-700);
+}
+
+.today-best-deals .deals-ends-in .deals-countdown {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--primary-300);
+    font-family: var(--body-small-400-font-family);
+    color: var(--gray-900);
+    font-size: var(--body-small-400-font-size);
+    white-space: nowrap;
+}
+
+.today-best-deals .div {
+    position: relative;
+    width: fit-content;
+    font-family: var(--body-small-400-font-family);
+    font-weight: var(--body-small-400-font-weight);
+    color: #000000;
+    font-size: var(--body-small-400-font-size);
+    letter-spacing: var(--body-small-400-letter-spacing);
+    line-height: var(--body-small-400-line-height);
+    white-space: nowrap;
+    font-style: var(--body-small-400-font-style);
+}
+
+.today-best-deals .time {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--warning-300);
+    border-radius: 2px;
+}
+
+.today-best-deals .button-browse {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    position: relative;
+    background-color: var(--gray-00);
+    color: var(--secondary-500);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.today-best-deals .button-browse:active {
+    background-color: var(--secondary-100);
+
+}
+
+.today-best-deals .button-browse .text-wrapper-4 {
+    flex: 1;
+}
+
+.today-best-deals .button-browse img {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.today-best-deals .img {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.today-best-deals .products {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.today-best-deals .products>div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 816px;
+}

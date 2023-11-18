@@ -7,27 +7,81 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/styleguide.css">
-
-    <script src="./js/navbar.js"></script>
-    <script src="./js/footer.js"></script>
-    <script src="./js/home.js"></script>
-    <style>
-        .content {
-            flex: 1;
-        }
-    </style>
-
+    <link rel="stylesheet" href="./styles/home.css">
 
 </head>
 
 <body>
     <div id="navbar"></div>
-    <div class="content"></div>
+    <div class="home-container">
+        <section class="ads-container">
+            <section id=" slider-container" class="slider-container">
+                <button class="control-btn control-btn--left" onclick="prevSlide()">‹</button>
+                <button class="control-btn control-btn--right" onclick="nextSlide()">›</button>
+            </section>
+            <section id="small-widget" class="small-widget">
+                <a href="#">
+                    <img src="./assets/images/home/image-4.png" alt="Banner 1">
+                </a>
+                <a href="#">
+                    <img src="./assets/images/home/image-5.png" alt="Banner 2">
+                </a>
+            </section>
+        </section>
+        <section class="today-best-deals" id="today-best-deals">
+            <div class="heading">
+                <div class="content">
+                    <div class="text-wrapper">Best Deals</div>
+                    <div class="deals-ends-in">
+                        <div class="div">Deals ends in</div>
+                        <div id="deals-countdown" class="deals-countdown "></div>
+                    </div>
+                </div>
+                <button class="button-browse">
+                    <div class="text-wrapper-4">Browse All Product</div>
+                    <img class="img" src="img/regular-arrowright-9.svg" />
+                </button>
+            </div>
+            <div class="products">
+                <div id="today-best-deals-products"></div>
+            </div>
+        </section>
+        <section id="best-seller" class="best-seller">
+            <div class="heading">
+                <div class="content">
+                    <div class="text-wrapper">best-seller</div>
+                </div>
+            </div>
+            <div class="products">
+                <div id="best-seller-products"></div>
+            </div>
+        </section>
+        <section id="top-rate" class="top-rate">
+        </section>
+    </div>
     <div id="footer">
     </div>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./js/home.js"></script>
+    <script src="./js/common.js"></script>
 </body>
 <script>
-
+    const productData = {
+        "id": "305658",
+        "name": "Điện thoại iPhone 15 Pro Max 256GB",
+        "title": "iPhone 15 Pro Max",
+        "brand": "iPhone (Apple)",
+        "cate": "Điện thoại",
+        "img": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
+        "price": 34990000,
+        "star": 5,
+        "rateCount": 31,
+    };
+    for (let i = 0; i < 10; i++) {
+        addProduct(productData, document.getElementById("today-best-deals-products"));
+        // addProduct(productData, document.getElementById("best-seller-products"));
+    }
 </script>
 
 </html>

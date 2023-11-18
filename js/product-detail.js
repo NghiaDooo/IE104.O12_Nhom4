@@ -20,38 +20,14 @@ let imagesIndex = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    displayRateStars(3.5);
+
+    displayRateStars(3.5, document.getElementById("detail-stars"));
     loadProductPrice(19990000, 15);
     loadProductPreviewImages(imagesSrc);
     addEventListenerToImages();
     updateActivateImage(imagesIndex);
     createProductInfo(productInfo);
 })
-
-function updateBreadcrumb() {
-    var url = window.location.href;
-    var urlParts = url.split('/');
-    var breadcrumbContainer = document.getElementById('breadcrumb');
-
-    // Clear previous breadcrumb
-    breadcrumbContainer.innerHTML = '';
-
-    // Add home link
-    var homeLink = document.createElement('a');
-    homeLink.href = '/';
-    homeLink.textContent = 'Home';
-    breadcrumbContainer.appendChild(homeLink);
-
-    var path = '';
-    for (var i = 3; i < urlParts.length; i++) {
-        path += '/' + urlParts[i];
-        var link = document.createElement('a');
-        link.href = path;
-        link.textContent = urlParts[i];
-        breadcrumbContainer.appendChild(document.createTextNode(' > '));
-        breadcrumbContainer.appendChild(link);
-    }
-}
 
 function loadProductPreviewImages(images) {
     const imagesContainer = document.getElementById("images-container");
@@ -104,39 +80,7 @@ function prevImage() {
     updateActivateImage(imagesIndex)
 }
 
-function displayRateStars(rating) {
-    const starRatingContainer = document.getElementById('detail-stars');
-    const listStars = Array.from(starRatingContainer.querySelectorAll('.icondetail-star'));
-    starRatingContainer.innerHTML = '';
 
-    const fullStarCount = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
-
-    for (let i = 0; i < fullStarCount; i++) {
-        const star = document.createElement('img');
-        star.src = './assets/images/product-detail/star.svg';
-        star.alt = 'star';
-        star.className = 'icondetail-star';
-        starRatingContainer.appendChild(star);
-    }
-
-    if (hasHalfStar) {
-        const halfStar = document.createElement('img');
-        halfStar.src = './assets/images/product-detail/half-star.svg';
-        halfStar.alt = 'half-star';
-        halfStar.className = 'icondetail-star';
-        starRatingContainer.appendChild(halfStar);
-    }
-
-    const emptyStarCount = 5 - Math.ceil(rating);
-    for (let i = 0; i < emptyStarCount; i++) {
-        const emptyStar = document.createElement('img');
-        emptyStar.src = './assets/images/product-detail/non-star.svg';
-        emptyStar.alt = 'non-star';
-        emptyStar.className = 'icondetail-star';
-        starRatingContainer.appendChild(emptyStar);
-    }
-}
 
 function loadProductPrice(originalPrice, discount) {
     var productPriceDiv = document.getElementById("product-price");
@@ -158,15 +102,18 @@ function loadProductPrice(originalPrice, discount) {
 function createProductInfo(productInfo) {
     const listInfo = document.getElementById("product-info");
     productInfo.forEach(info => {
-        const li = document.createElement('li');
-        const label = document.createElement('p');
-        const value = document.createElement('div');
+        if (info.value !== null) {
+            const li = document.createElement('li');
+            const label = document.createElement('p');
+            const value = document.createElement('div');
 
-        label.textContent = info.label;
-        value.textContent = info.value;
+            label.textContent = info.label;
+            value.textContent = info.value;
 
-        li.appendChild(label);
-        li.appendChild(value);
-        listInfo.appendChild(li);
+            li.appendChild(label);
+            li.appendChild(value);
+            listInfo.appendChild(li);
+        }
     });
 }
+
