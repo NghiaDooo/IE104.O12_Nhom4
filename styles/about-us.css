@@ -1,0 +1,229 @@
+.about-us{
+    width: auto;
+    height: auto;
+}
+.about-us-about-section{
+    padding-left: 300px;
+    padding-top: 72px;
+    display: flex;
+    height: 732px;
+    position: relative;
+}
+.section-content{
+    width: 536px;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.section-content-title{
+    color:  #191C1F;
+    font-family: sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    padding-bottom: 24px;
+    display: flex;
+}
+.section-content-text{
+    color: #475156;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    padding-bottom: 32px;
+}
+.section-feature{
+    gap: 16px;
+    flex-direction: column;
+    width: 535px;
+    height: 144px;
+}
+
+.section-feature-detail{
+    display: flex;
+    color: var(--gray-900, #191C1F);
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+.section-feature-text{
+    padding-top: 4px;
+}
+.section-icon{
+    width: 24px;
+    height: 24px;
+    padding-right: 12px;
+}
+.section-image{
+    width: 648px;
+    height: 536px;
+    border-radius: 4px;
+    margin-left: 136px;
+    align-items: center;
+    position: relative;
+}
+.team-member-title{
+
+    color:  #191C1F;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    padding-left: 300px;
+    padding-bottom: 40px;
+    position: relative;
+}
+.team-member-line-1,
+.team-member-line-2{
+    display: flex;
+    padding-left: 300px;
+    gap: 24px;
+    position: relative;
+}
+.team-member-line-2{
+    margin-bottom: 72px;
+}
+.team-member-content{
+    padding-right: 48px ;
+    width: 312px;
+    height: 112px;
+    border-radius: 3px;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+.team-member-name{
+    padding-top: 24px;
+    color: var(--gray-900, #191C1F);
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+}
+.team-member-position{
+    color: var(--gray-700, #475156);
+    font-family: sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+.about-us-banner{
+    flex: 0 0 auto;
+    position: relative;
+    height: auto;
+    width: fit-content;
+}
+.about-us-product{
+    height: 528px;
+    padding: 72px 300px;
+    display: flex;
+}
+.product-features{
+    width: 312px;
+    height: 384px;
+    padding-right: 24px;
+}
+.product-features-title{
+    color: var(--gray-900, #191C1F);
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    width: 312px;
+}
+.product-detail{
+    width: 312px;
+    height: 104px;
+    border-radius: 3px;
+    border: 2px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+    margin-right: 24px;
+    margin-top: 16px;
+}
+.about-us-newsletter{
+    width: auto;
+    height: 452px;
+    background: var(--secondary-700, #1B6392);
+    padding: 72px 300px;
+}
+.newsletter-content-title{
+    color: var(--gray-00, #FFF);
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+.newsletter-content-text{
+    color: var(--gray-00, #FFF);
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    padding-bottom: 32px;
+}
+.newsletter-input-field{
+    margin-left: 360px;
+    width: 624px;
+    height: 72px;
+    display: flex;
+    border-radius: 3px;
+    background: #FFF;
+    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12);
+}
+.button-subscribe{
+    width: 160px;
+    height: 48px;
+    border-radius: 1px;
+    background: var(--primary-500, #FA8232);
+    margin-left: 8px;
+    display: flex;
+    margin-top: 12px;
+}
+.button-subscribe-name{
+    color: var(--gray-00, #FFF);
+    font-family: sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    padding-left: 24px;
+    padding-right: 8px;
+    padding-top: 13px;
+}
+.button-subscribe-icon{
+    padding-top: 11px;
+}
+.about-us-email{
+    width: 340px;
+    height: 40px;
+    margin-top: 12px;
+}
+.about-us-email-label{
+    color: var(--gray-500, #77878F);
+    /* Body/Medium/400 */
+    font-family: sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 24px;
+    padding-left: 16px;
+}
+.product-branch{
+    padding-left: 384px;
+    padding-top: 32px;
+    display: flex;
+}
+.product-branch-features{
+    width: 72px;
+    height: 72px;
+    padding-right: 48px;
+}
+
+
+
