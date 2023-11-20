@@ -28,7 +28,7 @@ function loadProductPrice(discount, old_price, new_price) {
         priceOldElement.textContent = old_price;
         promotionElement.textContent = discount;
     } else {
-        pricePresentElement.textContent = old_price;
+        pricePresentElement.textContent = new_price;
         priceOldElement.style.display = "none";
         promotionElement.style.display = "none";
     }

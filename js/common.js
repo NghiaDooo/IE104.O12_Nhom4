@@ -32,7 +32,6 @@ function addUser(user) {
     }
 }
 
-
 function displayRateStars(rating, starRatingContainer) {
     starRatingContainer.innerHTML = '';
 
@@ -289,6 +288,11 @@ function createPopup(message, continueText, continueCallback, cancelCallback) {
     // Thêm overlay và popup vào body của trang
     document.body.appendChild(overlay);
 }
+
+const searchByNameLike = (keyword, listData) => {
+    const regex = new RegExp(keyword, 'i'); // 'i' để không phân biệt chữ hoa và chữ thường
+    return listData.filter(item => regex.test(item.name));
+};
 
 
 console.log(getAllUsers())

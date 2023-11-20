@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./styles/user-page.css">
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/styleguide.css">
+    <link rel="stylesheet" href="./styles/product.css">
 </head>
 
 <body>
@@ -39,10 +40,15 @@
                 <article id="purchased-order" class="purchased-order">
                     <h3>Lịch sử mua hàng</h3>
                     <div class="search-container">
-                        <input type="text" placeholder="Tìm kiếm sản phẩm bạn đã mua theo tên">
-                        <img id="search-purchased-product-btn" src="./assets/images/user-page/search.svg" alt="search">
+                        <input id="search-purchased-product-text" type="text"
+                            placeholder="Tìm kiếm sản phẩm bạn đã mua theo tên">
+                        <img id="search-purchased-product-btn" src="./assets/images/user-page/search.svg" alt="search"
+                            onclick="searchPurhasedProduct()">
                     </div>
-                    <div id="purchased-products">
+                    <div class="purchased-products-container">
+                        <div id="purchased-products" class="purchased-products">
+                        </div>
+                        <button id="btn-see-more" class="btn-see-more" onclick="loadMoreProduct()">Xem thêm</button>
 
                     </div>
                 </article>
@@ -52,9 +58,18 @@
     <div id="footer"></div>
     <script src="./js/navbar.js"></script>
     <script src="./js/footer.js"></script>
+    <script src="./data/data.js"></script>
     <script src="./js/common.js"></script>
     <script>
-        window.onload = function () {
+        const Pages = {
+            USER_INFO: 'user-info',
+            PURCHASED_ORDER: 'purchased-order'
+        };
+        const purchasedProducts = data;
+        var limitedProducts = 8;
+        var productsData = purchasedProducts;
+
+        function checkLoginState() {
             console.log(getCurrentUser());
             if (getCurrentUser() == null) {
                 const parentContainer = document.querySelector('.user-container');
@@ -64,13 +79,8 @@
                 createPopup("Bạn chưa đăng nhập!", "Đăng nhập", () => window.location.href = "login-register.html", () => window.location.href = "home.html");
                 return;
             };
-            if (userContainer.contains(overlay))
-                userContainer.removeChild(overlay);
         }
-        const Pages = {
-            USER_INFO: 'user-info',
-            PURCHASED_ORDER: 'purchased-order'
-        };
+
         function showTab(tabId, div) {
             document.querySelectorAll('.tab-active').forEach(function (div) {
                 div.classList.remove('tab-active');
@@ -85,18 +95,49 @@
             document.getElementById(tabId).classList.add('article-active');
         }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            var searchImage = document.getElementById('search-purchased-product-btn');
-            searchImage.onclick = function () {
-                alert('Hình ảnh đã được click!');
-
-            };
-        })
-
         function logOut() {
             setCurrentUser(null);
             window.location.href = "home.html"
         }
+
+        function searchPurhasedProduct() {
+            const searchKey = document.getElementById("search-purchased-product-text");
+            if (searchKey.value == null) {
+                document.getElementById("purchased-products").innerHTML = ''
+                productsData = purchasedProducts;
+                showLimitedProducts(productsData, document.getElementById("purchased-products"), limitedProducts);
+                isShowedAllProducts();
+                return;
+            }
+            document.getElementById("purchased-products").innerHTML = ''
+            productsData = searchByNameLike(searchKey.value, purchasedProducts);
+            if (productsData.length == 0)
+                alert('Không tìm thấy sản phẩm!');
+            showLimitedProducts(productsData, document.getElementById("purchased-products"), limitedProducts);
+            isShowedAllProducts();
+        };
+
+        function isShowedAllProducts() {
+            const btnSeeMore = document.getElementById("btn-see-more");
+            console.log(btnSeeMore)
+            if (limitedProducts >= productsData.length)
+                btnSeeMore.style.display = 'none';
+            else
+                btnSeeMore.style.display = 'block';
+        }
+
+        function loadMoreProduct() {
+            limitedProducts += 8;
+            showLimitedProducts(data, document.getElementById("purchased-products"), limitedProducts);
+            isShowedAllProducts();
+
+        }
+        window.onload = checkLoginState();
+        document.addEventListener("DOMContentLoaded", () => {
+            showLimitedProducts(data, document.getElementById("purchased-products"), limitedProducts);
+            isShowedAllProducts();
+        })
+
     </script>
 </body>
 

@@ -107,7 +107,47 @@
 
 .user-container .search-container img {
     position: absolute;
-    right: 2%;
+    right: 0%;
+    top: 0;
+    padding: 10px;
     width: 20px;
     height: 20px;
+    cursor: pointer;
+    box-sizing: content-box;
+    z-index: 1;
+}
+
+.user-container .search-container img:active {
+    box-shadow: 0 0 10px var(--secondary-200);
+    background-color: var(--secondary-200);
+}
+
+.user-container .purchased-products-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.user-container .purchased-products-container .purchased-products {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    position: relative;
+}
+
+.user-container .purchased-products-container .btn-see-more {
+    position: absolute;
+    bottom: -25px;
+    left: 40%;
+    padding: 5px 50px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 6px var(--secondary-200);
+    background-color: var(--gray-00);
+}
+
+.user-container .purchased-products-container .btn-see-more:active {
+    box-shadow: 0 0 10px var(--secondary-400);
+    background-color: var(--secondary-200);
 }
