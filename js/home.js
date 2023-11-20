@@ -63,7 +63,7 @@ function showSlide(index) {
     slides.forEach((slide, i) => {
         slide.style.display = i === index ? 'block' : 'none';
     });
-} Ư
+}
 
 function nextSlide() {
     const slides = document.querySelectorAll('.slide');

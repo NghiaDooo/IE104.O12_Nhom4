@@ -44,10 +44,7 @@ const InitNavbar = () => {
                     <a href="link-to-shopping-cart.html">
                         <img class="icons__img" src="img/icon-shopping-cart.png" />
                     </a>
-                    <a href="link-to-help.html">
-                        <img class="icons__img" src="img/icon-question.png" />
-                    </a>
-                    <a href="link-to-user-profile.html">
+                    <a href="user-page.html">
                         <img class="icons__img" src="img/icon-user.png" />
                     </a>
                 </div>
@@ -77,18 +74,6 @@ const InitNavbar = () => {
                         <div class="item__item-title">SẠC, CÁP SẠC</div>
                     </a>
                 </div>
-                <div class="bottom-nav__item">
-                    <a href="link-to-phone-case-products.html">
-                        <img class="item__item-icon" src="img/icon-phone-case.png" />
-                        <div class="item__item-title">ỐP LƯNG</div>
-                    </a>
-                </div>
-                <div class="bottom-nav__item">
-                    <a href="link-to-track-order.html">
-                        <img class="item__item-icon" src="img/icon-track-order.png" />
-                        <div class="item__item-title">THEO DÕI ĐƠN HÀNG</div>
-                    </a>
-                </div>
             </div>
         </div>
 `;
@@ -108,6 +93,8 @@ const InitNavbar = () => {
         const searchValue = searchInput.value;
         alert('You searched for: ' + searchValue);
     });
+
+
 
 }
 

@@ -29,7 +29,7 @@
                 <section>
                     <div onclick="showTab(Pages.USER_INFO, this)" class="tab-active">Hồ sơ</div>
                     <div onclick="showTab(Pages.PURCHASED_ORDER, this)">Lịch sử mua hàng</div>
-                    <div onclick="">Log out</div>
+                    <div onclick="logOut()">Log out</div>
                 </section>
             </div>
             <div class="box-right">
@@ -39,8 +39,11 @@
                 <article id="purchased-order" class="purchased-order">
                     <h3>Lịch sử mua hàng</h3>
                     <div class="search-container">
-                        <input type="text" placeholder="Tìm kiếm sản phẩm bạn đã mua theo tên hoặc ID">
-                        <img src="./assets/images/user-page/search.svg" alt="">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm bạn đã mua theo tên">
+                        <img id="search-purchased-product-btn" src="./assets/images/user-page/search.svg" alt="search">
+                    </div>
+                    <div id="purchased-products">
+
                     </div>
                 </article>
             </div>
@@ -51,6 +54,19 @@
     <script src="./js/footer.js"></script>
     <script src="./js/common.js"></script>
     <script>
+        window.onload = function () {
+            console.log(getCurrentUser());
+            if (getCurrentUser() == null) {
+                const parentContainer = document.querySelector('.user-container');
+                const overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                parentContainer.appendChild(overlay);
+                createPopup("Bạn chưa đăng nhập!", "Đăng nhập", () => window.location.href = "login-register.html", () => window.location.href = "home.html");
+                return;
+            };
+            if (userContainer.contains(overlay))
+                userContainer.removeChild(overlay);
+        }
         const Pages = {
             USER_INFO: 'user-info',
             PURCHASED_ORDER: 'purchased-order'
@@ -67,6 +83,19 @@
 
             // Hiển thị tab được chọn
             document.getElementById(tabId).classList.add('article-active');
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            var searchImage = document.getElementById('search-purchased-product-btn');
+            searchImage.onclick = function () {
+                alert('Hình ảnh đã được click!');
+
+            };
+        })
+
+        function logOut() {
+            setCurrentUser(null);
+            window.location.href = "home.html"
         }
     </script>
 </body>

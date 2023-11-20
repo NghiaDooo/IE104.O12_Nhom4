@@ -1,245 +1,42 @@
-<link rel="stylesheet" href="./styles/styleguide.css">
-<link rel="stylesheet" href="./styles/globals.css">
-<style>
-    .product-item {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2px 5px;
-        margin: 2px;
-        width: 234px;
-        height: 320px;
-        background-color: var(--gray-00);
-        border: 1px solid var(--gray-100);
-        border-radius: 3px;
-        transition: transform 0.3s linear;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    .product-item .overlap-group {
-        width: 206px;
-        height: 172px;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/styleguide.css">
+    <link rel="stylesheet" href="./styles/home.css">
 
-    .product-item .product-image {
-        width: 202px;
-        height: 172px;
-    }
-
-    .product-item .product-content {
-        width: 206px;
-        padding: 0 2px;
-    }
-
-    .product-item .product-content>div {
-        margin-top: 10px;
-    }
-
-    .product-item .product-rate {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-
-    .product-item .product-rate>div {
-        margin-right: 10px;
-    }
-
-    .product-item .icondetail-star {
-        width: 12px;
-        height: 12px;
-    }
-
-    .product-item .product-rate-number {
-        font-size: var(--body-XS-400-font-size);
-        color: var(--gray-500);
-        white-space: nowrap;
-    }
-
-    .product-item .product-name {
-        font-size: var(--body-small-600-size);
-        font-weight: bold;
-    }
-
-    .product-item .product-price {
-        font-size: var(--body-tiny-500-font-size);
-        color: var(--secondary-500);
-
-    }
-
-    /*product hover effect */
-    .product-item:hover {
-        background-color: var(--secondary-100);
-    }
-
-    .product-item:hover>div {
-        z-index: 2;
-        transform: translateY(-2%);
-    }
-</style>
+</head>
 
 <body>
-    <div id="product-list" class="product-list">
-        <div class="product-item">
-            <div class="overlap-group">
-                <img class="product-image" src="./assets/images/home/image.png">
-                <div id="hot-product"></div>
-                <div id="sale-product"></div>
-            </div>
-            <div class="product-content">
-                <div class="product-rate">
-                    <div class="product-rate-stars">
-                        <img src="./assets/images/product-detail/star.svg" alt="star" class="icondetail-star">
-                        <img src="./assets/images/product-detail/star.svg" alt="star" class="icondetail-star">
-                        <img src="./assets/images/product-detail/star.svg" alt="star" class="icondetail-star">
-                        <img src="./assets/images/product-detail/star.svg" alt="star" class="icondetail-star">
-                        <img src="./assets/images/product-detail/star.svg" alt="star" class="icondetail-star">
-                    </div>
-                    <div class="product-rate-number">(536 đánh giá)</div>
-                </div>
-                <div class="product-name">Samsung Electronics Samsung Galexy S21 5G</div>
-                <div class="product-price">$2,300</div>
-            </div>
-        </div>
+    <div id="navbar"></div>
+
+    <div id="footer">
     </div>
-    <script>
-        const productList = document.getElementById("product-list");
-        const product = [
-            { productImage: './assets/images/home/image.png' },
-            { productRateStars: 5 },
-            { productRateNumber: 536 },
-            { productInfomation: 'Samsung Electronics Samsung Galexy S21 5G' },
-            { productPrice: '$2,300' }
-        ]
+    <script src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
 
-
-        function displayRateStars(rating, starRatingContainer) {
-            starRatingContainer.innerHTML = '';
-
-            const fullStarCount = Math.floor(rating);
-            const hasHalfStar = rating % 1 !== 0;
-
-            for (let i = 0; i < fullStarCount; i++) {
-                const star = document.createElement('img');
-                star.src = './assets/images/product-detail/star.svg';
-                star.alt = 'star';
-                star.className = 'icondetail-star';
-                starRatingContainer.appendChild(star);
-            }
-
-            if (hasHalfStar) {
-                const halfStar = document.createElement('img');
-                halfStar.src = './assets/images/product-detail/half-star.svg';
-                halfStar.alt = 'half-star';
-                halfStar.className = 'icondetail-star';
-                starRatingContainer.appendChild(halfStar);
-            }
-
-            const emptyStarCount = 5 - Math.ceil(rating);
-            for (let i = 0; i < emptyStarCount; i++) {
-                const emptyStar = document.createElement('img');
-                emptyStar.src = './assets/images/product-detail/non-star.svg';
-                emptyStar.alt = 'non-star';
-                emptyStar.className = 'icondetail-star';
-                starRatingContainer.appendChild(emptyStar);
-            }
-        }
-
-        function addProduct(productData, productList) {
-            // Create product item container
-            const productItem = document.createElement('div');
-            productItem.className = 'product-item';
-
-            const productImageContainer = document.createElement('div');
-            productImageContainer.className = 'overlap-group';
-
-            // Create product image
-            const productImage = document.createElement('img');
-            productImage.className = 'product-image';
-            productImage.src = './assets/images/home/image.png'; // Set the default image source
-
-            // Create other div elements
-            const hotProductDiv = document.createElement('div');
-            hotProductDiv.id = 'hot-product';
-
-            const saleProductDiv = document.createElement('div');
-            saleProductDiv.id = 'sale-product';
-
-            // Create product content
-            const productContent = document.createElement('div');
-            productContent.className = 'product-content';
-
-            // Create product rate
-            const productRate = document.createElement('div');
-            productRate.className = 'product-rate';
-
-            // Create product rate stars
-            const productRateStars = document.createElement('div');
-            productRateStars.className = 'product-rate-stars';
-            displayRateStars(productData.star, productRateStars); // Use the 'star' property from the productData object
-
-            // Create product rate number
-            const productRateNumber = document.createElement('div');
-            productRateNumber.className = 'product-rate-number';
-            productRateNumber.innerText = `(${productData.rateCount} đánh giá)`; // Use the 'rateCount' property from the productData object
-
-            // Append rate stars and number to rate container
-            productRate.appendChild(productRateStars);
-            productRate.appendChild(productRateNumber);
-
-            // Create product info
-            const productInfo = document.createElement('div');
-            productInfo.className = 'product-name';
-            productInfo.innerText = productData.title; // Use the 'title' property from the productData object
-
-            // Create product price
-            const productPrice = document.createElement('div');
-            productPrice.className = 'product-price';
-            productPrice.innerText = productData.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }); // Format price as currency
-
-            // Append all elements to product content
-            productContent.appendChild(productRate);
-            productContent.appendChild(productInfo);
-            productContent.appendChild(productPrice);
-
-            // Append image and other div elements to the container
-            productImageContainer.appendChild(productImage);
-            productImageContainer.appendChild(hotProductDiv);
-            productImageContainer.appendChild(saleProductDiv);
-
-            // Append the entire container to the product item
-            productItem.appendChild(productImageContainer);
-            productItem.appendChild(productContent);
-
-            // Add CSS
-            const cssLink = document.createElement('link');
-            cssLink.rel = 'stylesheet';
-            cssLink.href = '../styles/product.css';
-            document.head.appendChild(cssLink);
-
-            // Append product item to product list
-            productList.appendChild(productItem);
-        }
-
-        // Example usage with the provided object
-        const productData = {
-            "id": "305658",
-            "name": "Điện thoại iPhone 15 Pro Max 256GB",
-            "title": "iPhone 15 Pro Max",
-            "brand": "iPhone (Apple)",
-            "cate": "Điện thoại",
-            "img": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
-            "price": 34990000,
-            "star": 5,
-            "rateCount": 31,
-        };
-
-        addProduct(productData, productList);
-
-
-
-
-    </script>
-
+    <script src="./js/common.js"></script>
 </body>
+<script>
+    const productData = {
+        "id": "305658",
+        "name": "Điện thoại iPhone 15 Pro Max 256GB",
+        "title": "iPhone 15 Pro Max",
+        "brand": "iPhone (Apple)",
+        "cate": "Điện thoại",
+        "img": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
+        "price": 34990000,
+        "star": 5,
+        "rateCount": 31,
+    };
+    for (let i = 0; i < 10; i++) {
+        addProduct(productData, document.getElementById("today-best-deals-products"));
+        // addProduct(productData, document.getElementById("best-seller-products"));
+    }
+</script>
+
+</html>

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/styleguide.css">
     <link rel="stylesheet" href="./styles/home.css">
-
 </head>
 
 <body>
@@ -28,7 +27,7 @@
                 </a>
             </section>
         </section>
-        <section class="today-best-deals" id="today-best-deals">
+        <section class="today-best-deals">
             <div class="heading">
                 <div class="content">
                     <div class="text-wrapper">Best Deals</div>
@@ -37,23 +36,31 @@
                         <div id="deals-countdown" class="deals-countdown "></div>
                     </div>
                 </div>
-                <button class="button-browse">
+                <a class="button-browse">
                     <div class="text-wrapper-4">Browse All Product</div>
-                    <img class="img" src="img/regular-arrowright-9.svg" />
-                </button>
+                    <img class="img" src="./assets/images/home/right-arrow.svg">
+                </a>
             </div>
             <div class="products">
                 <div id="today-best-deals-products"></div>
             </div>
         </section>
-        <section id="best-seller" class="best-seller">
+        <section class="new-products-container">
             <div class="heading">
-                <div class="content">
-                    <div class="text-wrapper">best-seller</div>
-                </div>
+                <h2 class="content">Sản phẩm mới</h2>
+            </div>
+            <div class="products">
+                <div id="new-products"></div>
+                <a href="" class="see-more-link">Xem thêm</a>
+            </div>
+        </section>
+        <section class="best-seller-container">
+            <div class="heading">
+                <h2 class="content">Sản phẩm bán chạy</h2>
             </div>
             <div class="products">
                 <div id="best-seller-products"></div>
+                <a href="" class="see-more-link">Xem thêm</a>
             </div>
         </section>
         <section id="top-rate" class="top-rate">
@@ -78,9 +85,10 @@
         "star": 5,
         "rateCount": 31,
     };
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 8; i++) {
         addProduct(productData, document.getElementById("today-best-deals-products"));
-        // addProduct(productData, document.getElementById("best-seller-products"));
+        addProduct(productData, document.getElementById("new-products"));
+        addProduct(productData, document.getElementById("best-seller-products"));
     }
 </script>
 

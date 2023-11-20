@@ -1,11 +1,19 @@
+function getCurrentUser() {
+    return JSON.parse(localStorage.getItem('currentUser'));
+}
+
+function setCurrentUser(user) {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     InitNavbar();
     InitFooter();
 });
 
-const userContainer = {
-    currentUser: null
-};
+
+
 function getAllUsers() {
     return JSON.parse(localStorage.getItem('userList')) || [];
 }
@@ -24,20 +32,6 @@ function addUser(user) {
     }
 }
 
-function readJSON(path, callback) {
-    var request = new XMLHttpRequest();
-    request.overrideMimeType("application/json");
-    request.open('GET', path, true);
-    request.onreadystatechange = function () {
-        if (request.readyState == 4 && request.status == 200) {
-            var data = JSON.parse(request.responseText);
-            callback(data);
-        } else if (request.readyState == 4) {
-            console.log('Không thể đọc tệp JSON');
-        }
-    };
-    request.send(null);
-}
 
 function displayRateStars(rating, starRatingContainer) {
     starRatingContainer.innerHTML = '';
@@ -151,3 +145,150 @@ function addProduct(productData, productList) {
     // Append product item to product list
     productList.appendChild(productItem);
 }
+
+// Hàm hiển thị số lượng nhất định sản phẩm
+function showLimitedProducts(products, productList, limit) {
+    for (let i = 0; i < limit && i < products.length; i++) {
+        addProduct(products[i], productList);
+    }
+}
+
+// Hàm hiển thị tất cả sản phẩm
+function showAllProducts(products, productList) {
+    productList.innerHTML = ''; // Xóa danh sách hiện tại
+
+    // Hiển thị tất cả sản phẩm
+    for (const product of products) {
+        addProduct(product, productList);
+    }
+}
+
+function addProductOnBasket(productData, productList) {
+    // Tạo phần tử div chứa sản phẩm
+    var productContainer = document.createElement('div');
+    productContainer.className = 'product-on-basket';
+    productContainer.id = productData.id; // Thêm id của sản phẩm vào productContainer
+
+    // Tạo nút xóa
+    var deleteButton = document.createElement('button');
+    deleteButton.id = 'btn-delete';
+    deleteButton.className = 'button';
+    deleteButton.innerHTML = '<img src="img/regular-xcircle-1.svg" />';
+    deleteButton.addEventListener('click', function () {
+        deleteProductOnBasket(this);
+    });
+    productContainer.appendChild(deleteButton);
+
+    // Tạo hình ảnh sản phẩm
+    var productImage = document.createElement('img');
+    productImage.className = 'product-image';
+    productImage.src = productData.img;
+    productContainer.appendChild(productImage);
+
+    // Tạo tên sản phẩm
+    var productName = document.createElement('p');
+    productName.className = 'name';
+    productName.textContent = productData.name;
+    productContainer.appendChild(productName);
+
+    // Tạo giá
+    var priceContainer = document.createElement('div');
+    priceContainer.className = 'price';
+
+    var oldPrice = document.createElement('div');
+    oldPrice.className = 'old-price';
+    oldPrice.textContent = productData.promo.old_price;
+    priceContainer.appendChild(oldPrice);
+
+    var newPrice = document.createElement('div');
+    newPrice.className = 'new-price';
+    newPrice.textContent = productData.promo.new_price;
+    priceContainer.appendChild(newPrice);
+
+    productContainer.appendChild(priceContainer);
+
+
+    // Tạo số lượng
+    var quanty = document.createElement('input');
+    quanty.type = 'number';
+    quanty.id = 'quanty';
+    quanty.className = 'quanty';
+    quanty.value = '1';
+    quanty.min = '1';
+    productContainer.appendChild(quanty);
+
+    // Tạo tổng giá
+    var totalPrice = document.createElement('div');
+    totalPrice.className = 'total-price';
+    totalPrice.setAttribute('data', productData.price);
+    totalPrice.textContent = productData.promo.new_price;
+    productContainer.appendChild(totalPrice);
+    // Thêm sản phẩm vào danh sách sản phẩm
+    productList.appendChild(productContainer);
+    quanty.addEventListener('input', () => {
+        quanty.nextSibling.setAttribute('data', quanty.value * productData.price);
+        quanty.nextSibling.textContent = quanty.nextSibling.getAttribute('data').toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + "₫";
+    })
+}
+
+function deleteProductOnBasket(deleteButton) {
+    var productContainer = deleteButton.closest('.product-on-basket');
+    if (productContainer) {
+        var productId = productContainer.id;
+        productContainer.remove();
+    }
+}
+
+function createPopup(message, continueText, continueCallback, cancelCallback) {
+    // Tạo overlay
+    var overlay = document.createElement('div');
+    overlay.className = 'overlay-popup';
+
+    // Tạo một thẻ div để chứa nội dung popup
+    var popupDiv = document.createElement('div');
+    popupDiv.className = 'popup';
+
+    // Tạo nội dung thông báo
+    var messageElement = document.createElement('p');
+    messageElement.textContent = message;
+
+    var buttonContainer = document.createElement('div');
+    buttonContainer.className = 'button-container';
+    // Tạo nút "Tiếp tục"
+    var continueButton = document.createElement('button');
+    continueButton.textContent = continueText;
+    continueButton.className = 'continue'
+    continueButton.addEventListener('click', function () {
+        // Gọi callback function khi nút "Tiếp tục" hoặc "Hủy" được nhấn
+        if (continueCallback && typeof continueCallback === 'function') {
+            continueCallback();
+        }
+        // Ẩn popup và overlay, sau đó xóa chúng khỏi DOM
+        document.body.removeChild(overlay);
+    });
+
+    // Tạo nút "Hủy"
+    var cancelButton = document.createElement('button');
+    cancelButton.textContent = 'Hủy';
+    cancelButton.className = 'cancel'
+    cancelButton.addEventListener('click', function () {
+        if (cancelCallback && typeof cancelCallback === 'function') {
+            cancelCallback();
+        }
+        // Ẩn popup và overlay, sau đó xóa chúng khỏi DOM
+        document.body.removeChild(overlay);
+    });
+
+    // Thêm nội dung và nút vào popup
+    popupDiv.appendChild(messageElement);
+    buttonContainer.appendChild(continueButton);
+    buttonContainer.appendChild(cancelButton);
+    popupDiv.appendChild(buttonContainer);
+    overlay.appendChild(popupDiv)
+
+    // Thêm overlay và popup vào body của trang
+    document.body.appendChild(overlay);
+}
+
+
+console.log(getAllUsers())

@@ -23,11 +23,10 @@
                     <h2>Đăng ký</h2>
                 </div>
             </div>
-            <form id="login-form" class="form" onsubmit="return login()">
+            <div id="login-form" class="form">
                 <div class="form__group">
                     <label for="email" class="form__label">Email:</label>
                     <input type="email" id="login-email" class="form__input" placeholder="Nhập địa chỉ email"
-                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}"
                         title="Vui lòng nhập địa chỉ email hợp lệ">
                 </div>
 
@@ -40,31 +39,29 @@
                         onclick="togglePasswordVisibility(this)">
                 </div>
                 <div class="button__submit">
-                    <button type="submit">Đăng nhập
+                    <button onclick="login()">Đăng nhập
                         <img src="./assets/images/login-register/regular-arrowright.svg" />
                     </button>
                 </div>
-            </form>
+            </div>
 
-            <form id="register-form" class="form" onsubmit="return register()">
+            <div id="register-form" class="form">
                 <div class="form__group">
                     <label for="username" class="form__label">Tên người dùng:</label>
                     <input type="text" id="register-username" name="username" class="form__input"
-                        placeholder="Nhập tên người dùng" required>
+                        placeholder="Nhập tên người dùng">
                 </div>
 
                 <div class="form__group">
                     <label for="email" class="form__label">Email:</label>
                     <input type="email" id="register-email" name="email" class="form__input"
-                        placeholder="Nhập địa chỉ email" required
-                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0.9.-]+.[a-zA-Z]{2,4}"
-                        title="Vui lòng nhập địa chỉ email hợp lệ">
+                        placeholder="Nhập địa chỉ email" title="Vui lòng nhập địa chỉ email hợp lệ">
                 </div>
 
                 <div class="form__group">
                     <label for="password" class="form__label">Mật khẩu:</label>
                     <input type="password" id="register-password" name="password" class="form__input password-input"
-                        placeholder="Mật khẩu" required>
+                        placeholder="Mật khẩu">
                     <img id="toggle-password-register" class="toggle__password"
                         src="./assets/images/login-register/eye-closed-svgrepo-com.svg" onblur=""
                         onclick="togglePasswordVisibility(this)">
@@ -73,18 +70,18 @@
                 <div class="form__group">
                     <label for="confirm-password" class="form__label">Xác nhận mật khẩu:</label>
                     <input type="password" id="confirm-password" name="confirm-password"
-                        class="form__input password-input" placeholder="Xác nhận mật khẩu" required>
+                        class="form__input password-input" placeholder="Xác nhận mật khẩu">
                     <img id="toggle-password-confirm" class="toggle__password"
                         src="./assets/images/login-register/eye-closed-svgrepo-com.svg"
                         onclick="togglePasswordVisibility(this)">
                 </div>
 
                 <div class="button__submit">
-                    <button type="submit">Đăng ký
+                    <button onclick="register()">Đăng ký
                         <img src="./assets/images/login-register/regular-arrowright.svg" />
                     </button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
     <div id="footer">

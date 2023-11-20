@@ -20,4 +20,87 @@ a {
   text-decoration: none;
 }
 
+/* POP UP */
+.overlay-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  animation: fadeIn 1s ease-in-out
+}
+
+.overlay-popup .popup {
+  background: #fff;
+  padding: 20px;
+  min-width: 400px;
+  min-height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+
+}
+
+.overlay-popup .popup p {
+  font-family: var(--heading-01-font-family);
+  font-weight: var(--heading-01-font-weight);
+  color: var(--gray-700);
+  white-space: nowrap;
+  font-size: var(--heading-01-font-size);
+  letter-spacing: var(--heading-01-letter-spacing);
+  line-height: var(--heading-01-line-height);
+  font-style: var(--heading-01-font-style);
+}
+
+.overlay-popup .button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-popup .button-container button {
+  padding: 5px 30px;
+  margin: 2px 7px;
+  border: none;
+  border-radius: 5px;
+  font-family: var(--label-01-font-family);
+  font-weight: var(--label-01-font-weight);
+  color: var(--gray-00);
+  white-space: nowrap;
+  font-size: var(--label-01-font-size);
+  letter-spacing: var(--label-01-letter-spacing);
+  line-height: var(--label-01-line-height);
+  font-style: var(--label-01-font-style);
+
+}
+
+.overlay-popup .button-container .continue {
+  background-color: var(--success-500);
+}
+
+.overlay-popup .button-container .cancel {
+  background-color: var(--danger-500);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    /* Ban đầu, không hiển thị (độ trong suốt là 0) */
+  }
+
+  100% {
+    opacity: 1;
+    /* Kết thúc, hiển thị đầy đủ (độ trong suốt là 1) */
+  }
+}
+
 @import url("https://fonts.googleapis.com/css?family=Public+Sans:400,700");

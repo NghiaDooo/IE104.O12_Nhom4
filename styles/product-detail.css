@@ -1,3 +1,8 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
 .product-details-container {
     padding: 20px 20px;
     margin: 10px 100px;
@@ -11,6 +16,7 @@
 
 .product-preview-container {
     display: flex;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -19,8 +25,8 @@
 
 
 .product-preview-container img {
-    width: 616px;
-    height: 464px;
+    width: 600px;
+    height: 600px;
     border-radius: 4px;
     margin-bottom: 15px;
 }
@@ -82,6 +88,7 @@
 }
 
 .box-right {
+    flex: 1;
     display: block;
     padding: 10px 20px;
 }
