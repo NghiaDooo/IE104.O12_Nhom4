@@ -1,0 +1,666 @@
+#personal-information {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* height: 100%; */
+    height: 100rem;
+}
+
+.container-personal-information {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100%; */
+    /* gap: 72px; */
+    gap: 30px;
+    /* margin: auto; */
+    /* width: 90%; */
+
+    /* margin: 20px 300px; */
+    /* margin: 1.53% 22.9%; */
+    margin: 10px;
+
+
+}
+
+.personal-information__side-bar {
+    /* width: 20%; */
+    width: 264px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0px;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+    box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
+    height: 400px;
+}
+
+.side-bar__nav-item {
+    display: flex;
+    gap: 12px;
+    height: 40px;
+    align-items: center;
+    padding-left: 24px;
+}
+
+
+.nav-item__icon {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-item__text {
+    color: var(--gray-600, #5F6C72);
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.side-bar__nav-item:nth-child(9) {
+    background: var(--primary-500, #FA8232);
+
+}
+
+.side-bar__nav-item:nth-child(9) .nav-item__text {
+    color: var(--gray-00, #FFF);
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
+
+
+.personal-information__infor {
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 24px;
+    /* width: 74.54%; */
+    /* height: 100%; */
+    height: 100rem;
+    width: 984px;
+}
+
+
+
+.infor__personal-account {
+
+    /* height: 508px; */
+    border-radius: 4px;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+    /* background-color: rgb(222, 204, 204); */
+
+}
+
+/*                                                   chung        */
+.infor-heading {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    border-radius: 4px 4px 0px 0px;
+    /* border: 1px solid var(--gray-100, #E4E7E9); */
+    border-bottom: 1px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+}
+
+.heading__text {
+    color: var(--gray-900, #191C1F);
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 142.857% */
+    text-transform: uppercase;
+}
+
+
+.personal-account__field {
+    display: flex;
+    gap: 24px;
+    margin: 24px;
+}
+
+
+.field__persional-img {
+    /* width: 19.25%;
+    height: 19.25%; */
+    width: 176px;
+    height: 176px;
+}
+
+.persional-img {
+    /* width: 176px; */
+    /* width: 100%; */
+    /* height: 176px; */
+    /* height: 100%; */
+    width: 176px;
+    height: 176px;
+    border-radius: 100px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+
+
+
+
+.field__input-field {
+    display: inline-flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 16px;
+
+    width: 736px;
+    /* width: 78.63%; */
+    /* margin:24px; */
+    /* height: 336px; */
+
+}
+
+.input-field__account {
+    display: flex;
+    /* align-items: flex-start; */
+    /* gap: 16px; */
+    gap: 16px;
+
+    height: 72px;
+}
+
+
+
+.account__label-input {
+    display: flex;
+    /* width: 360px; */
+    flex: 1;
+    /* height:72px; */
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 8px;
+}
+
+.account__label-input-setting {
+    display: flex;
+    width: 360px;
+    /* flex: 1; */
+    /* width: 50%; */
+    /* width:48.38%; */
+    /* height:72px; */
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 8px;
+}
+
+.account__label-input-setting-shipping {
+    display: flex;
+    width: 50%;
+    /* flex: 1; */
+    /* width: 50%; */
+    /* width:48.38%; */
+    /* height:72px; */
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 8px;
+}
+
+
+
+.account__label-input-setting-states-zipcode {
+    display: flex;
+    /* width: 360px; */
+    /* flex: 1; */
+    width: 50%;
+    /* width:46.5%; */
+    /* height:72px; */
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 8px;
+}
+
+
+
+
+
+
+
+
+.account-label {
+    color: var(--gray-900, #191C1F);
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+}
+
+.account-input {
+    height: 44px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* align-self: stretch; */
+    padding: 0px 16px;
+    border-radius: 2px;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+}
+
+input::placeholder {
+    color: var(--gray-700, #475156);
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+}
+
+select {
+    color: var(--gray-700, #475156);
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+
+
+.account__label-input-states-zipcode {
+    display: flex;
+    /* flex: 1; */
+    /* flex-direction: column; */
+    /* gap: 16px; */
+    gap: 16px;
+    /* width: 48.38%; */
+    width: 360px;
+
+}
+
+
+
+.personal-account__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 178px;
+    /* width:20.3%; */
+    height: 48px;
+    padding: 0px 24px;
+    /* margin: 24px 0px 24px 223px; */
+    /* margin: 3.48% 0px 3.48% 23.8%; */
+    border-radius: 2px;
+    background: var(--primary-500, #FA8232);
+    border: none;
+
+    color: var(--gray-00, #FFF);
+    font-family: Public Sans;
+    /* font-size: 14px; */
+    font-size: 13px;
+
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0.168px;
+    text-transform: uppercase;
+
+}
+
+.button__text {
+    color: var(--gray-00, #FFF);
+    /* height: 48px;  */
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0.168px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+.infor__shipping-billing-address {
+    display: flex;
+    gap: 24px;
+}
+
+.infor__shipping-address {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    gap: 24px;
+    /* width: 480px; */
+    border-radius: 4px;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+
+}
+
+.shipping-address__field-button {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 16px;
+    /* width: 936px; */
+    padding-left: 24px;
+    padding-right: 24px;
+
+}
+
+
+.shipping-address__field {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 24px;
+
+}
+
+/* .shipping-billing-address__heading {
+    display: flex;
+    height: 52px;
+    align-items: center;
+    padding-left: 24px;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 1px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+} */
+
+
+
+/* .field__name-city-zip-code {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 72px;
+    
+    width: 50%;
+
+} */
+
+
+
+
+.account__span {
+    color: var(--gray-600, #5F6C72);
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.account__input {
+    height: 44px;
+    /* align-self: stretch; */
+    padding: 0px 16px 0 16px;
+    border-radius: 2px;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+}
+
+.account__input-region {
+    height: 44px;
+    padding: 0px 16px 0 16px;
+    color: var(--gray-400, #929FA5);
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+}
+
+
+.shipping-address__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 190px; */
+    width: 178px;
+    /* width:13.5%; */
+    height: 48px;
+    padding: 0px 24px;
+    margin-bottom: 24px;
+    /* margin: 24px 0px 24px 224px; */
+    border-radius: 2px;
+    background: var(--primary-500, #FA8232);
+    border: none;
+
+    color: var(--gray-00, #FFF);
+    /* height: 48px;  */
+    font-family: Public Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0.168px;
+    text-transform: uppercase;
+
+}
+
+/* ///////////////////////////////////////////////////////////// */
+.infor__change-password {
+    display: flex;
+    padding-bottom: 0px;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-start; */
+    gap: 24px;
+    border-radius: 4px;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background: var(--gray-00, #FFF);
+}
+
+.change-password__field {
+    /* width: 936px; */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    /* padding-left: 0px; 
+    align-items: flex-start;  */
+
+}
+
+.infor-change-password-field {
+    display: flex;
+    height: 72px;
+    /* width: 936px; */
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 8px;
+
+}
+
+.field__icon {
+    position: relative;
+}
+
+.change-password-icon {
+    position: absolute;
+    right: 16px;
+    top: 40px;
+}
+
+.change-password__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 216px;
+    height: 48px;
+    padding: 0px 24px;
+    margin-bottom: 24px;
+    border-radius: 2px;
+    background: var(--primary-500, #FA8232);
+    border: none;
+
+    color: var(--gray-00, #FFF);
+    /* height: 48px;  */
+    font-family: Public Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0.168px;
+    text-transform: uppercase;
+
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+
+/* @media screen and  (max-width:750px){
+    .button__text{
+        font-size: 14px;
+    }
+    .container-personal-information{
+       
+        flex-wrap: wrap;
+        justify-content: center;
+    
+    }
+    .personal-information__side-bar{
+        width:100% !important;
+        margin:5px 0 0px;
+    }
+    .side-bar__nav-item{
+        width:40%;
+    }
+    .personal-information__infor{
+        width:100%  !important;
+        margin:0 0px;
+    } 
+   
+} */
+.field-input-buttom {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media screen and (max-width:1920px) {
+    .container-personal-information {
+        width: 100%;
+        gap: 2.29%;
+
+    }
+
+    .personal-information__side-bar {
+        width: 20%;
+    }
+
+    .personal-information__infor {
+        max-width: 77.71%;
+    }
+
+    .field__persional-img {
+        width: 19.13%;
+        height: 19.13%;
+    }
+
+    .persional-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .field-input-buttom {
+        width: 80.02%
+    }
+
+    .field__input-field {
+        /* width: 80.02%; */
+        width: 100%;
+    }
+
+    .input-field__account {
+        gap: 2.18%;
+    }
+
+    .account__label-input-setting,
+    .account__label-input-states-zipcode {
+        width: 48.91%;
+    }
+
+    .account__label-input-states-zipcode {
+        gap: 4.45%;
+    }
+
+    .account__label-input-setting-states-zipcode {
+        width: 47.775%;
+    }
+
+    .side-bar__nav-item {
+        padding-left: 9.09%;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .personal-account__button,
+    .shipping-address__button,
+    .change-password__button {
+        max-width: 100%;
+        font-size: 0.5rem;
+        font-weight: 700;
+        line-height: 1rem;
+    }
+}
+
+@media screen and (max-width:630px) {
+
+    .side-bar__nav-item .nav-item__icon {
+        width: 10px;
+        height: 10px;
+    }
+
+    .side-bar__nav-item .nav-item__text {
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1rem;
+    }
+}
+
+@media screen and (max-width:580px) {
+    .container-personal-information {
+        /* justify-content: center;
+        flex-wrap: wrap; */
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+    }
+
+    .personal-information__side-bar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* justify-content: center;
+        align-items: center; */
+        height: auto;
+    }
+
+    .side-bar__nav-item {
+        width: 50%;
+    }
+
+    .personal-account__field {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .personal-information__infor {
+        max-width: 100%;
+    }
+}

@@ -5,15 +5,12 @@
     height: 100%;
 }
 
-.form-sign-in-and-sign-up,
-.form-sign-in-and-sign-in {
+.form-sign-in-and-sign-up {
     width: 424px;
     /* height: 744px; */
-
     border-radius: 4px;
     border: 1px solid var(--gray-100, #E4E7E9);
     background: var(--gray-00, #FFF);
-
     /* Dropdown Shadow */
     box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);
 }
@@ -28,7 +25,6 @@
     flex: 1;
     color: var(--gray-500, #77878F);
     text-align: center;
-
     /* Body/XL/600 */
     font-family: Public Sans;
     font-size: 20px;
@@ -36,7 +32,6 @@
     font-weight: 600;
     line-height: 28px;
     /* 140% */
-
     padding: 16px 0px;
 }
 
@@ -52,6 +47,10 @@
     gap: 16px;
 }
 
+/* .field {
+    gap: 8px;
+} */
+
 .field input {
     border-radius: 2px;
     border: 1px solid var(--gray-100, #E4E7E9);
@@ -60,28 +59,37 @@
     padding: 16px;
 }
 
+/* .field label {
+    color: var(--gray-900, #191C1F);
+    font-family: Public Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+} */
+/* 142.857% */
+
+
 .field-checkbox {
     display: flex;
     gap: 8px;
 }
 
 .field-checkbox input {
-    height: 15px
+    height: 15px;
 }
 
 .field-checkbox p {
     color: var(--gray-700, #475156);
-
-    /* Body/Small/400 */
     font-family: Public Sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    /* 142.857% */
 }
 
-
+/* 142.857% */
+/*   xem lai */
 .field-checkbox label {
     width: 14px;
     height: 14px;
@@ -89,14 +97,13 @@
     background: var(--primary-500, #FA8232);
 }
 
+/*      */
 .field.password input {
     padding: 16px 40px 16px 16px;
-
 }
 
 .field.password {
     position: relative;
-
 }
 
 .eye-password {
@@ -128,7 +135,6 @@
 
 .term-condition {
     color: var(--secondary-500, #2DA5F3);
-
     /* Body/Small/500 */
     font-family: Public Sans;
     font-size: 14px;
@@ -140,16 +146,17 @@
 .button {
     position: relative;
     margin-top: 32px;
+    width: 360px;
 
 }
 
 .button-sign-up-sign-in {
-    border-radius: 2px;
     background: var(--primary-500, #FA8232);
+    border: 1px none;
+    border-radius: 7px;
     width: 360px;
     height: 48px;
     color: var(--gray-00, #FFF);
-    /* Heading/07 */
     font-family: Public Sans;
     font-size: 14px;
     font-style: normal;
@@ -163,10 +170,9 @@
 .button img {
     width: 20px;
     height: 20px;
-    flex-shrink: 0;
     margin-left: 8px;
     position: absolute;
-    top: 17px;
+    top: 15px;
 }
 
 /*                        ////////////////////////////////////////////////                         */
