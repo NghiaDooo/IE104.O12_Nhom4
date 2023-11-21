@@ -1,0 +1,214 @@
+.shopping-cart-container {
+    flex: 1;
+    display: flex;
+    padding: 20px 200px 200px 200px;
+
+}
+
+.product-table-container {
+    flex: 7;
+}
+
+.product-table-container .product-table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    box-shadow: 0 0 2px var(--secondary-500);
+}
+
+
+.product-table-container .product-table th,
+.product-table-container .product-table td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+    color: var(--gray-900);
+
+
+}
+
+.product-table-container .product-table th {
+    color: var(--gray-900);
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: var(--label-03-font-size);
+    padding: 15px;
+
+}
+
+.product-table-container .product-table td {
+    font-size: var(--body-tiny-400-font-size);
+}
+
+.product-table-container .product-table tr {
+
+    box-shadow: 0 0 1px var(--secondary-300);
+}
+
+.product-table-container .product-table thead th {
+    background-color: var(--gray-100);
+}
+
+.product-table-container .product-table .col-product {
+    width: 40%;
+}
+
+.product-table-container .product-table .col-quantity {
+    width: 11%;
+}
+
+.product-table-container .product-table .col-price {
+    width: 17%;
+}
+
+.product-table-container .product-table .col-total {
+    width: 17%;
+}
+
+.product-table-container .product-table .col-actions {
+    width: 10%;
+    text-align: right;
+}
+
+.product-table-container .product-table th {
+    background-color: #f2f2f2;
+}
+
+.product-table-container .product-table .product-media {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.product-table-container .product-table .product-media img {
+    max-width: 70px;
+    height: auto;
+    margin-right: 40px;
+}
+
+.product-table-container .product-table .quantity {
+    width: 50%;
+    height: 30px;
+    appearance: none;
+}
+
+.price_table {
+    margin: 0;
+}
+
+.product-table-container .product-table .button-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    background-color: #db3309;
+    color: white;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: var(--body-tiny-400-font-size);
+}
+
+.product-table-container .product-table .button-delete img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.product-table-container .product-table .button-delete div {
+    display: inline-block;
+}
+
+.product-table-container .product-table .button-delete:hover {
+    background-color: #ff0404;
+}
+
+.total-cart-container {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 2px var(--secondary-500);
+    margin-left: 20px;
+}
+
+.total-cart-container h3 {
+    padding: 10px;
+    text-align: center;
+    color: var(--gray-900);
+    font-weight: var(--heading-03-font-weight);
+    font-size: var(--heading-03-font-size);
+    background-color: var(--gray-100);
+}
+
+.total-cart-container .cart-total-detail {
+    flex: 1;
+    padding: 10px 30px;
+}
+
+.total-cart-container .text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 3;
+    color: var(--gray-900);
+    margin-top: 15px;
+}
+
+
+.total-cart-container .text-wrapper .fee-name {
+    color: var(--gray-900);
+    font-weight: bold;
+    font-size: var(--label-03-font-size);
+
+}
+
+.total-cart-container .text-wrapper .fee-name {
+    color: var(--gray-900);
+    font-size: var(--label-03-font-size);
+
+}
+
+.total-cart-container .text-wrapper .fee {
+    color: #fc3200;
+}
+
+.total-cart-container .cart-total {
+    margin: 10px 30px;
+    border-top: 2px solid var(--gray-400);
+
+}
+
+.total-cart-container .total-name {
+    font-size: var(--label-01-font-size);
+    font-weight: bold;
+}
+
+.total-cart-container .total-fee {
+    font-size: var(--label-01-font-size);
+    color: #fc3200;
+    font-weight: bold;
+}
+
+.total-cart-container .btn-pay {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    margin-top: 15px;
+    border: none;
+    background-color: var(--secondary-500);
+    font-size: var(--label-01-font-size);
+    color: var(--gray-100);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.total-cart-container .btn-pay:hover {
+    box-shadow: 0 0 5px var(--secondary-400);
+}
+
+.total-cart-container .btn-pay:active {
+    background-color: var(--secondary-400);
+}

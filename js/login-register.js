@@ -72,7 +72,7 @@ function login() {
     }
 
     if (user) {
-        alert(`Đăng nhập thành công. Chào mừng, ${user.username}!`);
+        alert(`Đăng nhập thành công. Chào mừng, ${user.accountInfo.username}!`);
         setCurrentUser(user);
         window.location.href = 'home.html';
     } else
@@ -120,11 +120,14 @@ function register() {
         purchaseHistory: [],
         shoppingCart: []
     };
+    console.log(JSON.stringify(newUser))
+    if (addUser(newUser)) {
+        alert("Đăng ký thành công.");
+        setCurrentUser(newUser);
+        window.location.href = 'home.html';
+    } else
+        alert("Oh no! đã có lỗi, chúng tôi sẽ sớm khắc phục!")
 
-    addUser(newUser)
-    alert("Đăng ký thành công.");
-    window.location.href = 'home.html';
 
-    return true;
 }
 

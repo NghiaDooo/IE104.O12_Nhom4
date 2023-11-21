@@ -1,3 +1,41 @@
+document.addEventListener("DOMContentLoaded", function () {
+    InitNavbar();
+    InitFooter();
+    addGoToTopBTN();
+});
+
+function addGoToTopBTN() {
+    const goToTopBtn = document.createElement('button');
+    const goToTopImg = document.createElement('img');
+
+    // Cấu hình các thuộc tính và nội dung của button
+    goToTopBtn.classList.add('go-to-top-btn');
+    goToTopBtn.style.display = 'none';
+    //thêm ảnh vào nút
+    goToTopImg.src = "../assets/images/arrow-up.svg"
+    goToTopBtn.appendChild(goToTopImg);
+
+    goToTopBtn.addEventListener('click', function () {
+        document.body.scrollIntoView({
+            behavior: 'smooth', // Làm cho cuộn mượt mà
+            block: 'start' // Cuộn đến đầu của phần tử mục tiêu
+        });
+    });
+
+
+    // Thêm sự kiện cuộn để ẩn/hiển thị nút
+    window.addEventListener('scroll', function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            goToTopBtn.style.display = 'block';
+        } else {
+            goToTopBtn.style.display = 'none';
+        }
+    });
+
+    // Thêm button vào body
+    document.body.appendChild(goToTopBtn);
+}
+
 function getCurrentUser() {
     return JSON.parse(localStorage.getItem('currentUser'));
 }
@@ -7,25 +45,31 @@ function setCurrentUser(user) {
 }
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    InitNavbar();
-    InitFooter();
-});
-
-
-
 function getAllUsers() {
     return JSON.parse(localStorage.getItem('userList')) || [];
+}
+
+function setUser(userUpdate) {
+    const users = getAllUsers();
+    users.map(user => {
+        if (user.accountInfo.email === userUpdate.accountInfo.email) {
+            user.accountInfo.email = userUpdate.accountInfo.email
+            localStorage.setItem('userList', JSON.stringify(users));
+        }
+    }
+    )
 }
 
 function addUser(user) {
     var userList = JSON.parse(localStorage.getItem('userList')) || [];
     var existingUser = userList.find(function (existingUser) {
-        return existingUser.email === user.email;
+        return existingUser.email === user.accountInfo.email;
     });
+    console.log(user)
     if (!existingUser) {
         userList.push(user);
         localStorage.setItem('userList', JSON.stringify(userList));
+        console.log(userList)
         return true;
     } else {
         return false;
@@ -162,81 +206,7 @@ function showAllProducts(products, productList) {
     }
 }
 
-function addProductOnBasket(productData, productList) {
-    // Tạo phần tử div chứa sản phẩm
-    var productContainer = document.createElement('div');
-    productContainer.className = 'product-on-basket';
-    productContainer.id = productData.id; // Thêm id của sản phẩm vào productContainer
 
-    // Tạo nút xóa
-    var deleteButton = document.createElement('button');
-    deleteButton.id = 'btn-delete';
-    deleteButton.className = 'button';
-    deleteButton.innerHTML = '<img src="img/regular-xcircle-1.svg" />';
-    deleteButton.addEventListener('click', function () {
-        deleteProductOnBasket(this);
-    });
-    productContainer.appendChild(deleteButton);
-
-    // Tạo hình ảnh sản phẩm
-    var productImage = document.createElement('img');
-    productImage.className = 'product-image';
-    productImage.src = productData.img;
-    productContainer.appendChild(productImage);
-
-    // Tạo tên sản phẩm
-    var productName = document.createElement('p');
-    productName.className = 'name';
-    productName.textContent = productData.name;
-    productContainer.appendChild(productName);
-
-    // Tạo giá
-    var priceContainer = document.createElement('div');
-    priceContainer.className = 'price';
-
-    var oldPrice = document.createElement('div');
-    oldPrice.className = 'old-price';
-    oldPrice.textContent = productData.promo.old_price;
-    priceContainer.appendChild(oldPrice);
-
-    var newPrice = document.createElement('div');
-    newPrice.className = 'new-price';
-    newPrice.textContent = productData.promo.new_price;
-    priceContainer.appendChild(newPrice);
-
-    productContainer.appendChild(priceContainer);
-
-
-    // Tạo số lượng
-    var quanty = document.createElement('input');
-    quanty.type = 'number';
-    quanty.id = 'quanty';
-    quanty.className = 'quanty';
-    quanty.value = '1';
-    quanty.min = '1';
-    productContainer.appendChild(quanty);
-
-    // Tạo tổng giá
-    var totalPrice = document.createElement('div');
-    totalPrice.className = 'total-price';
-    totalPrice.setAttribute('data', productData.price);
-    totalPrice.textContent = productData.promo.new_price;
-    productContainer.appendChild(totalPrice);
-    // Thêm sản phẩm vào danh sách sản phẩm
-    productList.appendChild(productContainer);
-    quanty.addEventListener('input', () => {
-        quanty.nextSibling.setAttribute('data', quanty.value * productData.price);
-        quanty.nextSibling.textContent = quanty.nextSibling.getAttribute('data').toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + "₫";
-    })
-}
-
-function deleteProductOnBasket(deleteButton) {
-    var productContainer = deleteButton.closest('.product-on-basket');
-    if (productContainer) {
-        var productId = productContainer.id;
-        productContainer.remove();
-    }
-}
 
 function createPopup(message, continueText, continueCallback, cancelCallback) {
     // Tạo overlay

@@ -41,7 +41,7 @@ const InitNavbar = () => {
                     <img id="search-icon" class="search__search-icon" src="img/icon-search.png " />
                 </div>
                 <div class="middle-nav__icons">
-                    <a href="link-to-shopping-cart.html">
+                    <a href="shopping-cart.html">
                         <img class="icons__img" src="img/icon-shopping-cart.png" />
                     </a>
                     <a href="user-page.html">

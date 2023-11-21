@@ -20,6 +20,26 @@ a {
   text-decoration: none;
 }
 
+/* Go to top button */
+
+.go-to-top-btn {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 2%;
+  right: 2%;
+  padding: 5px 7px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--secondary-400);
+}
+
+.go-to-top-btn img {
+  width: 50px;
+  height: 50px;
+}
+
 /* POP UP */
 .overlay-popup {
   position: fixed;
@@ -102,5 +122,7 @@ a {
     /* Kết thúc, hiển thị đầy đủ (độ trong suốt là 1) */
   }
 }
+
+
 
 @import url("https://fonts.googleapis.com/css?family=Public+Sans:400,700");

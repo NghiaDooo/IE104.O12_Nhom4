@@ -139,7 +139,7 @@
 }
 
 .today-best-deals .deals-ends-in .deals-countdown {
-    width: 80px;
+    width: 90px;
     padding: 5px;
     border-radius: 5px;
     background-color: var(--primary-300);
