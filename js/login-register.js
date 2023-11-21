@@ -72,7 +72,7 @@ function login() {
     }
 
     if (user) {
-        alert(`Đăng nhập thành công. Chào mừng, ${user.accountInfo.username}!`);
+        alert(`Đăng nhập thành công. Chào mừng, ${user.personalInfo.username}!`);
         setCurrentUser(user);
         window.location.href = 'home.html';
     } else

@@ -71,6 +71,7 @@
     <script src="./js/navbar.js"></script>
     <script src="./js/footer.js"></script>
     <script src="./js/home.js"></script>
+    <script src="./data/data.js"></script>
     <script src="./js/common.js"></script>
 </body>
 <script>
@@ -86,9 +87,9 @@
         "rateCount": 31,
     };
     for (let i = 0; i < 8; i++) {
-        addProduct(productData, document.getElementById("today-best-deals-products"));
-        addProduct(productData, document.getElementById("new-products"));
-        addProduct(productData, document.getElementById("best-seller-products"));
+        addProduct(data[i], document.getElementById("today-best-deals-products"));
+        addProduct(data[i], document.getElementById("new-products"));
+        addProduct(data[i], document.getElementById("best-seller-products"));
     }
 </script>
 

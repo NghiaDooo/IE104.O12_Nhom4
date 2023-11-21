@@ -1,11 +1,11 @@
 .container {
     display: flex;
     flex-direction: column;
+    margin: 10px 180px;
 }
 
 .product-details-container {
     padding: 20px 20px;
-    margin: 10px 100px;
     border: none;
     justify-content: flex-start;
     align-items: flex-start;
@@ -15,6 +15,7 @@
 }
 
 .product-preview-container {
+    flex: 2;
     display: flex;
 
     flex-direction: column;
@@ -88,7 +89,7 @@
 }
 
 .box-right {
-    flex: 1;
+    flex: 2;
     display: block;
     padding: 10px 20px;
 }

@@ -76,6 +76,18 @@ function addUser(user) {
     }
 }
 
+function checkLoginState() {
+    console.log(getCurrentUser());
+    if (getCurrentUser() == null) {
+        var parentContainer = document.querySelector('body > :nth-child(2)');
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay-unlogged');
+        parentContainer.appendChild(overlay);
+        createPopup("Bạn chưa đăng nhập!", "Đăng nhập", () => window.location.href = "login-register.html", () => window.location.href = "home.html");
+        return;
+    };
+}
+
 function displayRateStars(rating, starRatingContainer) {
     starRatingContainer.innerHTML = '';
 
@@ -155,15 +167,29 @@ function addProduct(productData, productList) {
     productInfo.className = 'product-name';
     productInfo.innerText = productData.title; // Use the 'title' property from the productData object
 
+
     // Create product price
     const productPrice = document.createElement('div');
     productPrice.className = 'product-price';
-    productPrice.innerText = productData.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }); // Format price as currency
+
 
     // Append all elements to product content
     productContent.appendChild(productRate);
     productContent.appendChild(productInfo);
     productContent.appendChild(productPrice);
+
+    if (productData.promo.old_price != 0) {
+        const oldPrice = document.createElement('div');
+        oldPrice.className = 'old-product-price';
+        oldPrice.innerText = productData.promo.old_price;
+        productPrice.appendChild(oldPrice);
+    }
+
+    const newPrice = document.createElement('div');
+    newPrice.className = 'new-product-price';
+    newPrice.innerText = productData.promo.new_price;
+    productPrice.appendChild(newPrice);
+
 
     // Append image and other div elements to the container
     productImageContainer.appendChild(productImage);

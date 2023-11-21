@@ -60,14 +60,28 @@
    }
 
    .product-item .product-price {
+       display: flex;
+       align-items: center;
        font-size: var(--body-tiny-500-font-size);
        color: var(--secondary-500);
+   }
 
+   .product-item .product-price .old-product-price {
+       font-size: 10px;
+       color: var(--gray-500);
+       text-decoration: line-through;
+       margin-right: 5px;
+   }
+
+   .product-item .product-price .new-product-price {
+       font-size: var(--body-tiny-500-font-size);
+       color: #ff0000;
+       font-weight: bold;
    }
 
    /*product hover effect */
    .product-item:hover {
-       box-shadow: 0px 0px 5px var(--gray-500);
+       box-shadow: 0px 0px 10px var(--secondary-500);
    }
 
    .product-item:hover .product-image {

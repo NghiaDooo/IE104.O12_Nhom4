@@ -110,6 +110,7 @@ function updateCartTotals() {
 
 }
 
+window.onload = checkLoginState();
 addProductOnCart(data[1]);
 addProductOnCart(data[2]);
 updateCartTotals();

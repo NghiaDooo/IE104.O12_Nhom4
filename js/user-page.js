@@ -6,17 +6,7 @@ const purchasedProducts = data;
 var limitedProducts = 8;
 var productsData = purchasedProducts;
 
-function checkLoginState() {
-    console.log(getCurrentUser());
-    if (getCurrentUser() == null) {
-        const parentContainer = document.querySelector('.user-container');
-        const overlay = document.createElement('div');
-        overlay.classList.add('overlay');
-        parentContainer.appendChild(overlay);
-        createPopup("Bạn chưa đăng nhập!", "Đăng nhập", () => window.location.href = "login-register.html", () => window.location.href = "home.html");
-        return;
-    };
-}
+
 
 function showTab(tabId, div) {
     document.querySelectorAll('.tab-active').forEach(function (div) {

@@ -15,6 +15,9 @@ function loadProduct(products) {
     const queryString = currentURL.split('?')[1];
     const queryParams = new URLSearchParams(queryString);
     const productId = queryParams.get('id');
+    if (productId == null) {
+        window.location.href = "home.html"
+    }
     return products.find(product => product.id === productId)
 }
 
