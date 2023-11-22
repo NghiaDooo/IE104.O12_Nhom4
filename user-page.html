@@ -28,14 +28,61 @@
         <div class="user-box">
             <div class="box-left">
                 <section>
-                    <div onclick="showTab(Pages.USER_INFO, this)" class="tab-active">Hồ sơ</div>
-                    <div onclick="showTab(Pages.PURCHASED_ORDER, this)">Lịch sử mua hàng</div>
+                    <div onclick="showTab('user-info', this)" class="tab-active">Hồ sơ</div>
+                    <div onclick="showTab('purchased-order', this)">Lịch sử mua hàng</div>
                     <div onclick="logOut()">Log out</div>
                 </section>
             </div>
             <div class="box-right">
-                <article id="user-info" class="user-info article-active ">
-                    1
+                <article id="user-info" class="user-info-container article-active ">
+                    <div class="heading">
+                        <h2>Hồ sơ của tôi</h2>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-info-left">
+                            <table>
+                                <tr>
+                                    <td class="td-left">
+                                        Tên người dùng
+                                    </td>
+                                    <td class="td-right">
+                                        <input id="user-name" type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left">
+                                        Email
+                                    </td>
+                                    <td class="td-right">
+                                        <p id="user-email">zxcv08122003@gmail.com</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left">
+                                        Địa chỉ
+                                    </td>
+                                    <td class="td-right">
+                                        <textarea id="user-address"></textarea>
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <button class="btn-save" onclick="updateUserProfile()">Lưu thông tin</button>
+                        </div>
+                        <div class="user-info-right">
+                            <div id="avatar-container" class="avatar-container">
+                                <label for="avatar-input">
+                                    <div class="avt-img">
+                                        <img id="avatar-img" src="./assets/images/user-page/user-avt.png" alt="Avatar">
+                                    </div>
+                                    <br>
+                                    <span>Click để thay đổi ảnh đại diện</span>
+                                </label>
+                                <input type="file" id="avatar-input" accept="image/*" onchange="changeAvatar(event)">
+                            </div>
+                        </div>
+                    </div>
                 </article>
                 <article id="purchased-order" class="purchased-order">
                     <h3>Lịch sử mua hàng</h3>

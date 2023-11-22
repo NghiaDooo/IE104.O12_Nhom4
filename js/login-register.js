@@ -111,16 +111,16 @@ function register() {
         accountInfo: {
             email: email,
             password: password,
-            roll: 'user'
+            role: 'user',
         },
         personalInfo: {
             username: username,
-            address: null,
+            address: '',
         },
         purchaseHistory: [],
         shoppingCart: []
     };
-    console.log(JSON.stringify(newUser))
+
     if (addUser(newUser)) {
         alert("Đăng ký thành công.");
         setCurrentUser(newUser);

@@ -51,13 +51,13 @@ function getAllUsers() {
 
 function setUser(userUpdate) {
     const users = getAllUsers();
-    users.map(user => {
-        if (user.accountInfo.email === userUpdate.accountInfo.email) {
-            user.accountInfo.email = userUpdate.accountInfo.email
-            localStorage.setItem('userList', JSON.stringify(users));
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].accountInfo.email === userUpdate.accountInfo.email) {
+            users[i] = userUpdate;
+            break;
         }
     }
-    )
+    localStorage.setItem('userList', JSON.stringify(users));
 }
 
 function addUser(user) {
@@ -65,11 +65,10 @@ function addUser(user) {
     var existingUser = userList.find(function (existingUser) {
         return existingUser.email === user.accountInfo.email;
     });
-    console.log(user)
+
     if (!existingUser) {
         userList.push(user);
         localStorage.setItem('userList', JSON.stringify(userList));
-        console.log(userList)
         return true;
     } else {
         return false;
@@ -77,7 +76,6 @@ function addUser(user) {
 }
 
 function checkLoginState() {
-    console.log(getCurrentUser());
     if (getCurrentUser() == null) {
         var parentContainer = document.querySelector('body > :nth-child(2)');
         const overlay = document.createElement('div');
@@ -217,6 +215,9 @@ function addProduct(productData, productList) {
 
 // Hàm hiển thị số lượng nhất định sản phẩm
 function showLimitedProducts(products, productList, limit) {
+    if (products == null) {
+        return;
+    }
     for (let i = 0; i < limit && i < products.length; i++) {
         addProduct(products[i], productList);
     }
@@ -285,7 +286,7 @@ function createPopup(message, continueText, continueCallback, cancelCallback) {
     document.body.appendChild(overlay);
 }
 
-const searchByNameLike = (keyword, listData) => {
+function searchByNameLike(keyword, listData) {
     const regex = new RegExp(keyword, 'i'); // 'i' để không phân biệt chữ hoa và chữ thường
     return listData.filter(item => regex.test(item.name));
 };

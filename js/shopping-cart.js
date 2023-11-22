@@ -93,7 +93,7 @@ function updateCartTotals() {
 
             if (!isNaN(integerValue)) {
                 productTotal += integerValue;
-                console.log("Giá trị số nguyên:", integerValue);
+
             } else {
                 console.error("Không thể chuyển đổi thành số nguyên:", productTableTBody.rows[i].cells[cellIndex].textContent);
             }

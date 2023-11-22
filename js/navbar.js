@@ -30,7 +30,7 @@ const InitNavbar = () => {
             </div>
             <div class="navigation__middle-nav">
                 <div class="middle-nav__logo">
-                    <a href="link-to-homepage.html">
+                    <a href="home.html">
                         <img class="logo__logo-icon" src="img/logo.png" />
                         <div class="logo__logo-text">AbcXyz</div>
                     </a>
