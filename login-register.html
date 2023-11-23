@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/styleguide.css">
+    <link rel="stylesheet" href="./styles/login-register.css">
+
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="container-login-register">
+        <div class="container__wrapper">
+            <div class="tabs">
+                <div id="login-tab" class="tab tab--highlight">
+                    <h2>Đăng nhập</h2>
+                </div>
+                <div id="signup-tab" class="tab">
+                    <h2>Đăng ký</h2>
+                </div>
+            </div>
+            <div id="login-form" class="form">
+                <div class="form__group">
+                    <label for="email" class="form__label">Email:</label>
+                    <input type="email" id="login-email" class="form__input" placeholder="Nhập địa chỉ email"
+                        title="Vui lòng nhập địa chỉ email hợp lệ">
+                </div>
+
+                <div class="form__group">
+                    <label for="password" class="form__label">Mật khẩu:</label>
+                    <input type="password" id="login-password" class="form__input password-input"
+                        placeholder="Mật khẩu">
+                    <img id="toggle-password-login" class="toggle__password"
+                        src="./assets/images/login-register/eye-closed-svgrepo-com.svg"
+                        onclick="togglePasswordVisibility(this)">
+                </div>
+                <div class="button__submit">
+                    <button onclick="login()">Đăng nhập
+                        <img src="./assets/images/login-register/regular-arrowright.svg" />
+                    </button>
+                </div>
+            </div>
+
+            <div id="register-form" class="form">
+                <div class="form__group">
+                    <label for="username" class="form__label">Tên người dùng:</label>
+                    <input type="text" id="register-username" name="username" class="form__input"
+                        placeholder="Nhập tên người dùng">
+                </div>
+
+                <div class="form__group">
+                    <label for="email" class="form__label">Email:</label>
+                    <input type="email" id="register-email" name="email" class="form__input"
+                        placeholder="Nhập địa chỉ email" title="Vui lòng nhập địa chỉ email hợp lệ">
+                </div>
+
+                <div class="form__group">
+                    <label for="password" class="form__label">Mật khẩu:</label>
+                    <input type="password" id="register-password" name="password" class="form__input password-input"
+                        placeholder="Mật khẩu">
+                    <img id="toggle-password-register" class="toggle__password"
+                        src="./assets/images/login-register/eye-closed-svgrepo-com.svg" onblur=""
+                        onclick="togglePasswordVisibility(this)">
+                </div>
+
+                <div class="form__group">
+                    <label for="confirm-password" class="form__label">Xác nhận mật khẩu:</label>
+                    <input type="password" id="confirm-password" name="confirm-password"
+                        class="form__input password-input" placeholder="Xác nhận mật khẩu">
+                    <img id="toggle-password-confirm" class="toggle__password"
+                        src="./assets/images/login-register/eye-closed-svgrepo-com.svg"
+                        onclick="togglePasswordVisibility(this)">
+                </div>
+
+                <div class="button__submit">
+                    <button onclick="register()">Đăng ký
+                        <img src="./assets/images/login-register/regular-arrowright.svg" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+    </div>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/login-register.js"></script>
+</body>
+<script>
+
+</script>
+
+</html>
