@@ -61,15 +61,16 @@ function validateEmail(email) {
 }
 
 function login() {
-    const email = document.getElementById("login-email").value;
-    const password = document.getElementById("login-password").value;
+    const email = filterXSS(document.getElementById("login-email").value);
+    const password = filterXSS(document.getElementById("login-password").value);
     const userList = getAllUsers();
 
-    const user = userList.find(user => user.accountInfo.email === email && user.accountInfo.password === password);
     if (!validateEmail(email)) {
         alert("Email không hợp lệ");
         return;
     }
+
+    const user = userList.find(user => user.accountInfo.email === email && verifyPassword(password, user.accountInfo.password, user.accountInfo.salt));
 
     if (user) {
         alert(`Đăng nhập thành công. Chào mừng, ${user.personalInfo.username}!`);
@@ -80,11 +81,11 @@ function login() {
 
 }
 
-function register() {
-    var username = document.getElementById("register-username").value;
-    var email = document.getElementById("register-email").value;
-    var password = document.getElementById("register-password").value;
-    var confirmPassword = document.getElementById("confirm-password").value;
+async function register() {
+    var username = filterXSS(document.getElementById("register-username").value);
+    var email = filterXSS(document.getElementById("register-email").value);
+    var password = filterXSS(document.getElementById("register-password").value);
+    var confirmPassword = filterXSS(document.getElementById("confirm-password").value);
 
     if (username === "" || email === "" || password === "" || confirmPassword === "") {
         alert("Vui lòng điền đủ tất cả thông tin!");
@@ -106,11 +107,12 @@ function register() {
         alert("Người dùng đã tồn tại.");
         return;
     }
-
+    const { hashedPassword, salt } = await hashPassword(password);
     const newUser = {
         accountInfo: {
             email: email,
-            password: password,
+            password: hashedPassword,
+            salt: salt,
             role: 'user',
         },
         personalInfo: {

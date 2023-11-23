@@ -18,8 +18,9 @@ function showTab(tabId, div) {
     loadUserProfile()
 }
 
-function checkUserRole() {
-    if (getCurrentUser().accountInfo.role == 'admin') {
+async function checkUserRole() {
+    const currentUser = await getCurrentUser();
+    if (currentUser && currentUser.accountInfo.role == 'admin') {
         var logOutButton = document.querySelector('.box-left section div:last-child');
         var newDiv = document.createElement('div');
         newDiv.textContent = 'Trang admin';
@@ -73,14 +74,16 @@ function loadMoreProduct() {
 
 }
 
-function loadUserProfile() {
-    const user = getCurrentUser();
-    const userName = document.getElementById('user-name');
-    const userEmail = document.getElementById('user-email');
-    const userAddress = document.getElementById('user-address');
-    userName.value = user.personalInfo.username || '';
-    userEmail.textContent = user.accountInfo.email || '';
-    userAddress.value = user.personalInfo.address || '';
+async function loadUserProfile() {
+    const user = await getCurrentUser();
+    if(user){
+        const userName = document.getElementById('user-name');
+        const userEmail = document.getElementById('user-email');
+        const userAddress = document.getElementById('user-address');
+        userName.value = user.personalInfo.username || '';
+        userEmail.textContent = user.accountInfo.email || '';
+        userAddress.value = user.personalInfo.address || '';
+    }
 }
 
 async function updateUserProfile() {
@@ -94,8 +97,8 @@ async function updateUserProfile() {
     }
     if (userName.value == user.personalInfo.username && userAddress.value == user.personalInfo.address)
         return;
-    user.personalInfo.username = userName.value;
-    user.personalInfo.address = userAddress.value;
+    user.personalInfo.username = filterXSS(userName.value);
+    user.personalInfo.address = filterXSS(userAddress.value);
     await setCurrentUser(user);
     setUser(user);
     loadUserProfile();
@@ -114,8 +117,8 @@ function changeAvatar(event) {
     reader.readAsDataURL(input.files[0]);
 }
 
-window.onload = function () {
-    checkLoginState()
+window.onload = async function () {
+    await checkLoginState()
 };
 document.addEventListener("DOMContentLoaded", () => {
     checkUserRole();

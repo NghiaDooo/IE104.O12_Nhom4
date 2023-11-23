@@ -36,12 +36,29 @@ function addGoToTopBTN() {
     document.body.appendChild(goToTopBtn);
 }
 
-function getCurrentUser() {
-    return JSON.parse(localStorage.getItem('currentUser'));
+async function getCurrentUser() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if(currentUser){
+        return await decodedJwt(currentUser.JWT, currentUser.secretKey);
+    }else{
+        return currentUser;
+    }
 }
 
-function setCurrentUser(user) {
-    localStorage.setItem('currentUser', JSON.stringify(user));
+async function setCurrentUser(user) {
+    if(user){
+        const secretKey = await hashPassword(user.accountInfo.password);
+        delete user.accountInfo.password;
+        delete user.accountInfo.salt;
+        const jwt = await encodedJWT(user, secretKey.hashedPassword);
+        const currentUser = {
+            JWT : jwt,
+            secretKey: secretKey.hashedPassword,
+        }
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    }else{
+        localStorage.setItem('currentUser', JSON.stringify(user));
+    }
 }
 
 
@@ -75,8 +92,9 @@ function addUser(user) {
     }
 }
 
-function checkLoginState() {
-    if (getCurrentUser() == null) {
+async function checkLoginState() {
+    const currentUser = await getCurrentUser();
+    if (!currentUser) {
         var parentContainer = document.querySelector('body > :nth-child(2)');
         const overlay = document.createElement('div');
         overlay.classList.add('overlay-unlogged');
@@ -290,6 +308,3 @@ function searchByNameLike(keyword, listData) {
     const regex = new RegExp(keyword, 'i'); // 'i' để không phân biệt chữ hoa và chữ thường
     return listData.filter(item => regex.test(item.name));
 };
-
-
-console.log(getAllUsers())

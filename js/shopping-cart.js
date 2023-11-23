@@ -110,7 +110,9 @@ function updateCartTotals() {
 
 }
 
-window.onload = checkLoginState();
+window.onload = window.onload = async function () {
+    await checkLoginState()
+};
 addProductOnCart(data[1]);
 addProductOnCart(data[2]);
 updateCartTotals();

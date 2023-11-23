@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function loadProduct(products) {
     const currentURL = window.location.href;
-    const queryString = currentURL.split('?')[1];
+    const queryString = filterXSS(currentURL.split('?')[1]);
     const queryParams = new URLSearchParams(queryString);
     const productId = queryParams.get('id');
     if (productId == null) {

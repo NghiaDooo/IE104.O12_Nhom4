@@ -46,7 +46,6 @@ function updateSmallWidget(index, data) {
     const smallWidgetSection = document.getElementById('small-widget');
     const imageLinks = smallWidgetSection.querySelectorAll('a');
     const images = smallWidgetSection.querySelectorAll('img');
-    console.log(1);
 
     if (index >= 0 && index < imageLinks.length) {
         imageLinks[index].href = data.link;
