@@ -119,84 +119,38 @@ function displayRateStars(rating, starRatingContainer) {
 }
 
 function addProduct(productData, productList) {
-    // Create product item container
-    const productItem = document.createElement('div');
-    productItem.className = 'product-item';
-
-    const productImageContainer = document.createElement('div');
-    productImageContainer.className = 'overlap-group';
-
-    // Create product image
-    const productImage = document.createElement('img');
-    productImage.className = 'product-image';
-    productImage.src = productData.img; // Set the default image source
-
-    // Create other div elements
-    const hotProductDiv = document.createElement('div');
-    hotProductDiv.id = 'hot-product';
-
-    const saleProductDiv = document.createElement('div');
-    saleProductDiv.id = 'sale-product';
-
-    // Create product content
-    const productContent = document.createElement('div');
-    productContent.className = 'product-content';
-
-    // Create product rate
-    const productRate = document.createElement('div');
-    productRate.className = 'product-rate';
-
-    // Create product rate stars
-    const productRateStars = document.createElement('div');
-    productRateStars.className = 'product-rate-stars';
-    displayRateStars(productData.star, productRateStars); // Use the 'star' property from the productData object
-
-    // Create product rate number
-    const productRateNumber = document.createElement('div');
-    productRateNumber.className = 'product-rate-number';
-    productRateNumber.innerText = `(${productData.rateCount} đánh giá)`; // Use the 'rateCount' property from the productData object
-
-    // Append rate stars and number to rate container
-    productRate.appendChild(productRateStars);
-    productRate.appendChild(productRateNumber);
-
-    // Create product info
-    const productInfo = document.createElement('div');
-    productInfo.className = 'product-name';
-    productInfo.innerText = productData.title; // Use the 'title' property from the productData object
+    // Create product item container as a string
+    let productItemHTML = `
+        <div class="product-item">
+            <div class="overlap-group">
+                <img class="product-image" src="${productData.img}">
+                <div id="hot-product"></div>
+                <div id="sale-product"></div>
+            </div>
+            <div class="product-content">
+                <div class="product-rate">
+                    <div id="product-rate-stars" class="product-rate-stars"></div>
+                    <div class="product-rate-number">(${productData.rateCount} đánh giá)</div>
+                </div>
+                <div class="product-name">${productData.title}</div>
+                <div class="product-price">
+                    ${productData.promo.old_price !== 0 ? `<div class="old-product-price">${productData.promo.old_price}</div>` : ''}
+                    <div class="new-product-price">${productData.promo.new_price}</div>
+                </div>
+            </div>
+        </div>
+    `;
 
 
-    // Create product price
-    const productPrice = document.createElement('div');
-    productPrice.className = 'product-price';
 
+    // Create a temporary container element
+    const tempContainer = document.createElement('div');
+    tempContainer.innerHTML = productItemHTML;
 
-    // Append all elements to product content
-    productContent.appendChild(productRate);
-    productContent.appendChild(productInfo);
-    productContent.appendChild(productPrice);
-
-    if (productData.promo.old_price != 0) {
-        const oldPrice = document.createElement('div');
-        oldPrice.className = 'old-product-price';
-        oldPrice.innerText = productData.promo.old_price;
-        productPrice.appendChild(oldPrice);
-    }
-
-    const newPrice = document.createElement('div');
-    newPrice.className = 'new-product-price';
-    newPrice.innerText = productData.promo.new_price;
-    productPrice.appendChild(newPrice);
-
-
-    // Append image and other div elements to the container
-    productImageContainer.appendChild(productImage);
-    productImageContainer.appendChild(hotProductDiv);
-    productImageContainer.appendChild(saleProductDiv);
-
-    // Append the entire container to the product item
-    productItem.appendChild(productImageContainer);
-    productItem.appendChild(productContent);
+    // Get the first child, which is the product item
+    const productItem = tempContainer.firstElementChild;;
+    // load rate star
+    displayRateStars(productData.star, productItem.querySelector('#product-rate-stars'));
 
     // Add CSS
     const cssLink = document.createElement('link');
@@ -212,6 +166,7 @@ function addProduct(productData, productList) {
     // Append product item to product list
     productList.appendChild(productItem);
 }
+
 
 // Hàm hiển thị số lượng nhất định sản phẩm
 function showLimitedProducts(products, productList, limit) {

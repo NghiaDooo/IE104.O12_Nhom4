@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/styleguide.css">
+    <style>
+        .products-content-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .products-content-container {
+            flex: 1;
+            margin: 30px 150px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="products-content-container">
+        <div>
+
+        </div>
+    </div>
+    <div id="footer"></div>
+
+    <script src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./data/data.js"></script>
+    <script>
+        const products = data;
+
+        function filterProducts() {
+
+        }
+
+        // Function to clear the product list
+        function clearProductList() {
+            const productListContainer = document.getElementById('product-list');
+            productListContainer.innerHTML = '';
+        }
+
+        function updateProductList() {
+            clearProductList();
+            const productListContainer = document.getElementById('product-list');
+            const filteredProducts = filterProducts();
+            filteredProducts.forEach(product => {
+                addProduct(product, productListContainer);
+            });
+        }
+
+        // Function to initialize the product list
+        function initProductList() {
+            const filterInput = document.getElementById('filterInput');
+
+            // Add an input event listener to the filter input
+            filterInput.addEventListener('input', function () {
+                updateProductList();
+            });
+
+            // Initial population of the product list (no filter initially)
+            updateProductList(0);
+        }
+
+    </script>
+</body>
+
+</html>

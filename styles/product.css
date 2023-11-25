@@ -11,8 +11,9 @@
        background-color: var(--gray-00);
        border: 1px solid var(--gray-100);
        border-radius: 3px;
-       transition: transform 0.3s linear;
+       cursor: pointer;
    }
+
 
    .product-item .overlap-group {
        width: 180px;
@@ -81,10 +82,35 @@
 
    /*product hover effect */
    .product-item:hover {
-       box-shadow: 0px 0px 10px var(--secondary-500);
+       animation: borderEffect 0.4s forwards;
+   }
+
+   @keyframes borderEffect {
+       from {
+           box-shadow: none;
+       }
+
+       to {
+           box-shadow: 0px 0px 10px var(--secondary-500);
+       }
+   }
+
+   .product-item .product-image {
+       z-index: 1;
+       transition: transform 0.3s;
    }
 
    .product-item:hover .product-image {
        z-index: 2;
-       transform: translateY(-10%);
+       animation: goUp 0.4s forwards;
+   }
+
+   @keyframes goUp {
+       from {
+           transform: translateY(0%);
+       }
+
+       to {
+           transform: translateY(-10%);
+       }
    }
