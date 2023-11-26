@@ -122,8 +122,9 @@
 }
 
 .user-container .purchased-products-container .purchased-products {
-    display: flex;
-    flex-wrap: wrap;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     padding: 15px;
     position: relative;
 }
@@ -180,12 +181,15 @@
 .user-info-container .user-info .user-info-left table {
     width: 100%;
     text-indent: initial;
+
 }
 
 .user-info-container .user-info .user-info-left table tr {
     display: table-row;
-    vertical-align: top;
-    margin-top: 20px;
+}
+
+.user-info-container .user-info .user-info-left table td {
+    vertical-align: middle;
 }
 
 .user-info-container .user-info-left .td-left {
@@ -206,6 +210,10 @@
     padding: 20px;
     white-space: nowrap;
     min-width: 20%;
+}
+
+.user-info-container .user-info-left .td-right p {
+    padding: 20px 0;
 }
 
 .user-info-container .user-info-left .td-right input {

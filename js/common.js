@@ -44,7 +44,6 @@ function setCurrentUser(user) {
     localStorage.setItem('currentUser', JSON.stringify(user));
 }
 
-
 function getAllUsers() {
     return JSON.parse(localStorage.getItem('userList')) || [];
 }
@@ -166,7 +165,6 @@ function addProduct(productData, productList) {
     // Append product item to product list
     productList.appendChild(productItem);
 }
-
 
 // Hàm hiển thị số lượng nhất định sản phẩm
 function showLimitedProducts(products, productList, limit) {

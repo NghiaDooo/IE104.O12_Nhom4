@@ -45,17 +45,17 @@ a {
 @keyframes pulse {
   0% {
     transform: scale(1);
-    opacity: 1;
+    opacity: 0.8;
   }
 
   50% {
     transform: scale(1.15);
-    opacity: 0.7;
+    opacity: 1;
   }
 
   100% {
     transform: scale(1);
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
@@ -142,13 +142,119 @@ a {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    /* Ban đầu, không hiển thị (độ trong suốt là 0) */
   }
 
   100% {
     opacity: 1;
-    /* Kết thúc, hiển thị đầy đủ (độ trong suốt là 1) */
   }
+}
+
+/* slide ads */
+.slider {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.slider .slides {
+  width: 500%;
+  height: 400px;
+  display: flex;
+}
+
+.slider .slides input {
+  display: none;
+}
+
+.slider .slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slider .slide img {
+  width: 100%;
+  height: 300px;
+
+}
+
+.slider .navigation-manual {
+  position: absolute;
+  width: 100%;
+  margin-top: -40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px;
+}
+
+.slider .manual-btn {
+  border: 2px solid var(--secondary-500);
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1.5s;
+}
+
+.slider .manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.slider .manual-btn:hover {
+  background: var(--secondary-500);
+}
+
+.slider #radio1:checked~.first {
+  margin-left: 0;
+}
+
+.slider #radio2:checked~.first {
+  margin-left: -20%;
+}
+
+.slider #radio3:checked~.first {
+  margin-left: -40%;
+}
+
+.slider #radio4:checked~.first {
+  margin-left: -60%;
+}
+
+.slider .navigation-auto {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+}
+
+.slider .navigation-auto div {
+  border: 2px solid var(--secondary-500);
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.slider .navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+
+.slider #radio1:checked~.navigation-auto .auto-btn1 {
+  background: var(--secondary-500);
+}
+
+.slider #radio2:checked~.navigation-auto .auto-btn2 {
+  background: var(--secondary-500);
+}
+
+.slider #radio3:checked~.navigation-auto .auto-btn3 {
+  background: var(--secondary-500);
+}
+
+.slider #radio4:checked~.navigation-auto .auto-btn4 {
+  background: var(--secondary-500);
 }
 
 

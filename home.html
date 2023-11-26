@@ -12,21 +12,42 @@
 
 <body>
     <div id="navbar"></div>
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <div class="slide first" style="border: 1px solid;">
+                <img src="./assets/images/slider-banner/banner1.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/images/slider-banner/banner2.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/images/slider-banner/banner3.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/images/slider-banner/banner4.png" alt="">
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+        </div>
+
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+    </div>
+
     <div class="home-container">
-        <section class="ads-container">
-            <section id=" slider-container" class="slider-container">
-                <button class="control-btn control-btn--left" onclick="prevSlide()">‹</button>
-                <button class="control-btn control-btn--right" onclick="nextSlide()">›</button>
-            </section>
-            <section id="small-widget" class="small-widget">
-                <a href="#">
-                    <img src="./assets/images/home/image-4.png" alt="Banner 1">
-                </a>
-                <a href="#">
-                    <img src="./assets/images/home/image-5.png" alt="Banner 2">
-                </a>
-            </section>
-        </section>
         <section class="today-best-deals">
             <div class="heading">
                 <div class="content">
@@ -75,21 +96,11 @@
     <script src="./js/common.js"></script>
 </body>
 <script>
-    const productData = {
-        "id": "305658",
-        "name": "Điện thoại iPhone 15 Pro Max 256GB",
-        "title": "iPhone 15 Pro Max",
-        "brand": "iPhone (Apple)",
-        "cate": "Điện thoại",
-        "img": "https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg",
-        "price": 34990000,
-        "star": 5,
-        "rateCount": 31,
-    };
+    const productData = data
     for (let i = 0; i < 8; i++) {
         addProduct(data[i], document.getElementById("today-best-deals-products"));
-        addProduct(data[i], document.getElementById("new-products"));
-        addProduct(data[i], document.getElementById("best-seller-products"));
+        addProduct(data[i + 8], document.getElementById("new-products"));
+        addProduct(data[i + 16], document.getElementById("best-seller-products"));
     }
 </script>
 

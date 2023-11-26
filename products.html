@@ -8,26 +8,204 @@
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/styleguide.css">
     <style>
-        .products-content-container {
-            flex: 1;
+        .filter-brand {
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+
+        }
+
+        .filter-brand .brand-filter-button {
+            padding: 0;
+            border-radius: 20px;
+            box-shadow: 0 0 3px var(--gray-500);
+            overflow: hidden;
+        }
+
+        .filter-brand .brand-filter-button img {
+            height: 38px;
+            width: 180px;
         }
 
         .products-content-container {
             flex: 1;
-            margin: 30px 150px;
-            background-color: aliceblue;
+            display: flex;
+        }
+
+        .products-content-container .left-filter-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 30px;
+        }
+
+        .products-content-container .left-filter-container .filter-list {
+            line-height: 2;
+            font-size: 18px;
+        }
+
+        .products-content-container .left-filter-container .filter-list label {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--secondary-500);
+            line-height: 2.5;
+        }
+
+        .products-content-container .left-filter-container .filter-list .filter-button {
+            margin-left: 15px;
+            padding: auto;
+            font-weight: 500;
+            color: var(--gray-900);
+        }
+
+        .products-content-container .left-filter-container .filter-box li:hover {
+            background-color: var(--secondary-100)
+        }
+
+        .products-content-container .left-filter-container .filter-list .link-active {
+            font-weight: 600;
+            color: var(--secondary-700);
+        }
+
+        .products-content-container .list-product-container {
+            flex: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 10px 10px 100px 10px;
+        }
+
+        .list-product-container .list-product {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 30px 10px;
+            align-content: space-between;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 3px var(--gray-500);
+        }
+
+        .list-product-container .btn-see-more {
+            position: absolute;
+            bottom: -15px;
+            left: 42%;
+            padding: 5px 50px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 6px var(--secondary-200);
+            background-color: var(--gray-00);
+            white-space: nowrap;
         }
     </style>
 </head>
 
 <body>
     <div id="navbar"></div>
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <div class="slide first">
+                <img src="./assets/images/slider-banner/banner1.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/images/slider-banner/banner2.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/images/slider-banner/banner3.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/images/slider-banner/banner4.png" alt="">
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+        </div>
+
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+    </div>
+    <div class="filter-brand">
+        <a class="brand-filter-button" onClick="handleFilterClick(event)" href="?brand=apple"> <img
+                src="./assets/images/filter/logo-iphone-220x48.png" alt=""></a>
+        <a class="brand-filter-button" onClick="handleFilterClick(event)" href="?brand=samsung"> <img
+                src="./assets/images/filter/samsungnew-220x48-1.png" alt=""></a>
+        <a class="brand-filter-button" onClick="handleFilterClick(event)" href="?brand=oppo"> <img
+                src="./assets/images/filter/OPPO42-b_5.jpg" alt=""></a>
+        <a class="brand-filter-button" onClick="handleFilterClick(event)" href="?brand=xiaomi"> <img
+                src="./assets/images/filter/logo-xiaomi-220x48-5.png" alt=""></a>
+        <a class="brand-filter-button" onClick="handleFilterClick(event)" href="?brand=nokia"><img
+                src="./assets/images/filter/Nokia42-b_21.jpg" alt=""></a>
+    </div>
     <div class="products-content-container">
-        <div>
+        <div class="left-filter-container">
+            <ul class="filter-list">
+                <li class="label">
+                    <label>Loại</label>
+                    <ul class="filter-box">
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?type=all">All</a>
+                        </li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?type=phone">Điện
+                                thoại</a></li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?type=headphone">Tai
+                                nghe</a></li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?type=backup-charging">Sạc
+                                dự
+                                phòng</a></li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?type=charging-cable">Cáp
+                                sạc</a></li>
+                    </ul>
+                </li>
+                <li class="label">
+                    <label>Giá</label>
+                    <ul class="filter-box">
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?price=all">All</a>
+                        </li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?price=0-2000000">Dưới
+                                2 triệu</a>
+                        </li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?price=2000000-4000000">Từ
+                                2 đến 4
+                                triệu</a></li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?price=4000000-7000000">Từ
+                                4 đến 7
+                                triệu</a></li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)"
+                                href="?price=7000000-13000000">Từ 7 đến 13
+                                triêu</a></li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)"
+                                href="?price=13000000-20000000">Từ 13 đến 20
+                                triệu</a></li>
+                        <li><a class="filter-button" onClick="handleFilterClick(event)" href="?price=20000000">Trên
+                                20 triệu</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="list-product-container">
+            <div id="list-product" class="list-product">
+                <button id="btn-see-more" class="btn-see-more" onclick="loadMoreProduct()">Xem thêm</button>
+            </div>
 
         </div>
+
     </div>
     <div id="footer"></div>
 
@@ -37,6 +215,68 @@
     <script src="./data/data.js"></script>
     <script>
         const products = data;
+        var limitedProducts = 10;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var counter = 2;
+            setInterval(function () {
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if (counter > 4) {
+                    counter = 1;
+                }
+            }, 5000);
+
+        });
+
+        function handleFilterClick(event) {
+            event.preventDefault();
+
+            const filterValue = event.currentTarget.getAttribute('href').split('=')[1];
+            const filterType = event.currentTarget.getAttribute('href').split('=')[0].split('?')[1];
+            console.log(filterValue)
+            if (filterType == 'brand') {
+                if (event.currentTarget.classList.contains("filter-active")) {
+                    event.currentTarget.classList.remove("filter-active");
+                } else {
+                    event.currentTarget.classList.add("filter-active");
+                }
+            }
+            updateUrlParameter(filterType, filterValue);
+        }
+
+        function updateUrlParameter(param, value) {
+            const url = new URL(window.location.href);
+            // Kiểm tra nếu giá trị là 'all' thì xóa tham số khỏi URL
+            if (value === 'all') {
+                url.searchParams.delete(param);
+
+            } else {
+                if (param == 'brand') {
+                    const values = url.searchParams.getAll(param);
+                    const valuesArray = values.length > 0 ? values.toString().split(',') : [];
+
+                    if (valuesArray.includes(value)) {
+                        const index = valuesArray.indexOf(value);
+                        valuesArray.splice(index, 1);
+                    } else {
+
+                        valuesArray.push(value);
+                    }
+
+                    if (valuesArray.length > 0) {
+                        url.searchParams.set(param, valuesArray.join(','));
+                    }
+                    else
+                        url.searchParams.delete(param);
+                } else {
+                    url.searchParams.set(param, value);
+                }
+
+
+            }
+            history.pushState(null, null, url.href);
+        }
 
         function filterProducts() {
 
@@ -69,6 +309,29 @@
             // Initial population of the product list (no filter initially)
             updateProductList(0);
         }
+
+        function isShowedAllProducts() {
+            const btnSeeMore = document.getElementById("btn-see-more");
+            if (products == null) {
+                btnSeeMore.style.display = 'none';
+                return
+            }
+            if (limitedProducts >= products.length)
+
+                btnSeeMore.style.display = 'none';
+            else
+                btnSeeMore.style.display = 'block';
+        }
+
+        function loadMoreProduct() {
+            limitedProducts += 8;
+            showLimitedProducts(data, document.getElementById("list-product"), limitedProducts);
+            isShowedAllProducts();
+
+        }
+
+        showLimitedProducts(data, document.getElementById("list-product"), limitedProducts);
+        isShowedAllProducts();
 
     </script>
 </body>
