@@ -1,0 +1,45 @@
+#admin-title, #table-title{
+    color: var(--primary-color);
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.5em;
+}
+#admin-title{
+    font-size: 4em;
+}
+#table-title{
+    font-size: 2em;
+}
+
+#tab {
+    display: flex;
+    justify-content: space-around;
+}
+
+#tab button {
+    font-size: 2em;
+    width: 100%;
+    margin: 0 1em;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.5em 0.5em;
+    transition: 0.3s;
+}
+
+#tab button:hover {
+    background-color: #ddd;
+}
+
+#tab button.active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color)
+}
+
+#table{
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid var(--primary-color);
+}

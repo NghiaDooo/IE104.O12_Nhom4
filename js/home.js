@@ -12,6 +12,61 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
+function addSlides(slides) {
+    const sliderContainer = document.querySelector('.slider-container');
+
+    slides.forEach(slideData => {
+        const a = document.createElement('a');
+        a.href = slideData.link;
+
+        const article = document.createElement('article');
+        article.className = 'slide';
+
+        const img = document.createElement('img');
+        img.className = 'slide-img';
+        img.src = slideData.imgSrc;
+        img.alt = slideData.altText;
+
+        article.appendChild(img);
+        a.appendChild(article);
+        sliderContainer.appendChild(a);
+    });
+}
+
+function updateSmallWidget(index, data) {
+    const smallWidgetSection = document.getElementById('small-widget');
+    const imageLinks = smallWidgetSection.querySelectorAll('a');
+    const images = smallWidgetSection.querySelectorAll('img');
+
+    if (index >= 0 && index < imageLinks.length) {
+        imageLinks[index].href = data.link;
+    }
+
+    if (index >= 0 && index < images.length) {
+        images[index].src = data.imgSrc;
+        images[index].alt = data.altText;
+    }
+}
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+    });
+}
+
+function nextSlide() {
+    const slides = document.querySelectorAll('.slide');
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+function prevSlide() {
+    const slides = document.querySelectorAll('.slide');
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
+
 function countdownTimeDeals() {
     const dealExpirationDate = new Date("2023-12-31T23:59:59").getTime();
 
