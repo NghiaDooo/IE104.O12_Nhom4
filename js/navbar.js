@@ -4,7 +4,7 @@ const InitNavbar = () => {
     let navbarHTML = `
   <div class="navigation">
             <div class="navigation__top-nav">
-                <p class="top-nav__slogan">Welcome to AbcXyz online eCommerce store.</p>
+                <p class="top-nav__slogan">Chào mừng bạn tới với AbcXyz online store.</p>
                 <div class="top-nav__right-content">
                     <div class="right-content__follow-us">
                         <div class="follow-us__text">Follow us:</div>
@@ -51,25 +51,25 @@ const InitNavbar = () => {
             </div>
             <div class="navigation__bottom-nav">
                 <div class="bottom-nav__item">
-                    <a href="link-to-mobile-products.html">
+                    <a href="list-product.html?type=phone">
                         <img class="item__item-icon" src="img/icon-mobile.png" />
                         <div class="item__item-title">ĐIỆN THOẠI</div>
                     </a>
                 </div>
                 <div class="bottom-nav__item">
-                    <a href="link-to-earphone-products.html">
+                    <a href="list-product.html?type=headphone">
                         <img class="item__item-icon" src="img/icon-earphone.png" />
                         <div class="item__item-title">TAI NGHE</div>
                     </a>
                 </div>
                 <div class="bottom-nav__item">
-                    <a href="link-to-backup-charger-products.html">
+                    <a href="list-product.html?type=backup-charging">
                         <img class="item__item-icon" src="img/icon-backup-charger.png" />
                         <div class="item__item-title">SẠC DỰ PHÒNG</div>
                     </a>
                 </div>
                 <div class="bottom-nav__item">
-                    <a href="link-to-charger-cable-products.html">
+                    <a href="list-product.html?type=charging-cable">
                         <img class="item__item-icon" src="img/icon-charger-cable.png" />
                         <div class="item__item-title">SẠC, CÁP SẠC</div>
                     </a>

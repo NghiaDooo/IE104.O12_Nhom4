@@ -7,104 +7,7 @@
     <title>Product List</title>
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/styleguide.css">
-    <style>
-        .filter-brand {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-around;
-            padding: 20px;
-
-        }
-
-        .filter-brand .brand-filter-button {
-            padding: 0;
-            border-radius: 20px;
-            box-shadow: 0 0 3px var(--gray-500);
-            overflow: hidden;
-        }
-
-        .filter-brand .brand-filter-button img {
-            height: 38px;
-            width: 180px;
-        }
-
-        .products-content-container {
-            flex: 1;
-            display: flex;
-            padding: 10px 100px;
-        }
-
-        .products-content-container .left-filter-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 10px 30px;
-        }
-
-        .products-content-container .left-filter-container .filter-list {
-            line-height: 2;
-            font-size: 18px;
-        }
-
-        .products-content-container .left-filter-container .filter-list label {
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-weight: bold;
-            color: var(--secondary-500);
-            line-height: 2.5;
-        }
-
-        .products-content-container .left-filter-container .filter-list .filter-button {
-            display: block;
-            margin-left: 15px;
-            padding: auto;
-            font-weight: 500;
-            color: var(--gray-900);
-        }
-
-        .products-content-container .left-filter-container .filter-box li:hover {
-            background-color: var(--secondary-100)
-        }
-
-        .products-content-container .left-filter-container .filter-list .filter-button-active {
-            font-weight: 600;
-            color: var(--secondary-700);
-        }
-
-        .products-content-container .list-product-container {
-            flex: 4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 10px 10px 100px 10px;
-        }
-
-        .list-product-container .list-product {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 30px 10px;
-            align-content: space-between;
-            width: 100%;
-            height: 100%;
-            box-shadow: 0 0 3px var(--gray-500);
-        }
-
-        .list-product-container .btn-see-more {
-            position: absolute;
-            bottom: -15px;
-            left: 42%;
-            padding: 5px 50px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 0 6px var(--secondary-200);
-            background-color: var(--gray-00);
-            white-space: nowrap;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/list-product.css">
 </head>
 
 <body>
@@ -154,6 +57,9 @@
                 src="./assets/images/filter/logo-xiaomi-220x48-5.png" alt=""></a>
         <a class="brand-filter-button" onClick="handleFilterClick(event)" href="?brand=nokia"><img
                 src="./assets/images/filter/Nokia42-b_21.jpg" alt=""></a>
+    </div>
+    <div class="sort-product-container">
+
     </div>
     <div class="products-content-container">
         <div class="left-filter-container">
@@ -219,15 +125,16 @@
         const products = data;
 
         // Đếm số cột của grid container
-        var gridContainer = document.querySelector('.list-product');
-        var computedStyle = window.getComputedStyle(gridContainer);
-        var gridColumnValue = computedStyle.getPropertyValue('grid-template-columns');
-        var gridColumnNumbers = gridColumnValue.split(' ').map(column => parseInt(column, 10)).length;
-        var limitedProducts = gridColumnNumbers * 2;
+        let gridContainer = document.querySelector('.list-product');
+        let computedStyle = window.getComputedStyle(gridContainer);
+        let gridColumnValue = computedStyle.getPropertyValue('grid-template-columns');
+        let gridColumnNumbers = gridColumnValue.split(' ').map(column => parseInt(column, 10)).length;
+        let limitedProducts = gridColumnNumbers * 2;
+        let listProduct = data;
         console.log(gridColumnNumbers)
 
         document.addEventListener('DOMContentLoaded', function () {
-            var counter = 2;
+            let counter = 2;
             setInterval(function () {
                 document.getElementById('radio' + counter).checked = true;
                 counter++;
@@ -239,13 +146,13 @@
         });
 
         function loadFilterUI() {
-            var currentUrl = window.location.href;
-            var filterButtons = document.querySelectorAll('.filter-box .filter-button');
+            let currentUrl = window.location.href;
+            let filterButtons = document.querySelectorAll('.filter-box .filter-button');
 
             // Kiểm tra nếu currentUrl không chứa bất kỳ giá trị nào trong href của thẻ "All"
             if (!currentUrl.includes('?')) {
 
-                var allElements = document.querySelectorAll('.filter-list .filter-box a[href*="=all"]');
+                let allElements = document.querySelectorAll('.filter-list .filter-box a[href*="=all"]');
 
                 allElements.forEach(function (element) {
                     element.classList.add('filter-button-active');
@@ -255,21 +162,21 @@
 
             function paramsMatch(currentUrl, hrefValue) {
                 // Escape các ký tự đặc biệt trong hrefValue để tránh chúng được hiểu là các biểu thức chính quy
-                var escapedHrefValue = hrefValue.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+                let escapedHrefValue = hrefValue.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
                 // Tạo biểu thức chính quy với hrefValue và không quan trọng đến dấu ? (không gian trắng không quan trọng)
-                var regex = new RegExp(escapedHrefValue.replace(/\?/g, "\\?"), "i");
+                let regex = new RegExp(escapedHrefValue.replace(/\?/g, "\\?"), "i");
 
                 // Kiểm tra xem regex có khớp với currentUrl hay không
                 return regex.test(currentUrl);
             }
 
             filterButtons.forEach(function (button) {
-                var hrefValue = button.getAttribute('href');
+                let hrefValue = button.getAttribute('href');
 
                 if (!currentUrl.includes(hrefValue.toString().split('?')[1].split('=')[0])) {
-                    var filterBox = button.closest('.filter-box');
-                    var filterButton = filterBox.querySelector('a[href*="=all"]');
+                    let filterBox = button.closest('.filter-box');
+                    let filterButton = filterBox.querySelector('a[href*="=all"]');
                     if (filterButton) {
                         filterButton.classList.add('filter-button-active');
                     }
@@ -284,9 +191,9 @@
 
         function handleFilterClick(event) {
             event.preventDefault();
-            var filterBox = event.target.closest('.filter-box');
+            let filterBox = event.target.closest('.filter-box');
             if (filterBox) {
-                var filterButtons = filterBox.querySelectorAll('.filter-button');
+                let filterButtons = filterBox.querySelectorAll('.filter-button');
                 filterButtons.forEach(function (button) {
                     button.classList.remove('filter-button-active');
                 });
@@ -303,6 +210,7 @@
                 }
             }
             updateUrlParameter(filterType, filterValue);
+            filterProductsByUrl()
         }
 
         function updateUrlParameter(param, value) {
@@ -338,45 +246,89 @@
             history.pushState(null, null, url.href);
         }
 
-        function filterProducts() {
+        function filterProductsByUrl() {
+            const urlParams = new URLSearchParams(window.location.href.split('?')[1]);
 
-        }
+            const typeParam = urlParams.get('type');
+            const priceParam = urlParams.get('price');
+            const brandParam = urlParams.get('brand');
 
-        // Function to clear the product list
-        function clearProductList() {
-            const productListContainer = document.getElementById('product-list');
-            productListContainer.innerHTML = '';
-        }
+            //translate type to Vietnamese
+            let vietnameseType;
+            switch (typeParam) {
+                case 'phone':
+                    vietnameseType = 'Điện thoại';
+                    break;
+                case 'headphone':
+                    vietnameseType = 'Tai nghe';
+                    break;
+                case 'backup-charging':
+                    vietnameseType = 'Sạc dự phòng';
+                    break;
+                case 'charging-cable':
+                    vietnameseType = 'Adapter sạc, chuyển đổi';
+                    break;
+                default:
+                    vietnameseType = typeParam;
+                    break;
+            }
 
-        function updateProductList() {
-            clearProductList();
-            const productListContainer = document.getElementById('product-list');
-            const filteredProducts = filterProducts();
-            filteredProducts.forEach(product => {
-                addProduct(product, productListContainer);
+            const priceRange = priceParam
+                ? priceParam.split('-').map(value => (value.toLowerCase() === 'all' ? null : Number(value)))
+                : null;
+
+            // Filter products based on URL parameters
+            const filteredProducts = data.filter(product => {
+                const isTypeMatch =
+                    !typeParam || product.cate.toLowerCase() === vietnameseType.toLowerCase();
+                const isPriceMatch =
+                    !priceRange ||
+                    (priceRange[0] === 0 || product.price >= priceRange[0]) &&
+                    (priceRange[1] === 0 || product.price <= priceRange[1]);
+                const isBrandMatch =
+                    !brandParam || product.brand.toLowerCase() === brandParam.toLowerCase();
+
+                return isTypeMatch && isPriceMatch && isBrandMatch;
             });
+            limitedProducts = gridColumnNumbers * 2;
+            listProduct = filteredProducts;
+            updateProductList();
         }
 
-        // Function to initialize the product list
-        function initProductList() {
-            const filterInput = document.getElementById('filterInput');
+        async function updateProductList() {
+            await loadFilterUI();
+            try {
 
-            // Add an input event listener to the filter input
-            filterInput.addEventListener('input', function () {
-                updateProductList();
-            });
+                await (async () => {
 
-            // Initial population of the product list (no filter initially)
-            updateProductList(0);
+                    const productListContainer = document.getElementById('list-product');
+                    productListContainer.innerHTML = `<button id="btn-see-more" class="btn-see-more" onclick="loadMoreProduct()">Xem thêm</button>`;
+
+                })();
+
+                if (listProduct.length === 0) {
+                    alert("Không tìn thấy sản phẩm!");
+                }
+                else {
+                    const productListContainer = document.getElementById('list-product');
+                    showLimitedProducts(listProduct, productListContainer, limitedProducts);
+                    isShowedAllProducts();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+
         }
+
+
 
         function isShowedAllProducts() {
             const btnSeeMore = document.getElementById("btn-see-more");
-            if (products == null) {
+            if (listProduct == null) {
                 btnSeeMore.style.display = 'none';
                 return
             }
-            if (limitedProducts >= products.length)
+            if (limitedProducts >= listProduct.length)
 
                 btnSeeMore.style.display = 'none';
             else
@@ -384,18 +336,19 @@
         }
 
         function loadMoreProduct() {
-            limitedProducts += gridColumnNumbers;
-            showLimitedProducts(data, document.getElementById("list-product"), limitedProducts);
+            if (limitedProducts <= listProduct.length) {
+                limitedProducts += gridColumnNumbers;
+                showLimitedProducts(listProduct, document.getElementById("list-product"), limitedProducts);
+            }
             isShowedAllProducts();
 
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-
-            loadFilterUI();
+            filterProductsByUrl();
+            updateProductList();
         });
-        showLimitedProducts(data, document.getElementById("list-product"), limitedProducts);
-        isShowedAllProducts();
+
 
     </script>
 </body>

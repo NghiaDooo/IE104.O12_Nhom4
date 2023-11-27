@@ -38,25 +38,26 @@ function addGoToTopBTN() {
 
 async function getCurrentUser() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if(currentUser){
+    if (currentUser) {
+        console.log(decodedJwt(currentUser.JWT, currentUser.secretKey))
         return await decodedJwt(currentUser.JWT, currentUser.secretKey);
-    }else{
+    } else {
         return currentUser;
     }
 }
 
 async function setCurrentUser(user) {
-    if(user){
+    if (user) {
         const secretKey = await hashPassword(user.accountInfo.password);
         delete user.accountInfo.password;
         delete user.accountInfo.salt;
         const jwt = await encodedJWT(user, secretKey.hashedPassword);
         const currentUser = {
-            JWT : jwt,
+            JWT: jwt,
             secretKey: secretKey.hashedPassword,
         }
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
-    }else{
+    } else {
         localStorage.setItem('currentUser', JSON.stringify(user));
     }
 }
@@ -189,7 +190,10 @@ function showLimitedProducts(products, productList, limit) {
     if (products == null) {
         return;
     }
-    for (let i = 0; i < limit && i < products.length; i++) {
+    productList.getElementsByClassName('product-item');
+
+    const countProductItems = productList.getElementsByClassName('product-item').length;
+    for (let i = countProductItems; i < limit && i < products.length; i++) {
         addProduct(products[i], productList);
     }
 }
