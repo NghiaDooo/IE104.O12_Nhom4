@@ -38,12 +38,17 @@ function addGoToTopBTN() {
 
 async function getCurrentUser() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
     if (currentUser) {
-        console.log(decodedJwt(currentUser.JWT, currentUser.secretKey))
-        return await decodedJwt(currentUser.JWT, currentUser.secretKey);
+        return decodedJwt(currentUser.JWT, currentUser.secretKey)
+            .then(result => {
+                return result;
+            });
     } else {
         return currentUser;
     }
+
+
 }
 
 async function setCurrentUser(user) {
@@ -207,8 +212,6 @@ function showAllProducts(products, productList) {
         addProduct(product, productList);
     }
 }
-
-
 
 function createPopup(message, continueText, continueCallback, cancelCallback) {
     // Tạo overlay

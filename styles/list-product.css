@@ -19,6 +19,10 @@
     width: 180px;
 }
 
+.filter-brand .filter-active {
+    box-shadow: 0 0 5px var(--secondary-500);
+}
+
 .products-content-container {
     flex: 1;
     display: flex;

@@ -87,7 +87,7 @@ async function loadUserProfile() {
 }
 
 async function updateUserProfile() {
-    const user = getCurrentUser();
+    const user = await getCurrentUser();
     const userName = document.getElementById('user-name');
     const userAddress = document.getElementById('user-address');
 
@@ -95,6 +95,8 @@ async function updateUserProfile() {
         alert("Tên người dùng không thể bị trống!");
         return;
     }
+
+    console.log(user)
     if (userName.value == user.personalInfo.username && userAddress.value == user.personalInfo.address)
         return;
     user.personalInfo.username = filterXSS(userName.value);

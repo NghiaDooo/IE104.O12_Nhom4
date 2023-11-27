@@ -89,9 +89,10 @@ const InitNavbar = () => {
     const searchInput = document.getElementById('search');
     const searchIcon = document.getElementById('search-icon');
 
-    searchIcon.addEventListener('click', function () {
+    searchIcon.addEventListener('click', function (event) {
+        event.preventDefault();
         const searchValue = searchInput.value;
-        alert('You searched for: ' + searchValue);
+        window.location.href = `list-product.html?keyword=${searchValue.toLowerCase()}`;
     });
 
 
