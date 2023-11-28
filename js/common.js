@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    InitNavbar();
-    InitFooter();
     addGoToTopBTN();
 });
 
@@ -107,6 +105,11 @@ async function checkLoginState() {
         createPopup("Bạn chưa đăng nhập!", "Đăng nhập", () => window.location.href = "login-register.html", () => window.location.href = "home.html");
         return;
     };
+}
+
+function logOut() {
+    setCurrentUser(null);
+    window.location.href = "home.html"
 }
 
 function displayRateStars(rating, starRatingContainer) {

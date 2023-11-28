@@ -1,5 +1,10 @@
+document.addEventListener("DOMContentLoaded", function () {
+    InitFooter();
+});
 const InitFooter = () => {
     const footerContainer = document.getElementById('footer');
+    if (!footerContainer)
+        return;
     const imageDirectory = '../assets/images/footer/';
     let footerHTML = `
  <footer class="footer">

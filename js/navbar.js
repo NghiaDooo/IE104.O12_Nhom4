@@ -1,5 +1,10 @@
+document.addEventListener("DOMContentLoaded", function () {
+    InitNavbar();
+});
 const InitNavbar = () => {
     const navbarContainer = document.getElementById('navbar');
+    if (!navbarContainer)
+        return;
     const imageDirectory = '../assets/images/navbar/';
     let navbarHTML = `
   <div class="navigation">
