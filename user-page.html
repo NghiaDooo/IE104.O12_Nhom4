@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Thêm CSS để tạo tab */
+
+        article {
+            display: none;
+        }
+
+        article.active {
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="./styles/user-page.css">
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/styleguide.css">
+    <link rel="stylesheet" href="./styles/product.css">
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="user-container">
+        <div class="user-box">
+            <div class="box-left">
+                <section>
+                    <div onclick="showTab('user-info', this)" class="tab-active">Hồ sơ</div>
+                    <div onclick="showTab('purchased-order', this)">Lịch sử mua hàng</div>
+                    <div onclick="logOut()">Log out</div>
+                </section>
+            </div>
+            <div class="box-right">
+                <article id="user-info" class="user-info-container article-active ">
+                    <div class="heading">
+                        <h2>Hồ sơ của tôi</h2>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-info-left">
+                            <table>
+                                <tr>
+                                    <td class="td-left">
+                                        Tên người dùng
+                                    </td>
+                                    <td class="td-right">
+                                        <input id="user-name" type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left">
+                                        Email
+                                    </td>
+                                    <td class="td-right">
+                                        <p id="user-email">zxcv08122003@gmail.com</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left">
+                                        Địa chỉ
+                                    </td>
+                                    <td class="td-right">
+                                        <textarea id="user-address"></textarea>
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <button class="btn-save" onclick="updateUserProfile()">Lưu thông tin</button>
+                        </div>
+                        <div class="user-info-right">
+                            <div id="avatar-container" class="avatar-container">
+                                <label for="avatar-input">
+                                    <div class="avt-img">
+                                        <img id="avatar-img" src="./assets/images/user-page/user-avt.png" alt="Avatar">
+                                    </div>
+                                    <br>
+                                    <span>Click để thay đổi ảnh đại diện</span>
+                                </label>
+                                <input type="file" id="avatar-input" accept="image/*" onchange="changeAvatar(event)">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article id="purchased-order" class="purchased-order">
+                    <h3>Lịch sử mua hàng</h3>
+                    <div class="search-container">
+                        <input id="search-purchased-product-text" type="text"
+                            placeholder="Tìm kiếm sản phẩm bạn đã mua theo tên">
+                        <img id="search-purchased-product-btn" src="./assets/images/user-page/search.svg" alt="search"
+                            onclick="searchPurhasedProduct()">
+                    </div>
+                    <div class="purchased-products-container">
+                        <div id="purchased-products" class="purchased-products">
+                        </div>
+                        <button id="btn-see-more" class="btn-see-more" onclick="loadMoreProduct()">Xem thêm</button>
+
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./data/data.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/user-page.js"></script>
+    <script src="./js/security.js"></script>
+</body>
+
+</html>

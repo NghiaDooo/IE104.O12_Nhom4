@@ -1,0 +1,434 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,700");
+
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Public Sans", Helvetica, sans-serif !important;
+
+}
+
+@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,700");
+
+:root {
+    --background-color1: #fafaff;
+    --background-color2: #ffffff;
+    --background-color3: #ededed;
+    --background-color4: #cad7fda4;
+    --primary-color: #4b49ac;
+    --secondary-color: #0c007d;
+    --Border-color: #3f0097;
+    --one-use-color: #3f0097;
+    --two-use-color: #5500cb;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    height: 70px;
+    width: 100vw;
+    padding: 0 30px;
+    background-color: var(--secondary-500);
+    position: fixed;
+    z-index: 100;
+    box-shadow: 1px 1px 6px var(--secondary-700);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo a {
+    display: flex;
+    background-color: transparent;
+    text-decoration: none;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo .logo__logo-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logo .logo__logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.icn {
+    height: 30px;
+}
+
+.menuicn {
+    cursor: pointer;
+}
+
+
+.main-container {
+    display: flex;
+    width: 100vw;
+    position: relative;
+    top: 70px;
+    z-index: 1;
+}
+
+.dpicn {
+    height: 42px;
+}
+
+.content-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.content-tab {
+    height: calc(100vh - 70px);
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 40px 30px 30px 30px;
+}
+
+.content-tab::-webkit-scrollbar-thumb {
+    background-image:
+        linear-gradient(to bottom, rgb(0, 0, 85), rgb(0, 0, 50));
+}
+
+.content-tab::-webkit-scrollbar {
+    width: 5px;
+}
+
+.content-tab::-webkit-scrollbar-track {
+    background-color: #9e9e9eb2;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.nav {
+    min-height: 91vh;
+    background-color: var(--gray-100);
+    position: absolute;
+    top: 0px;
+    left: 00;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 30px 0 20px 10px;
+}
+
+.navcontainer {
+    display: block;
+    width: 310px;
+    position: relative;
+    height: calc(100vh - 70px);
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 1px 1px 5px var(--gray-500);
+}
+
+.navcontainer::-webkit-scrollbar {
+    display: none;
+}
+
+.navclose {
+    width: 80px;
+}
+
+.nav-option {
+    width: 300px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 20px;
+    gap: 20px;
+    transition: all 0.1s ease-in-out;
+}
+
+.nav-option:hover {
+    border-left: 5px solid #a2a2a2;
+    background-color: #dadada;
+    cursor: pointer;
+}
+
+.nav-img {
+    height: 30px;
+}
+
+.nav-upper-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.option-active {
+    border-left: 5px solid #010058af;
+    background-color: var(--secondary-300);
+    cursor: pointer;
+}
+
+.option-active h3 {
+    font-weight: bold;
+}
+
+.option-active .nav-img[src$=".svg"] {
+    stroke: #fff;
+    /* Đổi #your_moon_color thành mã màu của bạn */
+}
+
+.option-active:hover {
+    border-left: 5px solid #010058af;
+    background-color: var(--secondary-300);
+    cursor: pointer;
+}
+
+.box {
+    height: 130px;
+    width: 230px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.08);
+}
+
+.box:nth-child(1) {
+    background-color: var(--one-use-color);
+}
+
+.box:nth-child(2) {
+    background-color: var(--two-use-color);
+}
+
+.box:nth-child(3) {
+    background-color: var(--one-use-color);
+}
+
+.box:nth-child(4) {
+    background-color: var(--two-use-color);
+}
+
+.box img {
+    height: 50px;
+}
+
+.box .text {
+    color: white;
+}
+
+.topic {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.topic-heading {
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+/* CSS cho bảng */
+.report-container {
+    width: 100%;
+    overflow-x: scroll;
+    border-collapse: collapse;
+    margin-top: 20px;
+    gap: 10px
+}
+
+.report-container thead,
+.report-container tbody {
+    min-width: 700px;
+}
+
+/* CSS cho tiêu đề của bảng */
+.report-header th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
+
+/* CSS cho tiêu đề của các cột */
+.report-topic-heading th {
+    background-color: #e6e6e6;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* CSS cho dữ liệu của bảng */
+.report-body td {
+    padding: 8px;
+    text-align: center;
+    border: none;
+}
+
+/* CSS cho dòng  của bảng */
+.report-body tr {
+    background-color: #f9f9f9;
+}
+
+/* CSS cho lớp label-tag */
+.label-tag {
+    color: green;
+    font-weight: bold;
+}
+
+/* CSS cho caption */
+caption {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+
+/* Responsive CSS Here */
+@media screen and (max-width: 950px) {
+    .nav-img {
+        height: 25px;
+    }
+
+    .nav-option {
+        gap: 30px;
+    }
+
+    .nav-option h3 {
+        font-size: 15px;
+    }
+
+    .report-topic-heading,
+    .item1,
+    .items {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .nav-img {
+        height: 30px;
+    }
+
+    .nav-option {
+        gap: 30px;
+    }
+
+    .nav-option h3 {
+        font-size: 20px;
+    }
+
+
+    .navcontainer {
+        width: 100vw;
+        position: absolute;
+        transition: all 0.6s ease-in-out;
+        top: 0;
+        left: -100vw;
+    }
+
+    .nav {
+        width: 100%;
+        position: absolute;
+    }
+
+    .navclose {
+        left: 00px;
+    }
+
+    .content-tab {
+        overflow-x: scroll;
+        padding: 40px 30px 30px 30px;
+    }
+
+
+}
+
+@media screen and (max-width: 490px) {
+    .logo {
+        font-size: 20px;
+        justify-content: space-between;
+    }
+
+    .menuicn {
+        height: 25px;
+    }
+
+    .nav-img {
+        height: 25px;
+    }
+
+    .nav-option {
+        gap: 25px;
+    }
+
+    .nav-option h3 {
+        font-size: 12px;
+    }
+
+    .nav-upper-options {
+        gap: 15px;
+    }
+
+
+    @media screen and (max-width: 400px) {
+        .view {
+            width: 60px;
+            font-size: 10px;
+            height: 27px;
+        }
+
+        .report-header {
+            height: 60px;
+            padding: 10px 10px 5px 10px;
+        }
+
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .report-body {
+        padding: 10px;
+    }
+
+    .label-tag {
+        width: 70px;
+    }
+
+}

@@ -1,0 +1,294 @@
+.user-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+.user-container .user-box {
+    flex: 1;
+    display: flex;
+    padding: 10px 10px;
+    margin: 40px 200px;
+}
+
+.user-container .user-box .box-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.user-container .box-left section {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-container .box-left .tab-active {
+    background-color: var(--secondary-200);
+    color: var(--gray-900);
+}
+
+.user-container .box-left div:active {
+    background-color: var(--secondary-200);
+    opacity: 0.4;
+}
+
+.user-container .box-left div {
+    display: flex;
+    padding: 12px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background-color: transparent;
+    box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    color: var(--gray-800);
+}
+
+.user-container .user-box .box-right {
+    flex: 4;
+    display: flex;
+    padding: 12px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid var(--gray-100, #E4E7E9);
+    background-color: transparent;
+    box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
+}
+
+.user-container article {
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+}
+
+.user-container .article-active {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-container .purchased-order {
+    flex: 1;
+
+}
+
+.user-container .purchased-order h3 {
+    justify-self: center;
+    text-align: center;
+    font-weight: var(--heading-03-font-weight);
+    font-size: var(--heading-03-font-size);
+}
+
+.user-container .search-container {
+    display: inline-block;
+    padding: 10px 5px;
+    margin: 20px auto;
+    width: 80%;
+    border: 1px solid var(--gray-100);
+    border-radius: 5px;
+    position: relative;
+}
+
+.user-container .search-container input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.user-container .search-container img {
+    position: absolute;
+    right: 0%;
+    top: 0;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    box-sizing: content-box;
+    z-index: 1;
+}
+
+.user-container .search-container img:active {
+    box-shadow: 0 0 10px var(--secondary-200);
+    background-color: var(--secondary-200);
+}
+
+.user-container .purchased-products-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.user-container .purchased-products-container .purchased-products {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 15px;
+    position: relative;
+}
+
+.user-container .purchased-products-container .btn-see-more {
+    position: absolute;
+    bottom: -25px;
+    left: 40%;
+    padding: 5px 50px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 6px var(--secondary-200);
+    background-color: var(--gray-00);
+}
+
+.user-container .purchased-products-container .btn-see-more:active {
+    box-shadow: 0 0 10px var(--secondary-400);
+    background-color: var(--secondary-200);
+}
+
+.user-info-container {
+    flex: 1;
+    display: flex;
+
+}
+
+.user-info-container .heading {
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.user-info-container .heading h2 {
+    font-family: var(--heading-02-font-family);
+    font-size: var(--heading-02-font-size);
+    font-weight: var(--heading-02-font-weight);
+    text-align: center;
+    padding: 10px;
+}
+
+.user-info-container .user-info {
+    flex: 1;
+    display: flex;
+    padding: 30px 10px;
+}
+
+.user-info-container .user-info .user-info-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid var(--gray-100);
+    margin-top: 12px;
+}
+
+.user-info-container .user-info .user-info-left table {
+    width: 100%;
+    text-indent: initial;
+
+}
+
+.user-info-container .user-info .user-info-left table tr {
+    display: table-row;
+}
+
+.user-info-container .user-info .user-info-left table td {
+    vertical-align: middle;
+}
+
+.user-info-container .user-info-left .td-left {
+    text-align: right;
+    color: var(--gray-700);
+    overflow: hidden;
+    padding: 30px;
+    white-space: nowrap;
+    min-width: 20%;
+    font-size: var(--label-02-font-size);
+    vertical-align: top;
+}
+
+.user-info-container .user-info-left .td-right {
+    text-align: left;
+    color: var(--gray-900);
+    overflow: hidden;
+    padding: 20px;
+    white-space: nowrap;
+    min-width: 20%;
+}
+
+.user-info-container .user-info-left .td-right p {
+    padding: 20px 0;
+}
+
+.user-info-container .user-info-left .td-right input {
+    padding: 7px 10px;
+    width: 200px;
+}
+
+.user-info-container .user-info-left .td-right textarea {
+    padding: 7px 10px;
+    width: 200px;
+}
+
+.user-info-container .btn-save {
+    padding: 15px 30px;
+    min-width: 30%;
+    margin-top: 50px;
+    border: none;
+    background-color: var(--secondary-500);
+    color: #fff;
+    cursor: pointer;
+}
+
+.user-info-container .btn-save:hover {
+    box-shadow: 0 0 5px var(--secondary-400);
+}
+
+.user-info-container .btn-save:active {
+    background-color: var(--secondary-400);
+}
+
+.user-info-container .user-info .user-info-right {
+    flex: 1;
+    margin-top: 12px;
+
+}
+
+.user-info-container .avatar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-info-container .avatar-container label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-info-container .avatar-container .avt-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    border: 1px solid var(--gray-400);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.user-info-container .avatar-container .avt-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: auto
+}
+
+.user-info-container .avatar-container input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

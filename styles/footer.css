@@ -1,16 +1,17 @@
-.container {
-
+.footer .container {
 	font-family: "Public Sans", Helvetica;
 	padding: 0;
+	flex-grow: 1;
+	padding: 15px 10px;
 }
 
-.row {
+.footer .row {
 	display: flex;
 	flex-grow: 1;
 	flex-wrap: wrap;
 }
 
-ul {
+.footer ul {
 	list-style: none;
 }
 
@@ -21,7 +22,7 @@ ul {
 	justify-content: space-between;
 }
 
-.footer__col {
+.footer .footer__col {
 	flex-grow: 1;
 	min-width: 0;
 	padding: 0 15px;
@@ -29,7 +30,7 @@ ul {
 	gap: 30px;
 }
 
-.footer__col h4 {
+.footer .footer__col h4 {
 	font-size: 18px;
 	color: #ffffff;
 	text-transform: capitalize;
@@ -38,7 +39,7 @@ ul {
 	position: relative;
 }
 
-.footer__col h4::before {
+.footer .footer__col h4::before {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -46,14 +47,14 @@ ul {
 	background-color: #e91e63;
 	height: 2px;
 	box-sizing: border-box;
-	width: 50px;
+	width: 25%;
 }
 
-.footer__col ul li:not(:last-child) {
+.footer .footer__col ul li:not(:last-child) {
 	margin-bottom: 10px;
 }
 
-.footer__col ul li a {
+.footer .footer__col ul li a {
 	font-size: 16px;
 	text-transform: capitalize;
 	color: #ffffff;
@@ -64,19 +65,24 @@ ul {
 	transition: all 0.3s ease;
 }
 
-.footer__col ul li a:hover {
+.footer .footer__col ul li a:hover {
 	color: #ffffff;
 	padding-left: 8px;
 }
 
-.footer__col .social-link {
-	display: inline-block;
+.footer .footer__col .social-links {
+	display: flex;
+	flex-direction: row;
+}
+
+.footer .footer__col .social-link {
+	display: flex;
+	flex-direction: row;
 	height: 40px;
 	width: 40px;
 	align-items: center;
 	justify-content: center;
 	background-color: rgba(255, 255, 255, 0.2);
-	padding-top: 9px;
 	margin: 0 10px 10px 0;
 	text-align: center;
 	line-height: 40px;
@@ -85,14 +91,14 @@ ul {
 	transition: all 0.5s ease;
 }
 
-.footer__col .social-link img {
+.footer .footer__col .social-link img {
 	position: relative;
 	width: 20px;
 	height: 20px;
 	object-fit: cover;
 }
 
-.footer__col .social-links a:hover {
+.footer .footer__col .social-links a:hover {
 	color: #24262b;
 	background-color: var(--primary-color);
 }

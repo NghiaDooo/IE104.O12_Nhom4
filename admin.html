@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+				initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styleguide.css">
+    <link rel="stylesheet" href="./styles/admin.css">
+    <style>
+        .content-tab {
+            display: none;
+        }
+
+        .content-tab-active {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- for header part -->
+    <header>
+        <div class="logo">
+            <a href="home.html">
+                <img class="logo__logo-icon" src="./assets/images/navbar/logo.png" />
+                <div class="logo__logo-text">AbcXyz</div>
+            </a>
+            <img src="./assets/images/admin/menu.svg" class="icn menuicn" id="menuicn" alt="menu-icon">
+        </div>
+
+    </header>
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option-active" onclick="changeTab('tab-dashbroad')">
+                        <img src="./assets/images/admin/dashborad.svg" class="nav-img" alt="dashboard">
+                        <h3> Bảng điều khiển</h3>
+                    </div>
+
+                    <div class="nav-option" onclick="changeTab('tab-categories')">
+                        <img src="./assets/images/admin/categories.svg" class="nav-img" alt="categories">
+                        <h3> Danh mục sản phẩm</h3>
+                    </div>
+
+                    <div class="nav-option" onclick="changeTab('tab-report')">
+                        <img src="./assets/images/admin/report.svg" class="nav-img" alt="report">
+                        <h3> Báo cáo doanh thu</h3>
+                    </div>
+
+                    <div class="nav-option" onclick="window.location.href=`user-page.html`">
+                        <img src="./assets/images/admin/goback.svg" class="nav-img" alt="go-back-btn">
+                        <h3>Quay về</h3>
+                    </div>
+
+                    <div class="nav-option logout" onclick="logOut()">
+                        <img src="./assets/images/admin/logout.svg" class="nav-img" alt="logout">
+                        <h3>Đăng xuất</h3>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Tab Content 1 -->
+        <div class="content-tab content-tab-active" id="tab-dashbroad">
+
+            <div class="box-container">
+
+                <div class="box box1">
+                    <div class="text">
+                        <h2 class="topic-heading">60.5k</h2>
+                        <h2 class="topic">Lượt truy cập</h2>
+                    </div>
+
+                    <img src="./assets/images/admin/access.svg" alt="access number">
+                </div>
+
+                <div class="box box2">
+                    <div class="text">
+                        <h2 class="topic-heading">1.5k</h2>
+                        <h2 class="topic">Lượt mua</h2>
+                    </div>
+
+                    <img src="./assets/images/admin/purchases.svg" alt="purchases">
+                </div>
+
+            </div>
+
+            <table class="report-container">
+                <caption>Top sản phẩm bán chạy</caption>
+                <thead class="report-header">
+                    <tr class="report-topic-heading">
+                        <th class="t-op">Tên sản phẩm</th>
+                        <th class="t-op">Lượt mua</th>
+                        <th class="t-op">Dánh giá</th>
+                        <th class="t-op">Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody class="report-body">
+                    <tr class="items">
+                        <td class="item1">
+                            <span class="t-op-nextlvl">Article 73</span>
+                        </td>
+                        <td class="item1">
+                            <span class="t-op-nextlvl">2.9k</span>
+                        </td>
+                        <td class="item1">
+                            <span class="t-op-nextlvl">210</span>
+                        </td>
+                        <td class="item1 label-tag">
+                            <span class="t-op-nextlvl">còn hàng</span>
+                        </td>
+                    </tr>
+
+                    <tr class="items">
+                        <td class="item1">
+                            <span class="t-op-nextlvl">Article 72</span>
+                        </td>
+                        <td class="item1">
+                            <span class="t-op-nextlvl">1.5k</span>
+                        </td>
+                        <td class="item1">
+                            <span class="t-op-nextlvl">360</span>
+                        </td>
+                        <td class="item1 label-tag">
+                            <span class="t-op-nextlvl">còn hàng</span>
+                        </td>
+                    </tr>
+
+                    <tr class="items">
+                        <td class="item1">
+                            <span class="t-op-nextlvl">Article 71</span>
+                        </td>
+                        <td class="item1">
+                            <span class="t-op-nextlvl">1.1k</span>
+                        </td>
+                        <td class="item1">
+                            <span class="t-op-nextlvl">150</span>
+                        </td>
+                        <td class="item1 label-tag">
+                            <span class="t-op-nextlvl">còn hàng</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+        <!-- Tab Content 2 -->
+        <div class="content-tab" id="tab-categories">
+            <div class="categories">
+                <!-- Nội dung của tab 2 -->
+                Danh mục sản phẩm
+            </div>
+        </div>
+        <!-- Tab Content 3 -->
+        <div class="content-tab" id="tab-report">
+            <div class="report">
+                <!-- Nội dung của tab 3 -->
+                Báo cáo doanh thu
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/common.js"></script>
+
+    <script>
+
+        let menuicn = document.querySelector(".menuicn");
+        let nav = document.querySelector(".navcontainer");
+
+        menuicn.addEventListener("click", () => {
+            nav.classList.toggle("navclose");
+        });
+
+        function changeTab(tabId) {
+            // Ẩn tất cả các tab content
+            var tabs = document.querySelectorAll('.content-tab');
+            tabs.forEach(function (tab) {
+                tab.classList.remove('content-tab-active');
+            });
+
+            // Ẩn tất cả các option
+            var options = document.querySelectorAll('.nav-option');
+            options.forEach(function (option) {
+                option.classList.remove('option-active');
+            });
+
+            // Hiển thị tab content được chọn và active option tương ứng
+            document.getElementById(tabId).classList.add('content-tab-active');
+            event.currentTarget.classList.add('option-active');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,11 +1,11 @@
-.container {
+.container-login-register {
   flex: 1;
   display: flex;
   justify-content: center;
   margin: 1em 0;
 }
 
-.container__wrapper {
+.container-login-register .container__wrapper {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -20,7 +20,7 @@
   margin: 0;
 }
 
-.tabs {
+.container-login-register .tabs {
   position: relative;
   top: 0;
   display: flex;
@@ -29,7 +29,7 @@
   margin: 20px auto;
 }
 
-.tab {
+.container-login-register .tab {
   width: 200px;
   padding: 10px 10px;
   border: none;
@@ -37,35 +37,35 @@
   text-align: center;
 }
 
-.tab--highlight {
+.container-login-register .tab--highlight {
   font-weight: bold;
   border-bottom: 3px solid rgba(250, 130, 50, 1);
 }
 
-.form {
+.container-login-register .form {
   padding: 20px 50px;
 }
 
-.form__group {
+.container-login-register .form__group {
   display: flex;
   flex-direction: column;
   position: relative;
   margin-bottom: 10px;
 }
 
-.form__label {
+.container-login-register .form__label {
   font-size: 0.8em;
   font-weight: 'semi-bold';
   margin: 10px 5px;
   margin-bottom: 10px;
 }
 
-.icon__wrapper {
+.container-login-register .icon__wrapper {
   display: flex;
   align-items: center;
 }
 
-.form__input {
+.container-login-register .form__input {
   flex: 1;
   padding: 10px;
   width: 100%;
@@ -74,7 +74,7 @@
   border-radius: 5px;
 }
 
-.toggle__password {
+.container-login-register .toggle__password {
   position: absolute;
   top: 50%;
   right: 5px;
@@ -83,14 +83,14 @@
   cursor: pointer;
 }
 
-.button__submit {
+.container-login-register .button__submit {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 30px;
 }
 
-.button__submit button {
+.container-login-register .button__submit button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,10 +107,10 @@
   border-radius: 5px;
 }
 
-.button__submit button img {
+.container-login-register .button__submit button img {
   margin-left: 20px;
 }
 
-#register-form {
+.container-login-register #register-form {
   display: none;
 }

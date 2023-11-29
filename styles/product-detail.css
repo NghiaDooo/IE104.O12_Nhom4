@@ -1,0 +1,238 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 180px;
+}
+
+.product-details-container {
+    padding: 20px 20px;
+    border: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 56px;
+    display: inline-flex;
+
+}
+
+.product-preview-container {
+    flex: 2;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+
+.product-preview-container img {
+    width: 600px;
+    height: 600px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    position: relative;
+}
+
+.images-container .preview-img--small {
+    margin: 0 5px;
+    width: 96px;
+    height: 96px;
+    border-radius: 2px;
+    border: 1px #E4E7E9 solid;
+
+}
+
+.images-container .img-active {
+    width: 96px;
+    height: 96px;
+    border-radius: 2px;
+    border: 2px var(--primary-color) solid
+}
+
+.images-container .left-button,
+.images-container .right-button {
+    position: absolute;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding-top: 15px;
+    border-radius: 40px;
+    opacity: 0.7;
+
+}
+
+.images-container .left-button {
+    left: -2%;
+}
+
+.images-container .right-button {
+    right: -2%;
+}
+
+.images-container .button-img {
+
+    width: 40px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.box-right {
+    flex: 2;
+    display: block;
+    padding: 10px 20px;
+}
+
+.box-right .product-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.box-right .detail-rate {
+    display: flex;
+    align-items: center;
+    padding: none;
+}
+
+.box-right .detail-stars {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-right .icondetail-star {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+
+.box-right .details-rate-totals {
+    margin-left: 10px;
+}
+
+.box-right .product-content h3 {
+    margin: 20px 0;
+    font-weight: var(--heading-03-font-weight);
+    font-size: var(--heading-03-font-size);
+    line-height: 1.2;
+}
+
+
+.box-right .product-price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.box-right .product-price p {
+    margin-right: 5px;
+}
+
+.box-right .price-present {
+
+    color: #d0021c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box-right .price-old {
+    color: #666;
+    font-size: 16px;
+    text-decoration-line: line-through;
+}
+
+.box-right .promotion {
+    color: #d0021c;
+    font-size: 16px;
+}
+
+.box-right .order {
+    display: flex;
+    margin-top: 20px;
+}
+
+.box-right .order button {
+    padding: 15px 2px;
+    font-size: 15px;
+}
+
+.box-right .order button:active {
+    opacity: 0.5;
+}
+
+.box-right .button-add-to-card {
+    flex: 3;
+    margin-right: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.box-right .button-order {
+    flex: 1;
+    border: 1px solid var(--primary-color);
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.box-right .product-info-container {
+    border: 1px solid rgba(128, 128, 128, 0.275);
+    border-radius: 3px;
+    margin-top: 20px;
+    display: block;
+}
+
+.box-right .product-info-container h4 {
+
+    padding: 15px 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.box-right .product-info {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding: 0 5px;
+}
+
+
+.box-right .product-info li {
+    list-style: none;
+    display: table;
+    border-top: 1px solid #eee;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.box-right .product-info li p {
+    clear: both;
+    float: left;
+    padding-left: 5px;
+    margin: 5px 0;
+    width: 40%;
+    color: #666;
+    box-sizing: border-box;
+}
+
+.box-right .product-info li div {
+    width: 60%;
+    float: left;
+    margin: 5px 0;
+    color: #333;
+}
