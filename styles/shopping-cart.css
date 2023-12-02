@@ -76,14 +76,18 @@ input::-webkit-outer-spin-button {
 }
 
 .cart-container .heading {
-    font-size: var(--fs-28);
+    font-size: 28px;
     font-weight: var(--fw-6);
-    color: var(--onyx);
-    border-bottom: 1px solid var(--gainsboro);
+    color: var(--gray-900);
+    border-bottom: 1px solid var(--gray-200);
     padding: 20px var(--px);
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.cart-container .heading img {
+    width: 50px;
 }
 
 .cart-container .heading ion-icon {
