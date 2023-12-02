@@ -1,7 +1,7 @@
 
-const purchasedProducts = data;
+var purchasedProducts;
 var limitedProducts = 8;
-var productsData = purchasedProducts;
+var productsData;
 
 function showTab(tabId, div) {
     document.querySelectorAll('.tab-active').forEach(function (div) {
@@ -80,6 +80,7 @@ async function loadUserProfile() {
         const userName = document.getElementById('user-name');
         const userEmail = document.getElementById('user-email');
         const userAddress = document.getElementById('user-address');
+        console.log(typeof user)
         userName.value = user.personalInfo.username || '';
         userEmail.textContent = user.accountInfo.email || '';
         userAddress.value = user.personalInfo.address || '';
@@ -101,8 +102,9 @@ async function updateUserProfile() {
         return;
     user.personalInfo.username = filterXSS(userName.value);
     user.personalInfo.address = filterXSS(userAddress.value);
+    console.log(user);
     await setCurrentUser(user);
-    setUser(user);
+    await setUser(user);
     loadUserProfile();
     alert("Cập nhật thông tin tài khoản thành công!");
 
@@ -124,7 +126,13 @@ window.onload = async function () {
 };
 document.addEventListener("DOMContentLoaded", async () => {
     await checkUserRole();
-    await loadUserProfile()
-    showLimitedProducts(productsData, document.getElementById("purchased-products"), limitedProducts);
-    isShowedAllProducts();
+    await loadUserProfile();
+    if (getCurrentUser != null) {
+        purchasedProducts = await getCurrentUser().purchasedProducts;
+        productsData = purchasedProducts
+
+        showLimitedProducts(productsData, document.getElementById("purchased-products"), limitedProducts);
+        isShowedAllProducts();
+    }
+
 });

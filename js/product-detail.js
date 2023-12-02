@@ -59,6 +59,45 @@ function createProductInfo(productInfo) {
     }
 }
 
-console.log(loadProduct(data))
+async function addToCart() {
+    const user = await getCurrentUser();
+    const product = loadProduct(data);
+
+    if (user && product) {
+        const existingItemIndex = user.shoppingCart.findIndex(item => item.id === product.id);
+
+        if (existingItemIndex !== -1) {
+            alert("Sản phẩm đã có trong giỏ hàng!")
+            return;
+        } else {
+
+            user.shoppingCart.push(product);
+        }
+        await setCurrentUser(user);
+        setUser(await getCurrentUser());
+        alert("Sản phẩm đã được thêm vào trong giỏ hàng!")
+    }
+
+}
+
+async function buyNow() {
+    const user = await getCurrentUser();
+    const product = loadProduct(data);
+
+    if (user && product) {
+        const existingItemIndex = user.shoppingCart.findIndex(item => item.id === product.id);
+
+        if (existingItemIndex !== -1) {
+            window.location.href = 'shopping-cart.html'
+        } else {
+            user.shoppingCart.push(product);
+            await setCurrentUser(user);
+            setUser(await getCurrentUser());
+        }
+        window.location.href = 'shopping-cart.html'
+    }
+
+}
+
 
 

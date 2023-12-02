@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     addGoToTopBTN();
 });
@@ -34,56 +35,44 @@ function addGoToTopBTN() {
     document.body.appendChild(goToTopBtn);
 }
 
-async function getCurrentUser() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-    if (currentUser) {
-        return decodedJwt(currentUser.JWT, currentUser.secretKey)
-            .then(result => {
-                return result;
-            });
-    } else {
-        return currentUser;
-    }
-
+function getCurrentUser() {
+    return JSON.parse(localStorage.getItem('currentUser'));
 
 }
 
-async function setCurrentUser(user) {
-    if (user) {
-        const secretKey = await hashPassword(user.accountInfo.password);
-        delete user.accountInfo.password;
-        delete user.accountInfo.salt;
-        const jwt = await encodedJWT(user, secretKey.hashedPassword);
-        const currentUser = {
-            JWT: jwt,
-            secretKey: secretKey.hashedPassword,
-        }
-        localStorage.setItem('currentUser', JSON.stringify(currentUser));
-    } else {
-        localStorage.setItem('currentUser', JSON.stringify(user));
-    }
+function setCurrentUser(user) {
+    localStorage.setItem('currentUser', JSON.stringify(user));
 }
 
 function getAllUsers() {
     return JSON.parse(localStorage.getItem('userList')) || [];
 }
 
-function setUser(userUpdate) {
+
+
+function setUser(email, updatedInfo) {
     const users = getAllUsers();
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].accountInfo.email === userUpdate.accountInfo.email) {
-            users[i] = userUpdate;
-            break;
-        }
+
+    // Tìm người dùng theo email
+    const userIndex = users.findIndex(user => user.accountInfo.email === email);
+
+    if (userIndex !== -1) {
+        // Sửa thông tin người dùng
+        users[userIndex] = {
+            ...users[userIndex],
+            ...updatedInfo,
+        };
+
+        // Lưu danh sách người dùng đã được cập nhật vào localStorage
+        localStorage.setItem('userList', JSON.stringify(users));
     }
-    localStorage.setItem('userList', JSON.stringify(users));
 }
+
 
 function addUser(user) {
     var userList = JSON.parse(localStorage.getItem('userList')) || [];
     var existingUser = userList.find(function (existingUser) {
-        return existingUser.email === user.accountInfo.email;
+        return existingUser.accountInfo.email === user.accountInfo.email;
     });
 
     if (!existingUser) {

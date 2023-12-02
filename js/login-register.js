@@ -1,4 +1,9 @@
-document.addEventListener('DOMContentLoaded', toggleTabs());
+document.addEventListener('DOMContentLoaded', () => {
+    toggleTabs();
+    console.log(dataUsers)
+    dataUsers.forEach(user => addUser(user))
+
+});
 function toggleTabs() {
     const loginTab = document.getElementById('login-tab');
     const signupTab = document.getElementById('signup-tab');
@@ -125,7 +130,7 @@ async function register() {
 
     if (addUser(newUser)) {
         alert("Đăng ký thành công.");
-        setCurrentUser(newUser);
+        setCurrentUser(getUserByEmail(user));
         window.location.href = 'home.html';
     } else
         alert("Oh no! đã có lỗi, chúng tôi sẽ sớm khắc phục!")

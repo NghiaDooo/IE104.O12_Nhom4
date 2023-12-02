@@ -80,6 +80,11 @@ const InitNavbar = () => {
                     </a>
                 </div>
             </div>
+             <div class="nav__search-2">
+                    <input type="text" id="search-2" name="search" class="search__search-input"
+                        placeholder="Bạn tìm gì...">
+                    <img id="search-icon-2" class="search__search-icon" src="img/icon-search.png " />
+                </div>
         </div>
 `;
     navbarHTML = navbarHTML.replace(/src="img\//g, `src="${imageDirectory}`);
@@ -95,6 +100,15 @@ const InitNavbar = () => {
     const searchIcon = document.getElementById('search-icon');
 
     searchIcon.addEventListener('click', function (event) {
+        event.preventDefault();
+        const searchValue = searchInput.value;
+        window.location.href = `list-product.html?keyword=${searchValue.toLowerCase()}`;
+    });
+
+    const searchInput2 = document.getElementById('search-2');
+    const searchIcon2 = document.getElementById('search-icon-2');
+
+    searchIcon2.addEventListener('click', function (event) {
         event.preventDefault();
         const searchValue = searchInput.value;
         window.location.href = `list-product.html?keyword=${searchValue.toLowerCase()}`;
