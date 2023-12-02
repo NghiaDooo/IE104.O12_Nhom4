@@ -50,20 +50,16 @@ function getAllUsers() {
 
 
 
-function setUser(email, updatedInfo) {
+function setUser(userUpdate) {
     const users = getAllUsers();
 
     // Tìm người dùng theo email
-    const userIndex = users.findIndex(user => user.accountInfo.email === email);
-
+    const userIndex = users.findIndex(user => user.accountInfo.email === userUpdate.accountInfo.email);
     if (userIndex !== -1) {
         // Sửa thông tin người dùng
-        users[userIndex] = {
-            ...users[userIndex],
-            ...updatedInfo,
-        };
+        users[userIndex] = userUpdate;
+        console.log(users)
 
-        // Lưu danh sách người dùng đã được cập nhật vào localStorage
         localStorage.setItem('userList', JSON.stringify(users));
     }
 }

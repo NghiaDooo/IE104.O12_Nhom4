@@ -60,9 +60,11 @@ function isShowedAllProducts() {
         btnSeeMore.style.display = 'none';
         return
     }
-    if (limitedProducts >= productsData.length)
+    if (limitedProducts >= productsData.length) {
+        console.log(1)
 
         btnSeeMore.style.display = 'none';
+    }
     else
         btnSeeMore.style.display = 'block';
 }
@@ -128,8 +130,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     await checkUserRole();
     await loadUserProfile();
     if (getCurrentUser != null) {
-        purchasedProducts = await getCurrentUser().purchasedProducts;
-        productsData = purchasedProducts
+        let user = await getCurrentUser()
+        purchasedProducts = user.purchaseHistory;
+        productsData = purchasedProducts;
+        console.log(productsData)
 
         showLimitedProducts(productsData, document.getElementById("purchased-products"), limitedProducts);
         isShowedAllProducts();

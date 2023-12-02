@@ -68,14 +68,12 @@ async function addToCart() {
 
         if (existingItemIndex !== -1) {
             alert("Sản phẩm đã có trong giỏ hàng!")
-            return;
         } else {
-
             user.shoppingCart.push(product);
+            await setCurrentUser(user);
+            setUser(user);
+            alert("Sản phẩm đã được thêm vào trong giỏ hàng!")
         }
-        await setCurrentUser(user);
-        setUser(await getCurrentUser());
-        alert("Sản phẩm đã được thêm vào trong giỏ hàng!")
     }
 
 }

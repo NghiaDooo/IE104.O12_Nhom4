@@ -180,7 +180,7 @@ async function payButtonClick() {
         alert('Đơn hàng của bạn đã được đặt!');
         const user = await getCurrentUser();
         if (user) {
-            user.purchaseHistory.push(user.shoppingCart)
+            user.shoppingCart.forEach(product => user.purchaseHistory.push(product));
             user.shoppingCart = []
             await setCurrentUser(user);
             setUser(await getCurrentUser());
