@@ -149,7 +149,7 @@ function addProduct(productData, productList) {
     let productItemHTML = `
         <div class="product-item">
             <div class="overlap-group">
-                <img class="product-image" src="${productData.img}">
+             <img class="product-image" src="${productData.img}" alt="${productData.title}}">
                 <div id="hot-product"></div>
                 <div id="sale-product"></div>
             </div>

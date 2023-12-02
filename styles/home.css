@@ -222,7 +222,7 @@
 
 .best-seller-container .heading .content {
     text-align: center;
-    font-family: var(--heading-03-font-family);
+    font-family: var(--heading-03-font-family);   
     font-weight: var(--heading-03-font-weight);
     font-size: var(--heading-03-font-size);
     letter-spacing: var(--heading-03-letter-spacing);
@@ -258,4 +258,16 @@
 
 .best-seller-container .see-more-link:hover {
     border: 1px solid var(--warning-500);
+}
+/* test */
+.today-best-deals {
+    background-color: #ff0000; /* Red background color */
+}
+
+.new-products-container {
+    background-color: #00ff00; /* Green background color */
+}
+
+.best-seller-container {
+    background-color: #ffff00; /* Yellow background color */
 }
