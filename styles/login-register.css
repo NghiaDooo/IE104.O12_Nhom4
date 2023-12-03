@@ -140,8 +140,7 @@
 
 /* reponsive */
 
-@media (max-width: 450px) {
-
+@media (max-width: 900px) {
   .container-login-register .container__wrapper {
     width: 100%;
     padding: 5px 15px;
@@ -170,5 +169,4 @@
   .container-login-register .form {
     padding: 10px 20px;
   }
-
 }
