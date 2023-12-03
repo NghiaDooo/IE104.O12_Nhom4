@@ -2,14 +2,16 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  margin: 1em 0;
+  align-items: center;
+  padding: 5% 15% 10% 15%;
 }
 
 .container-login-register .container__wrapper {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 500px;
+  width: 80%;
+  min-width: 300px;
   background-color: var(--gray-00);
   border-radius: 4px;
   overflow: hidden;
@@ -17,7 +19,7 @@
   border-color: var(--gray-100);
   box-shadow: var(--dropdown-shadow);
   padding: 10px 30px;
-  margin: 0;
+  margin: auto;
 }
 
 .container-login-register .tabs {
@@ -35,6 +37,9 @@
   border: none;
   margin: 0;
   text-align: center;
+  cursor: pointer;
+  transition: color 0.5s ease;
+  /* Thêm hiệu ứng chuyển động */
 }
 
 .container-login-register .tab--highlight {
@@ -42,8 +47,26 @@
   border-bottom: 3px solid rgba(250, 130, 50, 1);
 }
 
+.container-login-register .tab:hover {
+  color: rgba(250, 130, 50, 1);
+  /* Thêm màu khi hover */
+}
+
+.container-login-register .tab:focus {
+  outline: none;
+}
+
+.container-login-register .tab:focus,
+.container-login-register .tab--highlight {
+  color: rgba(250, 130, 50, 1);
+  /* Màu khi được chọn */
+}
+
+
 .container-login-register .form {
+
   padding: 20px 50px;
+
 }
 
 .container-login-register .form__group {
@@ -113,4 +136,39 @@
 
 .container-login-register #register-form {
   display: none;
+}
+
+/* reponsive */
+
+@media (max-width: 450px) {
+
+  .container-login-register .container__wrapper {
+    width: 100%;
+    padding: 5px 15px;
+    margin: 0;
+  }
+
+  .container-login-register .tab {
+    width: 55%;
+    padding: 4px 4px;
+    border: none;
+    margin: 0;
+    text-align: center;
+  }
+
+  .container-login-register .tabs {
+    margin: 10px 0px;
+    padding-top: 5px;
+  }
+
+
+  .container-login-register .tab--highlight {
+    font-weight: bold;
+    border-bottom: 3px solid rgba(250, 130, 50, 1);
+  }
+
+  .container-login-register .form {
+    padding: 10px 20px;
+  }
+
 }
