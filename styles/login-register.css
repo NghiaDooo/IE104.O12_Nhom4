@@ -1,0 +1,172 @@
+.container-login-register {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 15% 10% 15%;
+}
+
+.container-login-register .container__wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  min-width: 300px;
+  background-color: var(--gray-00);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: var(--gray-100);
+  box-shadow: var(--dropdown-shadow);
+  padding: 10px 30px;
+  margin: auto;
+}
+
+.container-login-register .tabs {
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.container-login-register .tab {
+  width: 200px;
+  padding: 10px 10px;
+  border: none;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.5s ease;
+  /* Thêm hiệu ứng chuyển động */
+}
+
+.container-login-register .tab--highlight {
+  font-weight: bold;
+  border-bottom: 3px solid rgba(250, 130, 50, 1);
+}
+
+.container-login-register .tab:hover {
+  color: rgba(250, 130, 50, 1);
+  /* Thêm màu khi hover */
+}
+
+.container-login-register .tab:focus {
+  outline: none;
+}
+
+.container-login-register .tab:focus,
+.container-login-register .tab--highlight {
+  color: rgba(250, 130, 50, 1);
+  /* Màu khi được chọn */
+}
+
+
+.container-login-register .form {
+
+  padding: 20px 50px;
+
+}
+
+.container-login-register .form__group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.container-login-register .form__label {
+  font-size: 0.8em;
+  font-weight: 'semi-bold';
+  margin: 10px 5px;
+  margin-bottom: 10px;
+}
+
+.container-login-register .icon__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.container-login-register .form__input {
+  flex: 1;
+  padding: 10px;
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container-login-register .toggle__password {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateX(-30%) translateY(50%);
+  color: rgba(255, 255, 255, .9);
+  cursor: pointer;
+}
+
+.container-login-register .button__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.container-login-register .button__submit button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-500, #FA8232);
+  width: 100%;
+  color: var(--gray-00, #FFF);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.168px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+}
+
+.container-login-register .button__submit button img {
+  margin-left: 20px;
+}
+
+.container-login-register #register-form {
+  display: none;
+}
+
+/* reponsive */
+
+@media (max-width: 900px) {
+  .container-login-register .container__wrapper {
+    width: 100%;
+    padding: 5px 15px;
+    margin: 0;
+  }
+
+  .container-login-register .tab {
+    width: 55%;
+    padding: 4px 4px;
+    border: none;
+    margin: 0;
+    text-align: center;
+  }
+
+  .container-login-register .tabs {
+    margin: 10px 0px;
+    padding-top: 5px;
+  }
+
+
+  .container-login-register .tab--highlight {
+    font-weight: bold;
+    border-bottom: 3px solid rgba(250, 130, 50, 1);
+  }
+
+  .container-login-register .form {
+    padding: 10px 20px;
+  }
+}
