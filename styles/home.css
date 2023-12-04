@@ -7,6 +7,9 @@
 }
 
 .today-best-deals {
+    background: url('../assets/images/home/ads1.png') no-repeat;
+    background-size: contain;
+    background-color: #FF685F;
     display: flex;
     width: 70%;
     flex-direction: column;
@@ -21,12 +24,15 @@
 }
 
 .today-best-deals .heading {
+
+
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     position: relative;
     flex: 0 0 auto;
+
 
 }
 
@@ -36,6 +42,12 @@
     justify-content: space-between;
     position: relative;
     flex: 0 0 auto;
+}
+
+.today-best-deals .text-wrapper {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 20px;
 }
 
 .today-best-deals .deals-ends-in {
@@ -56,7 +68,7 @@
     border-radius: 5px;
     background-color: var(--primary-300);
     font-family: var(--body-small-400-font-family);
-    color: var(--gray-900);
+    color: #fff;
     font-size: var(--body-small-400-font-size);
     white-space: nowrap;
     box-sizing: border-box;
@@ -67,7 +79,7 @@
     width: fit-content;
     font-family: var(--body-small-400-font-family);
     font-weight: var(--body-small-400-font-weight);
-    color: #000000;
+    color: #fff;
     font-size: var(--body-small-400-font-size);
     letter-spacing: var(--body-small-400-letter-spacing);
     line-height: var(--body-small-400-line-height);
@@ -87,13 +99,13 @@
 }
 
 .today-best-deals .button-browse {
+    background-color: transparent;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 6px 8px;
     position: relative;
-    background-color: var(--gray-00);
-    color: var(--secondary-500);
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -133,6 +145,7 @@
     flex-wrap: wrap;
     width: 816px;
 }
+
 .new-products-container {
     display: flex;
     width: 70%;
@@ -153,7 +166,7 @@
     top: -10px;
     width: 100%;
     border-radius: 12px;
-    background-color: var(--success-500);
+    background-color: rgb(36, 180, 0);
 }
 
 .new-products-container .heading .content {
@@ -172,7 +185,8 @@
     justify-content: center;
     margin-top: 20px;
 }
-.new-products-container .products >div {
+
+.new-products-container .products>div {
     display: flex;
     flex-wrap: wrap;
     width: 816px;
@@ -219,7 +233,7 @@
 
 .best-seller-container .heading .content {
     text-align: center;
-    font-family: var(--heading-03-font-family);   
+    font-family: var(--heading-03-font-family);
     font-weight: var(--heading-03-font-weight);
     font-size: var(--heading-03-font-size);
     letter-spacing: var(--heading-03-letter-spacing);
@@ -256,29 +270,32 @@
 .best-seller-container .see-more-link:hover {
     border: 1px solid var(--warning-500);
 }
+
 /* test */
-.today-best-deals {
-    background-color: #ff0000; /* Red background color */
-}
 
 .new-products-container {
-    background-color: #00ff00; /* Green background color */
+    background-color: #00ff00;
+    /* Green background color */
 }
 
 .best-seller-container {
-    background-color: #ffff00; /* Yellow background color */
+    background-color: #ffff00;
+    /* Yellow background color */
 }
+
 @media only screen and (max-width: 431px) {
-    .home-container{
+    .home-container {
         width: 100%;
         padding: 20px;
     }
+
     .today-best-deals,
     .new-products-container,
     .best-seller-container {
         width: 80%;
         padding: 20px;
     }
+
     .today-best-deals .heading,
     .today-best-deals .content,
     .today-best-deals .deals-ends-in,
@@ -287,15 +304,18 @@
     .today-best-deals .products>div {
         width: 100%;
     }
-    .today-best-deals .content{
+
+    .today-best-deals .content {
         flex-direction: column;
     }
-    .today-best-deals .heading{
+
+    .today-best-deals .heading {
         flex-direction: column;
     }
+
     .today-best-deals .button-browse {
         display: none;
-        
+
     }
 
     .new-products-container .heading,
@@ -306,16 +326,18 @@
     }
 
     .new-products-container .products>div,
-    .best-seller-container .products>div{
+    .best-seller-container .products>div {
         width: 100%;
     }
+
     .new-products-container .heading .content,
     .best-seller-container .heading .content {
         font-size: small;
     }
+
     .today-best-deals .products>div,
-    .new-products-container .products >div,
-    .best-seller-container .products>div{
+    .new-products-container .products>div,
+    .best-seller-container .products>div {
         justify-content: center;
     }
 
