@@ -38,7 +38,6 @@
     flex: 0 0 auto;
 }
 
-
 .today-best-deals .deals-ends-in {
     display: inline-flex;
     align-items: center;
@@ -107,6 +106,7 @@
 
 .today-best-deals .button-browse .text-wrapper-4 {
     flex: 1;
+    background-color: transparent
 }
 
 .today-best-deals .button-browse img {
@@ -114,7 +114,6 @@
     max-width: 100%;
     height: auto;
 }
-
 
 .today-best-deals .img {
     position: relative;
@@ -134,7 +133,6 @@
     flex-wrap: wrap;
     width: 816px;
 }
-
 .new-products-container {
     display: flex;
     width: 70%;
@@ -174,8 +172,7 @@
     justify-content: center;
     margin-top: 20px;
 }
-
-.new-products-container .products>div {
+.new-products-container .products >div {
     display: flex;
     flex-wrap: wrap;
     width: 816px;
@@ -270,4 +267,56 @@
 
 .best-seller-container {
     background-color: #ffff00; /* Yellow background color */
+}
+@media only screen and (max-width: 431px) {
+    .home-container{
+        width: 100%;
+        padding: 20px;
+    }
+    .today-best-deals,
+    .new-products-container,
+    .best-seller-container {
+        width: 80%;
+        padding: 20px;
+    }
+    .today-best-deals .heading,
+    .today-best-deals .content,
+    .today-best-deals .deals-ends-in,
+    .today-best-deals .button-browse,
+    .today-best-deals .img,
+    .today-best-deals .products>div {
+        width: 100%;
+    }
+    .today-best-deals .content{
+        flex-direction: column;
+    }
+    .today-best-deals .heading{
+        flex-direction: column;
+    }
+    .today-best-deals .button-browse {
+        display: none;
+        
+    }
+
+    .new-products-container .heading,
+    .best-seller-container .heading,
+    .new-products-container .see-more-link,
+    .best-seller-container .see-more-link {
+        width: 100%;
+    }
+
+    .new-products-container .products>div,
+    .best-seller-container .products>div{
+        width: 100%;
+    }
+    .new-products-container .heading .content,
+    .best-seller-container .heading .content {
+        font-size: small;
+    }
+    .today-best-deals .products>div,
+    .new-products-container .products >div,
+    .best-seller-container .products>div{
+        justify-content: center;
+    }
+
 }

@@ -257,6 +257,19 @@ a {
   background: var(--secondary-500);
 }
 
+@media only screen and (max-width: 431px) {
+  .slider{
+    height: 250px;
+  }
+  .slider .slides{
+    height: 250px;
+    
+  }
+  .slider .slide img {
+    height: 250px;
+  
+  }
+}
 
 
-@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,700"); 

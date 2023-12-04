@@ -13,7 +13,7 @@ const InitFooter = () => {
                     <div class="footer__col">
                         <h4 class="footer__title">company</h4>
                         <ul class="footer__list">
-                            <li class="footer__item"><a class="footer__link" href="#">about us</a></li>
+                            <li class="footer__item"><a class="footer__link" href="about-us.html">about us</a></li>
                             <li class="footer__item"><a class="footer__link" href="#">our services</a></li>
                             <li class="footer__item"><a class="footer__link" href="#">privacy policy</a></li>
                             <li class="footer__item"><a class="footer__link" href="#">affiliate program</a></li>
@@ -32,10 +32,10 @@ const InitFooter = () => {
                     <div class="footer__col">
                         <h4 class="footer__title">online shop</h4>
                         <ul class="footer__list">
-                            <li class="footer__item"><a class="footer__link" href="#">điện thoại</a></li>
-                            <li class="footer__item"><a class="footer__link" href="#">tai nghe</a></li>
-                            <li class="footer__item"><a class="footer__link" href="#">cáp sạc</a></li>
-                            <li class="footer__item"><a class="footer__link" href="#">sạc dự phòng</a></li>
+                            <li class="footer__item"><a class="footer__link" href="list-product.html?type=phone">điện thoại</a></li>
+                            <li class="footer__item"><a class="footer__link" href="list-product.html?type=headphone">tai nghe</a></li>
+                            <li class="footer__item"><a class="footer__link" href="list-product.html?type=charging-cable">cáp sạc</a></li>
+                            <li class="footer__item"><a class="footer__link" href="list-product.html?type=backup-charging">sạc dự phòng</a></li>
                         </ul>
                     </div>
                     <div class="footer__col">

@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AbcXyz Mobileshop</title>
-    <link rel="stylesheet" href="./styles/user-page.css">
-    <link rel="stylesheet" href="./styles/globals.css">
-    <link rel="stylesheet" href="./styles/styleguide.css">
-    <link rel="stylesheet" href="./styles/product.css">
-    <link rel="stylesheet" href="./styles/navbar.css">
-    <link rel="icon" href="./assets/images/navbar/smartphone.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./styles/about-us.css">
+  <link rel="stylesheet" href="./styles/globals.css">
+  <link rel="stylesheet" href="./styles/styleguide.css">
+  <link rel="stylesheet" href="./styles/navbar.css">
+  <link rel="icon" href="./assets/images/navbar/smartphone.png" type="image/x-icon">
+  <title>AbcXyz Mobileshop</title>
 </head>
-
 <body>
     <div id="navbar">
         <div class="navigation">
@@ -94,91 +90,97 @@
             </div>
         </div>
     </div>
-    <div class="user-container">
-        <div class="user-box">
-            <div class="box-left">
-                <section>
-                    <div onclick="showTab('user-info', this)" class="tab-active">Hồ sơ</div>
-                    <div onclick="showTab('purchased-order', this)">Lịch sử mua hàng</div>
-                    <div onclick="logOut()">Log out</div>
-                </section>
-            </div>
-            <div class="box-right">
-                <article id="user-info" class="user-info-container article-active ">
-                    <div class="heading">
-                        <h2>Hồ sơ của tôi</h2>
-                    </div>
-                    <div class="user-info">
-                        <div class="user-info-left">
-                            <table>
-                                <tr>
-                                    <td class="td-left">
-                                        Tên người dùng
-                                    </td>
-                                    <td class="td-right">
-                                        <input id="user-name" type="text">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="td-left">
-                                        Email
-                                    </td>
-                                    <td class="td-right">
-                                        <p id="user-email"></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="td-left">
-                                        Địa chỉ
-                                    </td>
-                                    <td class="td-right">
-                                        <textarea id="user-address"></textarea>
 
-                                    </td>
-                                </tr>
+<div class="about-section">
+  <h1>Giới thiệu về AbcXyz Mobileshop</h1>
+  <p>AbcXyz là địa chỉ tin cậy cho những người đam mê công nghệ di động, nơi cung cấp một trải nghiệm mua sắm trực tuyến hoàn hảo cho khách hàng tại Việt Nam.</p>
+  <p>Với cam kết chất lượng và dịch vụ tận tâm, AbcXyz không chỉ là một trang web bán hàng, mà còn là người bạn đồng hành đáng tin cậy trên hành trình khám phá thế giới công nghệ di động.</p>
+</div>
 
-                            </table>
-                            <button class="btn-save" onclick="updateUserProfile()">Lưu thông tin</button>
-                        </div>
-                        <div class="user-info-right">
-                            <div id="avatar-container" class="avatar-container">
-                                <label for="avatar-input">
-                                    <div class="avt-img">
-                                        <img id="avatar-img" src="./assets/images/user-page/user-avt.png" alt="Avatar">
-                                    </div>
-                                    <br>
-                                    <span>Click để thay đổi ảnh đại diện</span>
-                                </label>
-                                <input type="file" id="avatar-input" accept="image/*" onchange="changeAvatar(event)">
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article id="purchased-order" class="purchased-order">
-                    <h3>Lịch sử mua hàng</h3>
-                    <div class="search-container">
-                        <input id="search-purchased-product-text" type="text"
-                            placeholder="Tìm kiếm sản phẩm bạn đã mua theo tên">
-                        <img id="search-purchased-product-btn" src="./assets/images/user-page/search.svg" alt="search"
-                            onclick="searchPurhasedProduct()">
-                    </div>
-                    <div class="purchased-products-container">
-                        <div id="purchased-products" class="purchased-products">
-                        </div>
-                        <button id="btn-see-more" class="btn-see-more" onclick="loadMoreProduct()">Xem thêm</button>
-
-                    </div>
-                </article>
-            </div>
-        </div>
+<h2 class="our-team" style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="team-member">
+    <div class="member-card">
+      <img src="./assets/images/about-us/boy.png" alt="Đỗ Nghĩa" style="width:100%">
+      <div class="member-container">
+        <h2>Đỗ Phú Nghĩa</h2>
+        <p class="member-title">Nhóm trưởng</p>
+        <p>21520360@gm.uit.edu.vn</p>
+        <p><button class="contact-button">Contact</button></p>
+      </div>
     </div>
-    <div id="footer"></div>
-    <script src="./js/navbar.js"></script>
-    <script src="./js/footer.js"></script>
-    <script src="./data/data.js"></script>
-    <script src="./js/common.js"></script>
-    <script src="./js/user-page.js"></script>
-    <script src="./js/security.js"></script>
-</body>
+  </div>
 
+  <div class="team-member">
+    <div class="member-card">
+      <img src="./assets/images/about-us/girl.png" alt="Nguyễn Hoài Phương" style="width:100%">
+      <div class="member-container">
+        <h2>Nguyễn Hoài Phương</h2>
+        <p class="member-title">Thư kí</p>
+        <p> 21521308@gm.uit.edu.vn</p>
+        <p><button class="contact-button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="team-member">
+    <div class="member-card">
+      <img src="./assets/images/about-us/bussiness-man.png" alt="Lê Công Hiếu" style="width:100%">
+      <div class="member-container">
+        <h2>Lê Công Hiếu</h2>
+        <p class="member-title">Thành viên</p>
+        <p>21522070@gm.uit.edu.vn</p>
+        <p><button class="contact-button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="team-member">
+    <div class="member-card">
+      <img src="./assets/images/about-us/manthongthai.png" alt="Hoàng Phi Nhân" style="width:100%">
+      <div class="member-container">
+        <h2>Hoàng Phi Nhân</h2>
+        <p class="member-title">Thành viên</p>
+        <p>21520372@gm.uit.edu.vn</p>
+        <p><button class="contact-button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="team-member">
+    <div class="member-card">
+      <img src="./assets/images/about-us/man40.png" alt="Tô Mạnh Tiến" style="width:100%">
+      <div class="member-container">
+        <h2>Tô Mạnh Tiến</h2>
+        <p class="member-title">Thành viên</p>
+        <p>21522671@gm.uit.edu.vn</p>
+        <p><button class="contact-button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="team-member">
+    <div class="member-card">
+      <img src="./assets/images/about-us/boy1.png" alt="Lê Nam Thắng" style="width:100%">
+      <div class="member-container">
+        <h2>Lê Nam Thắng</h2>
+        <p class="member-title">Thành viên</p>
+        <p>21522588@gm.uit.edu.vn</p>
+        <p><button class="contact-button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="team-member">
+    <div class="member-card">
+      <img src="./assets/images/about-us/man.png" alt="Nguyễn Văn Hoành" style="width:100%">
+      <div class="member-container">
+        <h2>Nguyễn Văn Hoành</h2>
+        <p class="member-title">Thành viên</p>
+        <p>21520360@gm.uit.edu.vn</p>
+        <p><button class="contact-button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer"></div>
+<script src="./js/navbar.js"></script>
+<script src="./js/footer.js"></script>
+ <!-- <script src="./js/common.js"></script> -->
+</body>
 </html>
