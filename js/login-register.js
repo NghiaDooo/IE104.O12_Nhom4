@@ -130,9 +130,10 @@ async function register() {
 
     if (addUser(newUser)) {
         alert("Đăng ký thành công.");
-        setCurrentUser(getUserByEmail(user));
+        setCurrentUser(newUser);
         window.location.href = 'home.html';
-    } else
+    }
+     else
         alert("Oh no! đã có lỗi, chúng tôi sẽ sớm khắc phục!")
 
 
