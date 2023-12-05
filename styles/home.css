@@ -179,17 +179,27 @@
     font-style: var(--heading-03-font-style);
 }
 
-.new-products-container .products {
+.products {
     position: relative;
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    width: 100%;
 }
 
-.new-products-container .products>div {
-    display: flex;
-    flex-wrap: wrap;
-    width: 816px;
+
+
+.today-best-deals .products>div,
+.new-products-container .products>div,
+.best-seller-container .products>div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px;
+    padding: 30px 5px;
+    align-content: space-between;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 3px var(--gray-500);
 }
 
 .new-products-container .see-more-link {
@@ -283,6 +293,48 @@
     /* Yellow background color */
 }
 
+@media only screen and (max-width: 1225px) {
+
+    .today-best-deals,
+    .new-products-container,
+    .best-seller-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .today-best-deals .heading,
+    .today-best-deals .content,
+    .today-best-deals .deals-ends-in,
+    .today-best-deals .button-browse,
+    .today-best-deals .img,
+    .today-best-deals .products>div {
+        width: 100%;
+    }
+
+    .today-best-deals .content {
+        flex-direction: column;
+    }
+
+    .today-best-deals .heading {
+        flex-direction: column;
+    }
+
+    .today-best-deals .products>div,
+    .new-products-container .products>div,
+    .best-seller-container .products>div {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 5px;
+        padding: 30px 5px;
+        align-content: space-between;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 3px var(--gray-500);
+    }
+}
+
+
+
 @media only screen and (max-width: 431px) {
     .home-container {
         width: 100%;
@@ -313,32 +365,19 @@
         flex-direction: column;
     }
 
-    .today-best-deals .button-browse {
-        display: none;
-
-    }
-
-    .new-products-container .heading,
-    .best-seller-container .heading,
-    .new-products-container .see-more-link,
-    .best-seller-container .see-more-link {
-        width: 100%;
-    }
-
-    .new-products-container .products>div,
-    .best-seller-container .products>div {
-        width: 100%;
-    }
-
-    .new-products-container .heading .content,
-    .best-seller-container .heading .content {
-        font-size: small;
-    }
-
     .today-best-deals .products>div,
     .new-products-container .products>div,
     .best-seller-container .products>div {
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 5px;
+        padding: 30px 5px;
+        align-content: space-between;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 3px var(--gray-500);
     }
+
+
 
 }
