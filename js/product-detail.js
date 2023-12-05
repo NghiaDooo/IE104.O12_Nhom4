@@ -62,6 +62,9 @@ function createProductInfo(productInfo) {
 async function addToCart() {
     const user = await getCurrentUser();
     const product = loadProduct(data);
+    if (!user) {
+        alert("Bạn chưa đăng nhập");
+    }
 
     if (user && product) {
         const existingItemIndex = user.shoppingCart.findIndex(item => item.id === product.id);
@@ -81,6 +84,10 @@ async function addToCart() {
 async function buyNow() {
     const user = await getCurrentUser();
     const product = loadProduct(data);
+    if (!user) {
+        alert("Bạn chưa đăng nhập");
+    }
+
 
     if (user && product) {
         const existingItemIndex = user.shoppingCart.findIndex(item => item.id === product.id);
